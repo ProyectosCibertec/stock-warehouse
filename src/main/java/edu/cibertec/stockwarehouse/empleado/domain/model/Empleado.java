@@ -1,6 +1,6 @@
-package edu.cibertec.stockwarehouse.empleado.model;
+package edu.cibertec.stockwarehouse.empleado.domain.model;
 
-import edu.cibertec.stockwarehouse.cargo.domain.Cargo;
+import edu.cibertec.stockwarehouse.cargo.domain.model.Cargo;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 

@@ -1,4 +1,4 @@
-package edu.cibertec.stockwarehouse.cargo.domain;
+package edu.cibertec.stockwarehouse.cargo.domain.model;
 
 import lombok.Data;
 
