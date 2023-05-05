@@ -11,6 +11,7 @@ import java.util.List;
 
 @Mapper
 public interface CargoMapper {
+
     CargoMapper instance = Mappers.getMapper(CargoMapper.class);
 
     CargoDTO cargoACargoDTO(Cargo cargo);
