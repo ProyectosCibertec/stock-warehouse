@@ -41,6 +41,6 @@ public class OrdenCompraController {
 
     @DeleteMapping("/{id}")
     public  void  eliminarOrdeCompra(@PathVariable(value = "id") int id){
-             ordenCompraService.delte(id);
+             ordenCompraService.delete(id);
     }
 }

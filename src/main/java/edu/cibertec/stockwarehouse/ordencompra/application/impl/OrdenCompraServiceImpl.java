@@ -51,7 +51,7 @@ public class OrdenCompraServiceImpl implements OrdenCompraService {
     }
 
     @Override
-    public void delte(int id) {
+    public void delete(int id) {
         Optional<OrdenCompra> ordenCompraOptional = ordenCompraRepository.findById(id);
 
         if (ordenCompraOptional.isPresent()) {

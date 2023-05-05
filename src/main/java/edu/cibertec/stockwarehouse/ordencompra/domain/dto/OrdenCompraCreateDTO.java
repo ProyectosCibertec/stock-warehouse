@@ -30,5 +30,6 @@ public class OrdenCompraCreateDTO {
     private BigDecimal valortotal_orden;
 
     private int estado;
+
     private int proveedorId;
 }
