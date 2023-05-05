@@ -1,6 +1,7 @@
 package edu.cibertec.stockwarehouse.ordencompra.domain.model;
 
 import edu.cibertec.stockwarehouse.detalleordencompra.domain.model.DetalleOrdenCompra;
+import edu.cibertec.stockwarehouse.proveedor.domain.model.Proveedor;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -35,7 +36,7 @@ public class OrdenCompra {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fechaentrega;
 
-    @Column(name="direccion", length = 25, nullable = false)
+    @Column(name="condicionespago", length = 25, nullable = false)
     private String condicionespago;
 
     @Column(name="valortotal_orden", scale=2, nullable = false)
@@ -44,16 +45,18 @@ public class OrdenCompra {
     @Column(name = "estado")
     private int estado;
 
-    //relacionar ordencompra y detalleordencompra
-    @OneToMany(mappedBy = "ordencompra")
-    private Set<DetalleOrdenCompra> detallesOrdenCompra;
-
-    /*
     //relacionar ordencompra y proveedor - pendiente hasta que alfredo cree la clase Proveedor
     @ManyToOne()
     @JoinColumn(name = "id_proveedor ")
     private Proveedor proveedor;
-    */
+
+
+    //relacionar ordencompra y detalleordencompra
+    @OneToMany(mappedBy = "ordencompra")
+    private Set<DetalleOrdenCompra> detallesOrdenCompra;
+
+
+
 
 
     // método para asignar nombre a los estados
