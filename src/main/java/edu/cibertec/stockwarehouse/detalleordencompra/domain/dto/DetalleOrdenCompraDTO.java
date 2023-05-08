@@ -3,7 +3,6 @@ package edu.cibertec.stockwarehouse.detalleordencompra.domain.dto;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
 import java.math.BigDecimal;
 
 @Getter

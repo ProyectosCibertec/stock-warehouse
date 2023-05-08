@@ -5,8 +5,8 @@ import edu.cibertec.stockwarehouse.empleado.domain.dto.EmpleadoCreateDTO;
 import edu.cibertec.stockwarehouse.empleado.domain.dto.EmpleadoDTO;
 import edu.cibertec.stockwarehouse.empleado.domain.dto.EmpleadoUpdateDTO;
 import edu.cibertec.stockwarehouse.empleado.domain.mapper.EmpleadoMapper;
-import edu.cibertec.stockwarehouse.empleado.infrastructure.out.EmpleadoRepository;
 import edu.cibertec.stockwarehouse.empleado.domain.model.Empleado;
+import edu.cibertec.stockwarehouse.empleado.infrastructure.out.EmpleadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -44,6 +44,7 @@ public class EmpleadoServiceImpl implements EmpleadoService {
         Empleado empleado = EmpleadoMapper.instance.empleadoUpdateDTOAEmpleado(empleadoUpdateDTO);
         return EmpleadoMapper.instance.empleadoAEmpleadoDTO(empleadoRepository.save(empleado));
     }
+
     @Override
     public void delete(int id) {
         empleadoRepository.deleteById(id);

@@ -14,5 +14,5 @@ public class DetalleOrdenCompraCreateDTO {
     private BigDecimal costo_detalleorden;
     private int estado;
     private int id_orden_compra;
-    //private int id_producto;
+    // private int id_producto;
 }

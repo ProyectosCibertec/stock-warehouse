@@ -19,28 +19,28 @@ public class OrdenCompraController {
     private OrdenCompraService ordenCompraService;
 
     @GetMapping("/")
-    public ResponseEntity<List<OrdenCompraDTO>> listarOrdenesCompra(){
+    public ResponseEntity<List<OrdenCompraDTO>> listarOrdenesCompra() {
         return new ResponseEntity<>(ordenCompraService.findAll(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<OrdenCompraDTO> buscarOrdenCompraPorID(@PathVariable(value = "id") int id){
+    public ResponseEntity<OrdenCompraDTO> buscarOrdenCompraPorID(@PathVariable(value = "id") int id) {
         return new ResponseEntity<>(ordenCompraService.findByID(id), HttpStatus.OK);
     }
 
     @PostMapping("/")
     public ResponseEntity<OrdenCompraDTO> registrarOrdenCompra(@RequestBody OrdenCompraCreateDTO
-                                                                           ordenCompraCreateDTO){
+                                                                       ordenCompraCreateDTO) {
         return new ResponseEntity<>(ordenCompraService.save(ordenCompraCreateDTO), HttpStatus.CREATED);
     }
 
     @PutMapping("/")
-    public ResponseEntity<OrdenCompraDTO> actualizarOrdeCompra(@RequestBody OrdenCompraUpdateDTO ordenCompraUpdateDTO){
+    public ResponseEntity<OrdenCompraDTO> actualizarOrdeCompra(@RequestBody OrdenCompraUpdateDTO ordenCompraUpdateDTO) {
         return new ResponseEntity<>(ordenCompraService.update(ordenCompraUpdateDTO), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}")
-    public  void  eliminarOrdeCompra(@PathVariable(value = "id") int id){
-             ordenCompraService.delete(id);
+    public void eliminarOrdeCompra(@PathVariable(value = "id") int id) {
+        ordenCompraService.delete(id);
     }
 }

@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
-
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import java.math.BigDecimal;
@@ -17,11 +16,11 @@ public class OrdenCompraDTO {
     private int id_orden_compra;
     private String nro_orden_compra;
 
-    @Temporal(value= TemporalType.DATE)
+    @Temporal(value = TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fechaorden_compra;
 
-    @Temporal(value=TemporalType.DATE)
+    @Temporal(value = TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fechaentrega;
 
@@ -31,5 +30,7 @@ public class OrdenCompraDTO {
 
     private int estado;
 
-    private int proveedorId;
+    private String nomproveedor;
+
+
 }

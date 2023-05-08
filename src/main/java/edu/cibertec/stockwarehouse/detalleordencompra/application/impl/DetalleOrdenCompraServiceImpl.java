@@ -31,7 +31,7 @@ public class DetalleOrdenCompraServiceImpl implements DetalleOrdenCompraService 
 
         if (detalleOrdenCompraOptional.isPresent()) {
             return DetalleOrdenCompraMapper.instancia.detalleOrdenCompraADetalleOrdenCompraDTO(detalleOrdenCompraOptional.get());
-        }else {
+        } else {
             throw new NoResultException("No se encintro el detalle con id: " + id);
         }
     }
@@ -40,7 +40,7 @@ public class DetalleOrdenCompraServiceImpl implements DetalleOrdenCompraService 
     public DetalleOrdenCompraDTO save(DetalleOrdenCompraCreateDTO detalleOrdenCompraCreateDTO) {
 
         DetalleOrdenCompra detalleOrdenCompra = DetalleOrdenCompraMapper.instancia
-                        .detalleOrdenCompraCreateDTOADetalleOrdenCompra(detalleOrdenCompraCreateDTO);
+                .detalleOrdenCompraCreateDTOADetalleOrdenCompra(detalleOrdenCompraCreateDTO);
 
         return DetalleOrdenCompraMapper.instancia.detalleOrdenCompraADetalleOrdenCompraDTO(detalleOrdenCompraRepositoy.save(detalleOrdenCompra));
     }
@@ -59,7 +59,7 @@ public class DetalleOrdenCompraServiceImpl implements DetalleOrdenCompraService 
 
         if (detalleOrdenCompraOptional.isPresent()) {
             detalleOrdenCompraRepositoy.delete(detalleOrdenCompraOptional.get());
-        }else {
+        } else {
             throw new NoResultException("No se encontro la ordencompra con id: " + id);
         }
     }

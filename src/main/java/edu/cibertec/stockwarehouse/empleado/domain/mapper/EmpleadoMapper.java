@@ -12,9 +12,14 @@ import java.util.List;
 @Mapper
 public interface EmpleadoMapper {
     EmpleadoMapper instance = Mappers.getMapper(EmpleadoMapper.class);
+
     EmpleadoDTO empleadoAEmpleadoDTO(Empleado empleado);
+
     Empleado empleadoDTOAEmpleado(EmpleadoDTO empleadoDTO);
+
     Empleado empleadoUpdateDTOAEmpleado(EmpleadoUpdateDTO empleadoUpdateDTO);
+
     Empleado empleadoCreateDTOAEmpleado(EmpleadoCreateDTO empleadoCreateDTO);
+
     List<EmpleadoDTO> listaEmpleadoAListaEmpleadoDTO(List<Empleado> empleadoList);
 }
