@@ -17,11 +17,11 @@ public class OrdenCompraUpdateDTO {
 
     private String nro_orden_compra;
 
-    @Temporal(value= TemporalType.DATE)
+    @Temporal(value = TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fechaorden_compra;
 
-    @Temporal(value=TemporalType.DATE)
+    @Temporal(value = TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fechaentrega;
 
@@ -31,5 +31,5 @@ public class OrdenCompraUpdateDTO {
 
     private int estado;
 
-    private int proveedorId;
+    private long proveedorId;
 }

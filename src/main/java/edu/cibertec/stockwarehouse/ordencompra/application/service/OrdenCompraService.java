@@ -10,9 +10,13 @@ import java.util.List;
 public interface OrdenCompraService {
 
     List<OrdenCompraDTO> findAll();
+
     OrdenCompraDTO findByID(int id);
+
     OrdenCompraDTO save(OrdenCompraCreateDTO ordenCompraCreateDTO);
+
     OrdenCompraDTO update(OrdenCompraUpdateDTO ordenCompraUpdateDTO);
-    void delte(int id);
+
+    void delete(int id);
 
 }

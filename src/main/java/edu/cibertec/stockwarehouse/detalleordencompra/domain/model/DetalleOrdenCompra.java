@@ -23,13 +23,13 @@ public class DetalleOrdenCompra {
     @Column(name = "cantidad")
     private int cantidad;
 
-    @Column(name="precio_unitario", scale=2, nullable = false)
+    @Column(name = "precio_unitario", scale = 2, nullable = false)
     private BigDecimal precio_unitario;
 
-    @Column(name="costo_detalleorden", scale=2, nullable = false)
+    @Column(name = "costo_detalleorden", scale = 2, nullable = false)
     private BigDecimal costo_detalleorden;
 
-    @Column(name="estado")
+    @Column(name = "estado")
     private int estado;
 
     //relacion detalleordencompra y  producto
@@ -45,7 +45,7 @@ public class DetalleOrdenCompra {
      */
 
     //método para cálcular el costo del tetalle
-    public BigDecimal calcularCostoDetalleOrden(BigDecimal precio_unitario,BigDecimal costo_detalleorden) {
+    public BigDecimal calcularCostoDetalleOrden(BigDecimal precio_unitario, BigDecimal costo_detalleorden) {
         BigDecimal costo = precio_unitario.multiply(costo_detalleorden);
         return costo;
     }
@@ -54,9 +54,14 @@ public class DetalleOrdenCompra {
     public String NombreEstado() {
         String nombreEstado = null;
         switch (estado) {
-            case 0: nombreEstado = "Activo";break;
-            case 1: nombreEstado = "Anulado";break;
-            default: nombreEstado = "";
+            case 0:
+                nombreEstado = "Activo";
+                break;
+            case 1:
+                nombreEstado = "Anulado";
+                break;
+            default:
+                nombreEstado = "";
         }
         return nombreEstado;
     }

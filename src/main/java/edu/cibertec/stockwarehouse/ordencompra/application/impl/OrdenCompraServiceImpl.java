@@ -7,6 +7,8 @@ import edu.cibertec.stockwarehouse.ordencompra.domain.dto.OrdenCompraUpdateDTO;
 import edu.cibertec.stockwarehouse.ordencompra.domain.mapper.OrdenCompraMapper;
 import edu.cibertec.stockwarehouse.ordencompra.domain.model.OrdenCompra;
 import edu.cibertec.stockwarehouse.ordencompra.infrastructure.out.OrdenCompraRepository;
+import edu.cibertec.stockwarehouse.proveedor.domain.model.Proveedor;
+import edu.cibertec.stockwarehouse.proveedor.infrastructure.out.ProveedorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,14 +16,19 @@ import javax.persistence.NoResultException;
 import java.util.List;
 import java.util.Optional;
 
+
 @Service
 public class OrdenCompraServiceImpl implements OrdenCompraService {
 
     @Autowired
     private OrdenCompraRepository ordenCompraRepository;
 
+    @Autowired
+    private ProveedorRepository proveedorRepository;
+
     @Override
     public List<OrdenCompraDTO> findAll() {
+
         return OrdenCompraMapper.instancia.listaOrdenesCompraAOrdenCompraDTO(ordenCompraRepository.findAll());
     }
 
@@ -31,7 +38,7 @@ public class OrdenCompraServiceImpl implements OrdenCompraService {
 
         if (ordencompraOptional.isPresent()) {
             return OrdenCompraMapper.instancia.ordenCompraAOrdenCompraDTO(ordencompraOptional.get());
-        }else {
+        } else {
             throw new NoResultException("No se encontro la ordencompra con id: " + id);
         }
 
@@ -39,7 +46,12 @@ public class OrdenCompraServiceImpl implements OrdenCompraService {
 
     @Override
     public OrdenCompraDTO save(OrdenCompraCreateDTO ordenCompraCreateDTO) {
+
         OrdenCompra ordenCompra = OrdenCompraMapper.instancia.ordenCompraCreateDTOAOrdenCompra(ordenCompraCreateDTO);
+        Proveedor proveedor = proveedorRepository.findById(ordenCompraCreateDTO.getProveedorId())
+                .orElseThrow(() -> new NoResultException("No se encontro el proveedor con id: " + ordenCompraCreateDTO.getProveedorId()));
+        ordenCompra.setProveedor(proveedor);
+
         return OrdenCompraMapper.instancia.ordenCompraAOrdenCompraDTO(ordenCompraRepository.save(ordenCompra));
     }
 
@@ -51,12 +63,12 @@ public class OrdenCompraServiceImpl implements OrdenCompraService {
     }
 
     @Override
-    public void delte(int id) {
+    public void delete(int id) {
         Optional<OrdenCompra> ordenCompraOptional = ordenCompraRepository.findById(id);
 
         if (ordenCompraOptional.isPresent()) {
-           ordenCompraRepository.delete(ordenCompraOptional.get());
-        }else {
+            ordenCompraRepository.delete(ordenCompraOptional.get());
+        } else {
             throw new NoResultException("No se encontro la ordencompra con id: " + id);
         }
     }
