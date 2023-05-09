@@ -1,6 +1,7 @@
 package edu.cibertec.stockwarehouse.ordencompra.domain.model;
 
 import edu.cibertec.stockwarehouse.detalleordencompra.domain.model.DetalleOrdenCompra;
+import edu.cibertec.stockwarehouse.proveedor.domain.model.Proveedor;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -48,12 +49,12 @@ public class OrdenCompra {
     @OneToMany(mappedBy = "ordencompra")
     private Set<DetalleOrdenCompra> detallesOrdenCompra;
 
-    /*
+
     //relacionar ordencompra y proveedor - pendiente hasta que alfredo cree la clase Proveedor
     @ManyToOne()
     @JoinColumn(name = "id_proveedor ")
     private Proveedor proveedor;
-    */
+
 
 
     // método para asignar nombre a los estados
