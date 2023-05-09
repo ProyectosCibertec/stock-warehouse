@@ -1,5 +1,6 @@
 package edu.cibertec.stockwarehouse.usuario.model;
 
+import edu.cibertec.stockwarehouse.empleado.domain.model.Empleado;
 import edu.cibertec.stockwarehouse.tipousuario.model.TipoUsuario;
 import lombok.*;
 
@@ -16,11 +17,11 @@ public class Usuario {
     @Column(name = "id_usuario")
     private long id_usuario;
 
-    /*
+
     @OneToOne
     @JoinColumn(name="id_empleado")
     private Empleado empleado;
-    */
+
 
     @ManyToOne()
     @JoinColumn(name="id_tipo_usuario")

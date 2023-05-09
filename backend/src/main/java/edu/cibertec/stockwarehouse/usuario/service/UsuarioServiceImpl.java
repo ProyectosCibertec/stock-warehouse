@@ -1,5 +1,7 @@
 package edu.cibertec.stockwarehouse.usuario.service;
 
+import edu.cibertec.stockwarehouse.empleado.domain.model.Empleado;
+import edu.cibertec.stockwarehouse.empleado.infrastructure.out.EmpleadoRepository;
 import edu.cibertec.stockwarehouse.tipousuario.repository.TipoUsuarioRepository;
 import edu.cibertec.stockwarehouse.usuario.dtos.UsuarioCreateDto;
 import edu.cibertec.stockwarehouse.usuario.dtos.UsuarioDto;
@@ -25,6 +27,9 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Autowired
     private TipoUsuarioRepository tipoUsuarioRepository;
 
+    @Autowired
+    private EmpleadoRepository empleadoRepository;
+
 
     @Override
     public List<UsuarioDto> listarUsuarios() {
@@ -46,17 +51,21 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Override
     public UsuarioDto registrarProducto(UsuarioCreateDto usuarioCreateDto) {
         Usuario usuario = UsuarioMapper.INSTANCE.usaurioCreateDtoAUsuario(usuarioCreateDto);
-        Usuario respuestaEntity = usuarioRepository.save(usuario);
-        UsuarioDto respuestDto = UsuarioMapper.INSTANCE.usuarioAUsuarioDto(respuestaEntity);
-        respuestDto.setNombreTipoUsuario((tipoUsuarioRepository.findById(respuestaEntity.getTipoUsuario().getIdTipoUsuario()).get().getNombreTipoUsuario()));
-        return respuestDto;
+        return getUsuarioDto(usuario);
     }
 
     @Override
     public UsuarioDto actualizarProducto(UsuarioUpdateDto usuarioUpdateDto) {
         Usuario usuario = UsuarioMapper.INSTANCE.usaurioUpdateDtoAUsuario(usuarioUpdateDto);
+        return getUsuarioDto(usuario);
+    }
+
+    private UsuarioDto getUsuarioDto(Usuario usuario) {
         Usuario respuestaEntity = usuarioRepository.save(usuario);
         UsuarioDto respuestDto = UsuarioMapper.INSTANCE.usuarioAUsuarioDto(respuestaEntity);
+        respuestDto.setNombreTipoUsuario((tipoUsuarioRepository.findById(respuestaEntity.getTipoUsuario().getIdTipoUsuario()).get().getNombreTipoUsuario()));
+        Optional<Empleado> empleado = empleadoRepository.findById(respuestaEntity.getEmpleado().getId());
+        respuestDto.setNombreCompletoEmpleado(empleado.get().getNombre()+' '+empleado.get().getApellido());
         return respuestDto;
     }
 
