@@ -1,14 +1,15 @@
 package edu.cibertec.stockwarehouse.cabecerainventario.domain.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import edu.cibertec.stockwarehouse.empleado.domain.model.Empleado;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Getter
+@Setter
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -28,8 +29,9 @@ public class CabeceraInventario {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fecha_cab_inventario;
 
-    @Column(name = "id_empleado")
-    private int empleado;
+    @ManyToOne
+    @JoinColumn(name = "id_empleado")
+    private Empleado empleado;
 
     @Column(name = "estado")
     private int estado;
