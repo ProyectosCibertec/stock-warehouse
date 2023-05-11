@@ -1,0 +1,40 @@
+package edu.cibertec.stockwarehouse.usuario.model;
+
+import edu.cibertec.stockwarehouse.empleado.domain.model.Empleado;
+import edu.cibertec.stockwarehouse.tipousuario.model.TipoUsuario;
+import lombok.*;
+
+import javax.persistence.*;
+
+@Entity
+@Getter
+@Setter
+@Table(name = "tb_usuario")
+public class Usuario {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_usuario")
+    private long id_usuario;
+
+
+    @OneToOne
+    @JoinColumn(name="id_empleado")
+    private Empleado empleado;
+
+
+    @ManyToOne()
+    @JoinColumn(name="id_tipo_usuario")
+    private TipoUsuario tipoUsuario;
+
+
+    @Column(name="login_usuario", length = 50, nullable = false)
+    private String login_usuario;
+
+    @Column(name="contrasena_usuario", length = 350, nullable = false)
+    private String contrasena_usuario;
+
+    @Column(name="estado")
+    private int estado;
+
+}
