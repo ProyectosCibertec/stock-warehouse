@@ -1,11 +1,14 @@
 package edu.cibertec.stockwarehouse.empleado.domain.model;
 
+import edu.cibertec.stockwarehouse.cabecerainventario.domain.model.CabeceraInventario;
 import edu.cibertec.stockwarehouse.cargo.domain.model.Cargo;
+import edu.cibertec.stockwarehouse.ordencompra.domain.model.OrdenCompra;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Data
 @Entity
@@ -44,4 +47,7 @@ public class Empleado {
 
     @Column(name = "estado")
     private int estado;
+
+    @OneToMany(mappedBy = "empleado")
+    private Set<CabeceraInventario> cabecera;
 }
