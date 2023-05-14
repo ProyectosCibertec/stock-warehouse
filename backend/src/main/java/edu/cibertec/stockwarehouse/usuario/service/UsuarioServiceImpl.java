@@ -9,11 +9,9 @@ import edu.cibertec.stockwarehouse.usuario.dtos.UsuarioUpdateDto;
 import edu.cibertec.stockwarehouse.usuario.mappers.UsuarioMapper;
 import edu.cibertec.stockwarehouse.usuario.model.Usuario;
 import edu.cibertec.stockwarehouse.usuario.repository.UsuarioRepository;
-import org.mapstruct.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,9 +38,9 @@ public class UsuarioServiceImpl implements UsuarioService {
     public UsuarioDto obtenerUsuarioPorId(long id) {
         Optional<Usuario> usuario = usuarioRepository.findById(id);
         UsuarioDto usuarioDto;
-        if(usuario.isPresent()){
+        if (usuario.isPresent()) {
             usuarioDto = UsuarioMapper.INSTANCE.usuarioAUsuarioDto(usuario.get());
-        }else{
+        } else {
             usuarioDto = null;
         }
         return usuarioDto;
@@ -65,7 +63,7 @@ public class UsuarioServiceImpl implements UsuarioService {
         UsuarioDto respuestDto = UsuarioMapper.INSTANCE.usuarioAUsuarioDto(respuestaEntity);
         respuestDto.setNombreTipoUsuario((tipoUsuarioRepository.findById(respuestaEntity.getTipoUsuario().getIdTipoUsuario()).get().getNombreTipoUsuario()));
         Optional<Empleado> empleado = empleadoRepository.findById(respuestaEntity.getEmpleado().getId());
-        respuestDto.setNombreCompletoEmpleado(empleado.get().getNombre()+' '+empleado.get().getApellido());
+        respuestDto.setNombreCompletoEmpleado(empleado.get().getNombre() + ' ' + empleado.get().getApellido());
         return respuestDto;
     }
 
@@ -73,10 +71,10 @@ public class UsuarioServiceImpl implements UsuarioService {
     public String eliminarUsuario(long id) {
         Optional<Usuario> entities = usuarioRepository.findById(id);
         String resultado;
-        if(entities.isPresent()) {
+        if (entities.isPresent()) {
             usuarioRepository.deleteById(id);
             resultado = "Registro Eliminado";
-        }else {
+        } else {
             resultado = "No se pudo realizar la eliminación";
         }
         return resultado;

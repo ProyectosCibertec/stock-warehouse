@@ -12,11 +12,16 @@ import java.util.List;
 @Mapper
 public interface CategoriaMapper {
     CategoriaMapper instance = Mappers.getMapper(CategoriaMapper.class);
+
     CategoriaDTO categoriaACategoriaDTO(Categoria categoria);
+
     Categoria categoriaDTOACategoria(CategoriaDTO categoriaDTO);
+
     Categoria categoriaUpdateDTOACategoria(CategoriaUpdateDTO categoriaUpdateDTO);
+
     Categoria categotiaCreateDTOACategoria(CategoriaCreateDTO categoriaCreateDTO);
-   List<CategoriaDTO> listaCategoriaAlistaCategoriaDTO(List<Categoria> categoriaList);
+
+    List<CategoriaDTO> listaCategoriaAlistaCategoriaDTO(List<Categoria> categoriaList);
 
 
 }

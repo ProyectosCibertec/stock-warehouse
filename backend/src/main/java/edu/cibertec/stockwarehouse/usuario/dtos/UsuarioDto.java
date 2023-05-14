@@ -1,7 +1,6 @@
 package edu.cibertec.stockwarehouse.usuario.dtos;
 
 
-
 import lombok.Getter;
 import lombok.Setter;
 

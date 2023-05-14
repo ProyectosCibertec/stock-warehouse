@@ -15,7 +15,7 @@ public interface CabeceraInventarioMapper {
 
     CabeceraInventarioMapper instancia = Mappers.getMapper(CabeceraInventarioMapper.class);
 
-    @Mapping(target = "nomempleado",source = "empleado.id")
+    @Mapping(target = "nomempleado", source = "empleado.id")
     CabeceraInventarioDTO cabeceraInventarioCabeceraInventarioDTO(CabeceraInventario cabeceraInventario);
 
     CabeceraInventario cabeceraInventarioDTOACabeceraInventario(CabeceraInventarioDTO cabeceraInventarioDTO);
@@ -23,9 +23,9 @@ public interface CabeceraInventarioMapper {
     @Mapping(target = "empleado.id", source = "cabcabeceraInventarioCreateDTO.idempleado")
     CabeceraInventario cabeceraInventarioCreateDTOCabeceraInventario(CabeceraInventarioCreateDTO cabcabeceraInventarioCreateDTO);
 
-    @Mapping (target = "empleado.id", source = "cabeceraInventarioUpdateDTO.idempleado")
+    @Mapping(target = "empleado.id", source = "cabeceraInventarioUpdateDTO.idempleado")
     CabeceraInventario cabeceraInventarioUpdateDTOcabeceraInventario(CabeceraInventarioUpdateDTO cabeceraInventarioUpdateDTO);
 
-    @Mapping(target = "nomempleado",source = "empleado.id")
+    @Mapping(target = "nomempleado", source = "empleado.id")
     List<CabeceraInventarioDTO> listaCabeceraInventarioCabeceraInventarioDTO(List<CabeceraInventario> listaCabeceraInventario);
 }

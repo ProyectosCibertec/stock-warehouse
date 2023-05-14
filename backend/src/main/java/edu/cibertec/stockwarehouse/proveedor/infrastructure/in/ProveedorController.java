@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController
@@ -18,27 +19,27 @@ public class ProveedorController {
     private ProveedorService proveedorService;
 
     @GetMapping("proveedores")
-    public ResponseEntity<List<ProveedorDTO>> listarProveedores(){
+    public ResponseEntity<List<ProveedorDTO>> listarProveedores() {
         return new ResponseEntity<>(proveedorService.listarProveedores(), HttpStatus.OK);
     }
 
     @GetMapping("/proveedores/{proveedorId}")
-    public ResponseEntity<ProveedorDTO> obtenerProveedorPorId(@PathVariable("proveedorId") long proveedorId){
-        return new ResponseEntity<>(proveedorService.obtenerProveedorPorID(proveedorId),HttpStatus.OK);
+    public ResponseEntity<ProveedorDTO> obtenerProveedorPorId(@PathVariable("proveedorId") long proveedorId) {
+        return new ResponseEntity<>(proveedorService.obtenerProveedorPorID(proveedorId), HttpStatus.OK);
     }
 
     @PostMapping("proveedores")
-    public ResponseEntity<ProveedorDTO> registrarProveedor(@RequestBody ProveedorCreateDTO proveedorCreateDTO){
-        return new ResponseEntity<>(proveedorService.registrarProveedor(proveedorCreateDTO),HttpStatus.OK);
+    public ResponseEntity<ProveedorDTO> registrarProveedor(@RequestBody ProveedorCreateDTO proveedorCreateDTO) {
+        return new ResponseEntity<>(proveedorService.registrarProveedor(proveedorCreateDTO), HttpStatus.OK);
     }
 
     @PutMapping("proveedores")
-    public ResponseEntity<ProveedorDTO> actualizarProveedor(@RequestBody ProveedorUpdateDTO proveedorUpdateDTO){
-        return new ResponseEntity<>(proveedorService.actualizarProveedor(proveedorUpdateDTO),HttpStatus.OK);
+    public ResponseEntity<ProveedorDTO> actualizarProveedor(@RequestBody ProveedorUpdateDTO proveedorUpdateDTO) {
+        return new ResponseEntity<>(proveedorService.actualizarProveedor(proveedorUpdateDTO), HttpStatus.OK);
     }
 
     @DeleteMapping("/proveedores/{proveedorId}")
-    public ResponseEntity<String> eliminarProveedor(@PathVariable("proveedorId") long proveedorId){
-        return new ResponseEntity<>(proveedorService.eliminarProveedor(proveedorId),HttpStatus.OK);
+    public ResponseEntity<String> eliminarProveedor(@PathVariable("proveedorId") long proveedorId) {
+        return new ResponseEntity<>(proveedorService.eliminarProveedor(proveedorId), HttpStatus.OK);
     }
 }

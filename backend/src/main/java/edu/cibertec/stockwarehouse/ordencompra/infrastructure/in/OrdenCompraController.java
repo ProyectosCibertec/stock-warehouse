@@ -3,6 +3,7 @@ package edu.cibertec.stockwarehouse.ordencompra.infrastructure.in;
 import edu.cibertec.stockwarehouse.ordencompra.application.service.OrdenCompraService;
 import edu.cibertec.stockwarehouse.ordencompra.domain.dto.OrdenCompraCreateDTO;
 import edu.cibertec.stockwarehouse.ordencompra.domain.dto.OrdenCompraDTO;
+import edu.cibertec.stockwarehouse.ordencompra.domain.dto.OrdenCompraDetalleDTO;
 import edu.cibertec.stockwarehouse.ordencompra.domain.dto.OrdenCompraUpdateDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,6 +22,11 @@ public class OrdenCompraController {
     @GetMapping("/")
     public ResponseEntity<List<OrdenCompraDTO>> listarOrdenesCompra() {
         return new ResponseEntity<>(ordenCompraService.findAll(), HttpStatus.OK);
+    }
+
+    @GetMapping("/ordendetalle/{id}")
+    public ResponseEntity<OrdenCompraDetalleDTO> listarOrdenCompraConDetalle(@PathVariable(value = "id") int id) {
+        return new ResponseEntity<>(ordenCompraService.ordenCompraConDetalle(id), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
