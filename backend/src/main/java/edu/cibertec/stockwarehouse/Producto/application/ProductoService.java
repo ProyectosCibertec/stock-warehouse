@@ -10,9 +10,13 @@ public interface ProductoService {
 
 
     ProductoDTO find(int id);
+
     List<ProductoDTO> findAll();
+
     ProductoDTO save(ProductoCreateDTO productoCreateDTO);
+
     ProductoDTO update(ProductoUpdateDTO productoUpdateDTO);
-    void delete (int id);
+
+    void delete(int id);
 
 }

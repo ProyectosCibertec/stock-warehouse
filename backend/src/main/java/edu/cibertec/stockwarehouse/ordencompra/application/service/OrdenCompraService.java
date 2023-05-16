@@ -1,6 +1,7 @@
 package edu.cibertec.stockwarehouse.ordencompra.application.service;
 
 
+import edu.cibertec.stockwarehouse.ordencompra.domain.dto.OrdenCompraDetalleDTO;
 import edu.cibertec.stockwarehouse.ordencompra.domain.dto.OrdenCompraCreateDTO;
 import edu.cibertec.stockwarehouse.ordencompra.domain.dto.OrdenCompraDTO;
 import edu.cibertec.stockwarehouse.ordencompra.domain.dto.OrdenCompraUpdateDTO;
@@ -17,6 +18,7 @@ public interface OrdenCompraService {
 
     OrdenCompraDTO update(OrdenCompraUpdateDTO ordenCompraUpdateDTO);
 
+    OrdenCompraDetalleDTO ordenCompraConDetalle(int id);
     void delete(int id);
 
 }

@@ -9,6 +9,7 @@ import edu.cibertec.stockwarehouse.empleado.domain.model.Empleado;
 import edu.cibertec.stockwarehouse.empleado.infrastructure.out.EmpleadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import javax.persistence.NoResultException;
 import java.util.List;
 import java.util.Optional;

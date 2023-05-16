@@ -1,6 +1,9 @@
 package edu.cibertec.stockwarehouse.ordencompra.application.impl;
 
+import edu.cibertec.stockwarehouse.detalleordencompra.domain.mapper.DetalleOrdenCompraMapper;
+import edu.cibertec.stockwarehouse.detalleordencompra.infrastructure.out.DetalleOrdenCompraRepositoy;
 import edu.cibertec.stockwarehouse.ordencompra.application.service.OrdenCompraService;
+import edu.cibertec.stockwarehouse.ordencompra.domain.dto.OrdenCompraDetalleDTO;
 import edu.cibertec.stockwarehouse.ordencompra.domain.dto.OrdenCompraCreateDTO;
 import edu.cibertec.stockwarehouse.ordencompra.domain.dto.OrdenCompraDTO;
 import edu.cibertec.stockwarehouse.ordencompra.domain.dto.OrdenCompraUpdateDTO;
@@ -15,6 +18,7 @@ import org.springframework.stereotype.Service;
 import javax.persistence.NoResultException;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -26,10 +30,26 @@ public class OrdenCompraServiceImpl implements OrdenCompraService {
     @Autowired
     private ProveedorRepository proveedorRepository;
 
+    @Autowired
+    private DetalleOrdenCompraRepositoy detalleOrdenCompraRepositoy;
+
     @Override
     public List<OrdenCompraDTO> findAll() {
 
         return OrdenCompraMapper.instancia.listaOrdenesCompraAOrdenCompraDTO(ordenCompraRepository.findAll());
+    }
+
+    @Override
+    public OrdenCompraDetalleDTO ordenCompraConDetalle(int id) {
+        OrdenCompra ordenCompra = ordenCompraRepository.findById(id).orElse(null);
+        if (ordenCompra == null) {
+            return null;
+        }
+        OrdenCompraDetalleDTO ordenCompraDetalleDTO = OrdenCompraMapper.instancia.OrdenComprasADetalleOrdenPorOrdenCompraDTO(ordenCompra);
+        ordenCompraDetalleDTO.setListaDetallesDTO(detalleOrdenCompraRepositoy.findByordencompra(ordenCompra).stream()
+                .map(DetalleOrdenCompraMapper.instancia::detalleOrdenCompraADetalleOrdenCompraDTO)
+                .collect(Collectors.toList()));
+        return ordenCompraDetalleDTO;
     }
 
     @Override
@@ -61,6 +81,7 @@ public class OrdenCompraServiceImpl implements OrdenCompraService {
         OrdenCompra ordenCompra = OrdenCompraMapper.instancia.ordenCompraUpdateDTOAOrdenCompra(ordenCompraUpdateDTO);
         return OrdenCompraMapper.instancia.ordenCompraAOrdenCompraDTO(ordenCompraRepository.save(ordenCompra));
     }
+
 
     @Override
     public void delete(int id) {
