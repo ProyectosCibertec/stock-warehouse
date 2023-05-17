@@ -2,15 +2,11 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-<<<<<<< HEAD
-      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
       </profile>
-=======
->>>>>>> origin
       <profile name="Annotation profile for StockWarehouse" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -24,12 +20,6 @@
         <module name="StockWarehouse" />
       </profile>
     </annotationProcessing>
-<<<<<<< HEAD
-=======
-    <bytecodeTargetLevel>
-      <module name="StockWarehouse" target="1.8" />
-    </bytecodeTargetLevel>
->>>>>>> origin
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
