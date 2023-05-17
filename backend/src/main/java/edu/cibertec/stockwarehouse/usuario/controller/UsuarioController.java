@@ -20,22 +20,22 @@ public class UsuarioController {
     private UsuarioService usuarioService;
 
     @GetMapping("usuario")
-    public ResponseEntity<List<UsuarioDto>> listarUsuarios(){
+    public ResponseEntity<List<UsuarioDto>> listarUsuarios() {
         return new ResponseEntity<>(usuarioService.listarUsuarios(), HttpStatus.OK);
     }
 
     @GetMapping("usuario/{id_usuario}")
-    public ResponseEntity<UsuarioDto> obtenerUsuarioPorId(@PathVariable("id_usuario") long id_usuario){
+    public ResponseEntity<UsuarioDto> obtenerUsuarioPorId(@PathVariable("id_usuario") long id_usuario) {
         return new ResponseEntity<>(usuarioService.obtenerUsuarioPorId(id_usuario), HttpStatus.OK);
     }
 
     @PostMapping("usuario")
-    public ResponseEntity<UsuarioDto> registrarUsuario (@RequestBody UsuarioCreateDto usuarioCreateDto){
+    public ResponseEntity<UsuarioDto> registrarUsuario(@RequestBody UsuarioCreateDto usuarioCreateDto) {
         return new ResponseEntity<>(usuarioService.registrarProducto(usuarioCreateDto), HttpStatus.OK);
     }
 
     @PutMapping("usuario")
-    public ResponseEntity<UsuarioDto> actualizarUsuario (@RequestBody UsuarioUpdateDto usuarioUpdateDto){
+    public ResponseEntity<UsuarioDto> actualizarUsuario(@RequestBody UsuarioUpdateDto usuarioUpdateDto) {
         return new ResponseEntity<>(usuarioService.actualizarProducto(usuarioUpdateDto), HttpStatus.OK);
     }
 

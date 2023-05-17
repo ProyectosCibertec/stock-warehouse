@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name="tb_tipo_usuario")
+@Table(name = "tb_tipo_usuario")
 @Getter
 @Setter
 public class TipoUsuario {
@@ -18,18 +18,23 @@ public class TipoUsuario {
     @Column(name = "id_tipo_usuario")
     private long idTipoUsuario;
 
-    @Column(name="nombre_tipo_usuario", length = 50, nullable = false)
+    @Column(name = "nombre_tipo_usuario", length = 50, nullable = false)
     private String nombreTipoUsuario;
 
-    @Column(name="estado")
+    @Column(name = "estado")
     private int estado;
 
     public String NombreEstado() {
         String nombreEstado = null;
         switch (estado) {
-            case 0: nombreEstado = "Activo";break;
-            case 1: nombreEstado = "Anulado";break;
-            default: nombreEstado = "";
+            case 0:
+                nombreEstado = "Activo";
+                break;
+            case 1:
+                nombreEstado = "Anulado";
+                break;
+            default:
+                nombreEstado = "";
         }
         return nombreEstado;
     }

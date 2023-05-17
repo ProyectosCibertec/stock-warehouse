@@ -15,12 +15,13 @@ public interface TipoUsuarioMapper {
     TipoUsuarioMapper INSTANCE = Mappers.getMapper(TipoUsuarioMapper.class);
 
     TipoUsuarioDto tipoUsuarioATipoUsuarioDto(TipoUsuario tipoUsuario);
+
     TipoUsuario tipoUsuarioDtoATipoUsuario(TipoUsuarioDto tipoUsuarioDto);
 
-    TipoUsuario tipoUsuarioCreateDtoATipoUsuario (TipoUsuarioCreateDto tipoUsuarioCreateDto);
+    TipoUsuario tipoUsuarioCreateDtoATipoUsuario(TipoUsuarioCreateDto tipoUsuarioCreateDto);
 
-    TipoUsuario tipoUsuarioUpdateDtoATipoUsuario (TipoUsuarioUpdateDto tipoUsuarioUpdateDto);
+    TipoUsuario tipoUsuarioUpdateDtoATipoUsuario(TipoUsuarioUpdateDto tipoUsuarioUpdateDto);
 
-    List<TipoUsuarioDto> listaTipoUsuarioAListaTipoUsuarioDto (List<TipoUsuario> listaTipoUsuario);
+    List<TipoUsuarioDto> listaTipoUsuarioAListaTipoUsuarioDto(List<TipoUsuario> listaTipoUsuario);
 
 }

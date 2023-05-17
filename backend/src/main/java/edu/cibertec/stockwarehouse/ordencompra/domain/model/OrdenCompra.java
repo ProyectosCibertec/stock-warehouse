@@ -45,14 +45,14 @@ public class OrdenCompra {
     @Column(name = "estado")
     private int estado;
 
-    //relacionar ordencompra y proveedor - pendiente hasta que alfredo cree la clase Proveedor
-    @ManyToOne()
+    //relacionar ordencompra y proveedor
+    @ManyToOne( fetch = FetchType.LAZY)
     @JoinColumn(name = "id_proveedor")
     private Proveedor proveedor;
 
 
     //relacionar ordencompra y detalleordencompra
-    @OneToMany(mappedBy = "ordencompra")
+    @OneToMany(mappedBy = "ordencompra", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Set<DetalleOrdenCompra> detallesOrdenCompra;
 
 
