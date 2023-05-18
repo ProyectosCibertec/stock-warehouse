@@ -38,7 +38,7 @@ public class DetalleInventario {
     @ManyToOne()
     @JoinColumn(name = "id_cab_inventario")
     private CabeceraInventario cabecerainventario;
-    
+
     //método para asignar nombre a los estados
     public String NombreEstado() {
         String nombreEstado = null;

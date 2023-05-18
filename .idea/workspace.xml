@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88a0639c-ff40-4279-95fc-4e7ee765faff" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/detalleinventario/model/DetalleInventario.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/detalleinventario/model/DetalleInventario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/empleado/domain/model/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/empleado/domain/model/Empleado.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +55,8 @@
 }]]></component>
   <component name="RunManager">
     <configuration name="StockWarehouseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <module name="StockWarehouse" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="edu.cibertec.stockwarehouse.StockWarehouseApplication" />
       <extension name="coverage">
@@ -81,7 +85,7 @@
       <updated>1684296985778</updated>
       <workItem from="1684296987215" duration="2204000" />
       <workItem from="1684351661024" duration="118000" />
-      <workItem from="1684423941152" duration="6758000" />
+      <workItem from="1684423941152" duration="7578000" />
     </task>
     <servers />
   </component>
