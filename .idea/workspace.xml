@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88a0639c-ff40-4279-95fc-4e7ee765faff" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/detalleinventario/model/DetalleInventario.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/detalleinventario/model/DetalleInventario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/empleado/domain/model/Empleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/empleado/domain/model/Empleado.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +38,7 @@
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "D:/ALFREDO SOTO NOLAZCO/CIBERTEC/CIBERTEC/2023/CICLO VI/DESARROLLO DE APLICACIONES WEB II/ProyectoDAWII/stock-warehouse",
@@ -45,9 +47,30 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "spring.configuration.checksum": "d684f8108698ad177985518dcab8f94b",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="StockWarehouseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="StockWarehouse" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="edu.cibertec.stockwarehouse.StockWarehouseApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.cibertec.stockwarehouse.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.StockWarehouseApplication" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -56,7 +79,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1684296985778</updated>
-      <workItem from="1684296987215" duration="1617000" />
+      <workItem from="1684296987215" duration="2204000" />
+      <workItem from="1684351661024" duration="118000" />
+      <workItem from="1684423941152" duration="6758000" />
     </task>
     <servers />
   </component>

@@ -35,7 +35,7 @@ public class Empleado {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fechaIngreso;
 
-    @Column(name = "fechaCese", nullable = false)
+    @Column(name = "fechaCese")
     @Temporal(value = TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fechaCese;
