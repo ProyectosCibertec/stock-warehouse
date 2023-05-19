@@ -1,5 +1,6 @@
-package edu.cibertec.stockwarehouse.detalleinventario.model;
+package edu.cibertec.stockwarehouse.detalleinventario.domain.model;
 
+import edu.cibertec.stockwarehouse.Producto.domain.model.Producto;
 import edu.cibertec.stockwarehouse.cabecerainventario.domain.model.CabeceraInventario;
 import edu.cibertec.stockwarehouse.ordencompra.domain.model.OrdenCompra;
 import lombok.AllArgsConstructor;
@@ -25,16 +26,17 @@ public class DetalleInventario {
 
 
     @Column(name = "nro_orden_compra")
-    private char nro_orden_compra;
+    private String nro_orden_compra;
 
-    @Column(name = "id_producto")
-    private char producto;
+    @ManyToOne()
+    @JoinColumn(name = "id_producto")
+    private Producto producto;
 
     @Column(name = "cantidad")
     private int cantidad;
 
     @Column(name = "observaciones")
-    private int observaciones;
+    private String observaciones;
 
 
     @Column(name = "estado")

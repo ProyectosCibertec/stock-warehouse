@@ -29,7 +29,7 @@ public class CabeceraInventarioServiceImp implements CabeceraInventarioService {
 
     @Override
     public List<CabeceraInventarioDTO> findAll() {
-        return CabeceraInventarioMapper.instancia.listaCabeceraInventarioCabeceraInventarioDTO(cabeceraInventarioRepository.findAll());
+        return CabeceraInventarioMapper.instancia.listaCabeceraInventarioACabeceraInventarioDTO(cabeceraInventarioRepository.findAll());
     }
 
     @Override
@@ -37,7 +37,7 @@ public class CabeceraInventarioServiceImp implements CabeceraInventarioService {
         Optional<CabeceraInventario> cabecerainventarioOptional = cabeceraInventarioRepository.findById(id);
 
         if(cabecerainventarioOptional.isPresent()){
-            return CabeceraInventarioMapper.instancia.cabeceraInventarioCabeceraInventarioDTO(cabecerainventarioOptional.get());
+            return CabeceraInventarioMapper.instancia.cabeceraInventarioACabeceraInventarioDTO(cabecerainventarioOptional.get());
         } else{
             throw new NoResultException("No se encontro la Cabecera de inventario con id"+ id);
         }
@@ -46,19 +46,19 @@ public class CabeceraInventarioServiceImp implements CabeceraInventarioService {
 
     @Override
     public CabeceraInventarioDTO save(CabeceraInventarioCreateDTO cabeceraInventarioCreateDTO) {
-        CabeceraInventario cabeceraInventario = CabeceraInventarioMapper.instancia.cabeceraInventarioCreateDTOCabeceraInventario(cabeceraInventarioCreateDTO);
+        CabeceraInventario cabeceraInventario = CabeceraInventarioMapper.instancia.cabeceraInventarioCreateDTOACabeceraInventario(cabeceraInventarioCreateDTO);
         Empleado empleado = empleadoRepository.findById(cabeceraInventarioCreateDTO.getIdempleado())
                 .orElseThrow(()-> new NoResultException("No se encontro empleado con id:" + cabeceraInventarioCreateDTO.getIdempleado()));
         cabeceraInventario.setEmpleado(empleado);
 
-        return CabeceraInventarioMapper.instancia.cabeceraInventarioCabeceraInventarioDTO(cabeceraInventarioRepository.save(cabeceraInventario));
+        return CabeceraInventarioMapper.instancia.cabeceraInventarioACabeceraInventarioDTO(cabeceraInventarioRepository.save(cabeceraInventario));
     }
 
     @Override
     public CabeceraInventarioDTO update(CabeceraInventarioUpdateDTO cabeceraInventarioUpdateDTO) {
 
-        CabeceraInventario cabeceraInventario = CabeceraInventarioMapper.instancia.cabeceraInventarioUpdateDTOcabeceraInventario(cabeceraInventarioUpdateDTO);
-        return CabeceraInventarioMapper.instancia.cabeceraInventarioCabeceraInventarioDTO(cabeceraInventarioRepository.save(cabeceraInventario));
+        CabeceraInventario cabeceraInventario = CabeceraInventarioMapper.instancia.cabeceraInventarioUpdateDTOACabeceraInventario(cabeceraInventarioUpdateDTO);
+        return CabeceraInventarioMapper.instancia.cabeceraInventarioACabeceraInventarioDTO(cabeceraInventarioRepository.save(cabeceraInventario));
     }
 
     @Override
