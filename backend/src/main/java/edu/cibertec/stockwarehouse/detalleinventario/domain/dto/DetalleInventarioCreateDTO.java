@@ -8,7 +8,7 @@ import lombok.Setter;
 public class DetalleInventarioCreateDTO {
 
     private int id_cab_inventario;
-    //private String nro_orden_compra;
+    private String nro_orden_compra;
     private int id_producto;
     private int cantidad;
     private String observaciones;
