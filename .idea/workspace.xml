@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88a0639c-ff40-4279-95fc-4e7ee765faff" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/detalleinventario/domain/dto/DetalleInventarioCreateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/detalleinventario/domain/dto/DetalleInventarioCreateDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/detalleinventario/domain/dto/DetalleInventarioDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/detalleinventario/domain/dto/DetalleInventarioDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/detalleinventario/domain/dto/DetalleInventarioUpdateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/detalleinventario/domain/dto/DetalleInventarioUpdateDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/detalleinventario/domain/mapper/DetalleInventarioMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/detalleinventario/domain/mapper/DetalleInventarioMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/detalleinventario/infrastructure/in/DetalleInventarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/detalleinventario/infrastructure/in/DetalleInventarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/cabecerainventario/domain/mapper/CabeceraInventarioMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/cabecerainventario/domain/mapper/CabeceraInventarioMapper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

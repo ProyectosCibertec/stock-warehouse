@@ -20,7 +20,7 @@ public interface CabeceraInventarioMapper {
 
     CabeceraInventario cabeceraInventarioDTOACabeceraInventario(CabeceraInventarioDTO cabeceraInventarioDTO);
 
-    @Mapping(target = "empleado.id", source = "cabcabeceraInventarioCreateDTO.idempleado")
+    @Mapping(target = "empleado.id", source = "cabeceraInventarioCreateDTO.idempleado")
     CabeceraInventario cabeceraInventarioCreateDTOACabeceraInventario(CabeceraInventarioCreateDTO cabcabeceraInventarioCreateDTO);
 
     @Mapping (target = "empleado.id", source = "cabeceraInventarioUpdateDTO.idempleado")
@@ -28,4 +28,6 @@ public interface CabeceraInventarioMapper {
 
     @Mapping(target = "nomempleado",source = "empleado.nombre")
     List<CabeceraInventarioDTO> listaCabeceraInventarioACabeceraInventarioDTO(List<CabeceraInventario> listaCabeceraInventario);
+
+
 }
