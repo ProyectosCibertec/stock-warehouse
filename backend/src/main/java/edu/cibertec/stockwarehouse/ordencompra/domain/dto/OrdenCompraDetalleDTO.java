@@ -1,19 +1,22 @@
 package edu.cibertec.stockwarehouse.ordencompra.domain.dto;
 
+import edu.cibertec.stockwarehouse.detalleordencompra.domain.dto.DetalleOrdenCompraDTO;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class OrdenCompraUpdateDTO {
+public class OrdenCompraDetalleDTO {
 
     private int id_orden_compra;
 
@@ -33,5 +36,7 @@ public class OrdenCompraUpdateDTO {
 
     private int estado;
 
-    private long proveedorId;
+    private String nomproveedor;
+
+   private List<DetalleOrdenCompraDTO> listaDetallesDTO =  new ArrayList<>();
 }

@@ -1,4 +1,5 @@
 package edu.cibertec.stockwarehouse.Categoria.infraestructure.in;
+
 import edu.cibertec.stockwarehouse.Categoria.aplication.CategoriaService;
 import edu.cibertec.stockwarehouse.Categoria.domain.dto.CategoriaCreateDTO;
 import edu.cibertec.stockwarehouse.Categoria.domain.dto.CategoriaDTO;
@@ -9,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+
 @RestController
 @RequestMapping("/api/categoria")
 public class CategoriaController {
@@ -16,21 +18,27 @@ public class CategoriaController {
     private CategoriaService categoriaService;
 
     @GetMapping("/")
-    public ResponseEntity<List<CategoriaDTO>> listarCategorias(){
+    public ResponseEntity<List<CategoriaDTO>> listarCategorias() {
         return new ResponseEntity<>(categoriaService.findAll(), HttpStatus.OK);
     }
+
     @GetMapping("/{id}")
-    public ResponseEntity<CategoriaDTO> buscarCategoria(@PathVariable("id") int id){
+    public ResponseEntity<CategoriaDTO> buscarCategoria(@PathVariable("id") int id) {
         return new ResponseEntity<>(categoriaService.find(id), HttpStatus.OK);
     }
+
     @PostMapping("/")
-    public ResponseEntity<CategoriaDTO> registrarCategoria(@RequestBody CategoriaCreateDTO categoriaCreateDTO){
+    public ResponseEntity<CategoriaDTO> registrarCategoria(@RequestBody CategoriaCreateDTO categoriaCreateDTO) {
         return new ResponseEntity<>(categoriaService.save(categoriaCreateDTO), HttpStatus.CREATED);
     }
+
     @PutMapping("/")
-    public ResponseEntity<CategoriaDTO> actualizarCategoria(@RequestBody CategoriaUpdateDTO categoriaUpdateDTO){
+    public ResponseEntity<CategoriaDTO> actualizarCategoria(@RequestBody CategoriaUpdateDTO categoriaUpdateDTO) {
         return new ResponseEntity<>(categoriaService.update(categoriaUpdateDTO), HttpStatus.CREATED);
     }
+
     @DeleteMapping("/id")
-    public void eliminarCategoria(@PathVariable("id") int id){categoriaService.delete(id);}
+    public void eliminarCategoria(@PathVariable("id") int id) {
+        categoriaService.delete(id);
+    }
 }

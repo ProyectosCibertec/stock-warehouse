@@ -1,9 +1,8 @@
 package edu.cibertec.stockwarehouse.detalleordencompra.domain.model;
 
+import edu.cibertec.stockwarehouse.Producto.domain.model.Producto;
 import edu.cibertec.stockwarehouse.ordencompra.domain.model.OrdenCompra;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -12,6 +11,8 @@ import java.math.BigDecimal;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 @Table(name = "tb_detalleordencompra")
 public class DetalleOrdenCompra {
 
@@ -33,16 +34,16 @@ public class DetalleOrdenCompra {
     private int estado;
 
     //relacion detalleordencompra y  producto
-    @ManyToOne()
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_orden_compra")
     private OrdenCompra ordencompra;
 
-    /*
-    //relacion detalleordencompra y  ordenCompra - pendiente hasta que raida cree la clase producto
-    @ManyToOne()
+
+    //relacion detalleordencompra y  ordenCompra
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_producto")
     private Producto producto;
-     */
+
 
     //método para cálcular el costo del tetalle
     public BigDecimal calcularCostoDetalleOrden(BigDecimal precio_unitario, BigDecimal costo_detalleorden) {

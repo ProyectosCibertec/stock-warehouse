@@ -1,7 +1,6 @@
 package edu.cibertec.stockwarehouse.ordencompra.domain.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Temporal;
@@ -11,6 +10,9 @@ import java.util.Date;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class OrdenCompraDTO {
 
     private int id_orden_compra;

@@ -4,6 +4,7 @@ import edu.cibertec.stockwarehouse.Categoria.domain.model.Categoria;
 import lombok.Data;
 
 import java.io.Serializable;
+
 @Data
 public class ProductoDTO implements Serializable {
     private int id;

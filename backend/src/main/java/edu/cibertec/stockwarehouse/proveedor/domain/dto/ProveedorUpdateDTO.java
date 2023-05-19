@@ -2,6 +2,7 @@ package edu.cibertec.stockwarehouse.proveedor.domain.dto;
 
 import edu.cibertec.stockwarehouse.ordencompra.domain.model.OrdenCompra;
 import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Set;
 
@@ -14,5 +15,5 @@ public class ProveedorUpdateDTO implements Serializable {
     private String direccion;
     private String telefono;
     private int estado;
-    private Set<OrdenCompra> ordenes;
+
 }

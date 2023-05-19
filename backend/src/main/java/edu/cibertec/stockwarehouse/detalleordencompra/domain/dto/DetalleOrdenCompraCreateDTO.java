@@ -1,18 +1,25 @@
 package edu.cibertec.stockwarehouse.detalleordencompra.domain.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class DetalleOrdenCompraCreateDTO {
 
     private int cantidad;
+
     private BigDecimal precio_unitario;
+
     private BigDecimal costo_detalleorden;
+
     private int estado;
-    private int id_orden_compra;
-    // private int id_producto;
+
+    private int ordencompraid;
+
+    private int productoid;
 }

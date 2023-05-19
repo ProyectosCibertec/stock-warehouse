@@ -2,7 +2,6 @@ package edu.cibertec.stockwarehouse.empleado.domain.model;
 
 import edu.cibertec.stockwarehouse.cabecerainventario.domain.model.CabeceraInventario;
 import edu.cibertec.stockwarehouse.cargo.domain.model.Cargo;
-import edu.cibertec.stockwarehouse.ordencompra.domain.model.OrdenCompra;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -36,7 +35,7 @@ public class Empleado {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fechaIngreso;
 
-    @Column(name = "fechaCese", nullable = false)
+    @Column(name = "fechaCese")
     @Temporal(value = TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fechaCese;

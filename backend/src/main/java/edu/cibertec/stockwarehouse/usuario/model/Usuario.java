@@ -2,7 +2,8 @@ package edu.cibertec.stockwarehouse.usuario.model;
 
 import edu.cibertec.stockwarehouse.empleado.domain.model.Empleado;
 import edu.cibertec.stockwarehouse.tipousuario.model.TipoUsuario;
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
@@ -19,22 +20,22 @@ public class Usuario {
 
 
     @OneToOne
-    @JoinColumn(name="id_empleado")
+    @JoinColumn(name = "id_empleado")
     private Empleado empleado;
 
 
     @ManyToOne()
-    @JoinColumn(name="id_tipo_usuario")
+    @JoinColumn(name = "id_tipo_usuario")
     private TipoUsuario tipoUsuario;
 
 
-    @Column(name="login_usuario", length = 50, nullable = false)
+    @Column(name = "login_usuario", length = 50, nullable = false)
     private String login_usuario;
 
-    @Column(name="contrasena_usuario", length = 350, nullable = false)
+    @Column(name = "contrasena_usuario", length = 350, nullable = false)
     private String contrasena_usuario;
 
-    @Column(name="estado")
+    @Column(name = "estado")
     private int estado;
 
 }
