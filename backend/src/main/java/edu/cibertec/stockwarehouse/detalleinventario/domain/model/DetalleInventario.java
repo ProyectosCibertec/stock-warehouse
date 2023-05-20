@@ -1,11 +1,15 @@
-package edu.cibertec.stockwarehouse.detalleinventario.model;
+package edu.cibertec.stockwarehouse.detalleinventario.domain.model;
 
+import edu.cibertec.stockwarehouse.Producto.domain.model.Producto;
 import edu.cibertec.stockwarehouse.cabecerainventario.domain.model.CabeceraInventario;
+import edu.cibertec.stockwarehouse.ordencompra.domain.model.OrdenCompra;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Data
@@ -19,17 +23,21 @@ public class DetalleInventario {
     @Column(name = "id_detalleInventario")
     private int id_detalleInventario;
 
+
+
     @Column(name = "nro_orden_compra")
     private String nro_orden_compra;
 
-    @Column(name = "id_producto")
-    private char producto;
+    @ManyToOne()
+    @JoinColumn(name = "id_producto")
+    private Producto producto;
 
     @Column(name = "cantidad")
     private int cantidad;
 
     @Column(name = "observaciones")
     private String observaciones;
+
 
     @Column(name = "estado")
     private int estado;
@@ -38,6 +46,7 @@ public class DetalleInventario {
     @ManyToOne()
     @JoinColumn(name = "id_cab_inventario")
     private CabeceraInventario cabecerainventario;
+
 
     //método para asignar nombre a los estados
     public String NombreEstado() {
