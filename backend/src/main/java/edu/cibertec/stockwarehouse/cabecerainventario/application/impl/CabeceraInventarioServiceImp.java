@@ -3,10 +3,13 @@ package edu.cibertec.stockwarehouse.cabecerainventario.application.impl;
 import edu.cibertec.stockwarehouse.cabecerainventario.application.service.CabeceraInventarioService;
 import edu.cibertec.stockwarehouse.cabecerainventario.domain.dto.CabeceraInventarioCreateDTO;
 import edu.cibertec.stockwarehouse.cabecerainventario.domain.dto.CabeceraInventarioDTO;
+import edu.cibertec.stockwarehouse.cabecerainventario.domain.dto.CabeceraInventarioDetalleDTO;
 import edu.cibertec.stockwarehouse.cabecerainventario.domain.dto.CabeceraInventarioUpdateDTO;
 import edu.cibertec.stockwarehouse.cabecerainventario.domain.mapper.CabeceraInventarioMapper;
 import edu.cibertec.stockwarehouse.cabecerainventario.domain.model.CabeceraInventario;
 import edu.cibertec.stockwarehouse.cabecerainventario.infrastructure.out.CabeceraInventarioRepository;
+import edu.cibertec.stockwarehouse.detalleinventario.domain.mapper.DetalleInventarioMapper;
+import edu.cibertec.stockwarehouse.detalleinventario.infrastructure.out.DetalleInventarioRepository;
 import edu.cibertec.stockwarehouse.empleado.application.EmpleadoService;
 import edu.cibertec.stockwarehouse.empleado.domain.model.Empleado;
 import edu.cibertec.stockwarehouse.empleado.infrastructure.out.EmpleadoRepository;
@@ -16,6 +19,7 @@ import org.springframework.stereotype.Service;
 import javax.persistence.NoResultException;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class CabeceraInventarioServiceImp implements CabeceraInventarioService {
@@ -26,11 +30,16 @@ public class CabeceraInventarioServiceImp implements CabeceraInventarioService {
     @Autowired
     private EmpleadoRepository empleadoRepository;
 
+    @Autowired
+    private DetalleInventarioRepository detalleInventarioRepository;
+
 
     @Override
     public List<CabeceraInventarioDTO> findAll() {
         return CabeceraInventarioMapper.instancia.listaCabeceraInventarioACabeceraInventarioDTO(cabeceraInventarioRepository.findAll());
     }
+
+
 
     @Override
     public CabeceraInventarioDTO findByID(int id) {
@@ -59,6 +68,19 @@ public class CabeceraInventarioServiceImp implements CabeceraInventarioService {
 
         CabeceraInventario cabeceraInventario = CabeceraInventarioMapper.instancia.cabeceraInventarioUpdateDTOACabeceraInventario(cabeceraInventarioUpdateDTO);
         return CabeceraInventarioMapper.instancia.cabeceraInventarioACabeceraInventarioDTO(cabeceraInventarioRepository.save(cabeceraInventario));
+    }
+
+    @Override
+    public CabeceraInventarioDetalleDTO cabeceraInventarioConDetalle(int id) {
+        CabeceraInventario cabeceraInventario = cabeceraInventarioRepository.findById(id).orElse(null);
+        if(cabeceraInventario == null){
+            return null;
+        }
+        CabeceraInventarioDetalleDTO cabeceraInventarioDetalleDTO = CabeceraInventarioMapper.instancia.CabeceraInventarioADetalleInventarioDTO(cabeceraInventario);
+        cabeceraInventarioDetalleDTO.setListaDetalleInventarioDTO(detalleInventarioRepository.findBycabecerainventario(cabeceraInventario).stream()
+                .map(DetalleInventarioMapper.instancia::detalleInvantarioDetalleInventarioDTO)
+                .collect(Collectors.toList()));
+        return cabeceraInventarioDetalleDTO;
     }
 
     @Override
