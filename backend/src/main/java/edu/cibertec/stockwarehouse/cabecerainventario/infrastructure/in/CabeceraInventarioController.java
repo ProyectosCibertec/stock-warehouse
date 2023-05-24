@@ -4,6 +4,7 @@ package edu.cibertec.stockwarehouse.cabecerainventario.infrastructure.in;
 import edu.cibertec.stockwarehouse.cabecerainventario.application.service.CabeceraInventarioService;
 import edu.cibertec.stockwarehouse.cabecerainventario.domain.dto.CabeceraInventarioCreateDTO;
 import edu.cibertec.stockwarehouse.cabecerainventario.domain.dto.CabeceraInventarioDTO;
+import edu.cibertec.stockwarehouse.cabecerainventario.domain.dto.CabeceraInventarioDetalleDTO;
 import edu.cibertec.stockwarehouse.cabecerainventario.domain.dto.CabeceraInventarioUpdateDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -22,6 +23,11 @@ public class CabeceraInventarioController {
     @GetMapping("/")
     public ResponseEntity<List<CabeceraInventarioDTO>> listarCabeceraInventario(){
         return new ResponseEntity<>(cabeceraInventarioService.findAll(), HttpStatus.OK);
+    }
+
+    @GetMapping("/inventariodetalle/{id}")
+    public ResponseEntity<CabeceraInventarioDetalleDTO> listarCabeceraInventarioConDetalle(@PathVariable(value = "id") int id){
+        return new ResponseEntity<CabeceraInventarioDetalleDTO>(cabeceraInventarioService.cabeceraInventarioConDetalle(id),HttpStatus.OK);
     }
 
     @GetMapping("/{id}")

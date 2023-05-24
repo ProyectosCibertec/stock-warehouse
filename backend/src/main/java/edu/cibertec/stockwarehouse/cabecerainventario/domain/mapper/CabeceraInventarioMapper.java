@@ -2,6 +2,7 @@ package edu.cibertec.stockwarehouse.cabecerainventario.domain.mapper;
 
 import edu.cibertec.stockwarehouse.cabecerainventario.domain.dto.CabeceraInventarioCreateDTO;
 import edu.cibertec.stockwarehouse.cabecerainventario.domain.dto.CabeceraInventarioDTO;
+import edu.cibertec.stockwarehouse.cabecerainventario.domain.dto.CabeceraInventarioDetalleDTO;
 import edu.cibertec.stockwarehouse.cabecerainventario.domain.dto.CabeceraInventarioUpdateDTO;
 import edu.cibertec.stockwarehouse.cabecerainventario.domain.model.CabeceraInventario;
 import org.mapstruct.Mapper;
@@ -21,13 +22,15 @@ public interface CabeceraInventarioMapper {
     CabeceraInventario cabeceraInventarioDTOACabeceraInventario(CabeceraInventarioDTO cabeceraInventarioDTO);
 
     @Mapping(target = "empleado.id", source = "cabeceraInventarioCreateDTO.idempleado")
-    CabeceraInventario cabeceraInventarioCreateDTOACabeceraInventario(CabeceraInventarioCreateDTO cabcabeceraInventarioCreateDTO);
+    CabeceraInventario cabeceraInventarioCreateDTOACabeceraInventario(CabeceraInventarioCreateDTO cabeceraInventarioCreateDTO);
 
     @Mapping (target = "empleado.id", source = "cabeceraInventarioUpdateDTO.idempleado")
-    CabeceraInventario cabeceraInventarioUpdateDTOACabeceraInventario(CabeceraInventarioUpdateDTO cabeceraInventarioUpdateDTO);
+    CabeceraInventario cabeceraInventarioUpdateDTOACabeceraInventario(CabeceraInventarioUpdateDTO cabeceraInventarioUpdateDTO );
 
     @Mapping(target = "nomempleado",source = "empleado.nombre")
     List<CabeceraInventarioDTO> listaCabeceraInventarioACabeceraInventarioDTO(List<CabeceraInventario> listaCabeceraInventario);
+
+    CabeceraInventarioDetalleDTO CabeceraInventarioADetalleInventarioDTO(CabeceraInventario cabeceraInventario);
 
 
 }
