@@ -7,6 +7,7 @@ import { ProveedorService } from '../../servicios/proveedor.service';
   templateUrl: './listar-proveedor.component.html',
   styleUrls: ['./listar-proveedor.component.css']
 })
+
 export class ListarProveedorComponent implements OnInit{
 
   proveedores?:Proveedor[];

@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListarProveedorComponent } from './proveedor/componentes/listar-proveedor/listar-proveedor.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

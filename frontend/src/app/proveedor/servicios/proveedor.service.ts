@@ -7,6 +7,7 @@ import { Proveedor } from '../modelos/Proveedor';
 })
 export class ProveedorService {
 
+
   constructor(private http:HttpClient) { }
   url = 'http://localhost:8080/api/proveedores';
 
