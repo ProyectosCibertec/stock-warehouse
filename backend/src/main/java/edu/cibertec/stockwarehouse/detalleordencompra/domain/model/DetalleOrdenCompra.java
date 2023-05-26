@@ -1,6 +1,6 @@
 package edu.cibertec.stockwarehouse.detalleordencompra.domain.model;
 
-import edu.cibertec.stockwarehouse.Producto.domain.model.Producto;
+import edu.cibertec.stockwarehouse.producto.domain.model.Producto;
 import edu.cibertec.stockwarehouse.ordencompra.domain.model.OrdenCompra;
 import lombok.*;
 

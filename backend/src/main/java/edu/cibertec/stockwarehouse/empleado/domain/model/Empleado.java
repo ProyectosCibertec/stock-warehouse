@@ -46,7 +46,4 @@ public class Empleado {
 
     @Column(name = "estado")
     private int estado;
-
-    @OneToMany(mappedBy = "empleado")
-    private Set<CabeceraInventario> cabecera;
 }
