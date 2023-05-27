@@ -6,10 +6,14 @@ describe('ActualizarProveedorComponent', () => {
   let component: ActualizarProveedorComponent;
   let fixture: ComponentFixture<ActualizarProveedorComponent>;
 
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ ActualizarProveedorComponent ]
+    })
+    .compileComponents();
+  });
+
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [ActualizarProveedorComponent]
-    });
     fixture = TestBed.createComponent(ActualizarProveedorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
