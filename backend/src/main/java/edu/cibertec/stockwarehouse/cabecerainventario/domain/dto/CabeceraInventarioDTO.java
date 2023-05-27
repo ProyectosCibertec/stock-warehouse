@@ -13,15 +13,11 @@ import java.util.Date;
 public class CabeceraInventarioDTO {
 
     private int id_cab_inventario;
-
     private int tipo_inventario;
-
     @Temporal(value = TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fecha_cab_inventario;
-
     private int estado;
-
     private String nomempleado;
 
 }

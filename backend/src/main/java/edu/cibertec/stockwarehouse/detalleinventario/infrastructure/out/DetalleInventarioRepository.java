@@ -1,7 +1,14 @@
 package edu.cibertec.stockwarehouse.detalleinventario.infrastructure.out;
 
-import edu.cibertec.stockwarehouse.detalleinventario.model.DetalleInventario;
+import edu.cibertec.stockwarehouse.cabecerainventario.domain.model.CabeceraInventario;
+import edu.cibertec.stockwarehouse.detalleinventario.domain.model.DetalleInventario;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface DetalleInventarioRepository extends JpaRepository<DetalleInventario, Integer> {
+import java.util.List;
+
+@Repository
+public interface DetalleInventarioRepository extends JpaRepository<DetalleInventario,Integer> {
+
+    List<DetalleInventario> findBycabecerainventario(CabeceraInventario cabeceraInventario);
 }
