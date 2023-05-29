@@ -1,4 +1,4 @@
-package edu.cibertec.stockwarehouse.ordencompra.application.service;
+package edu.cibertec.stockwarehouse.ordencompra.application;
 
 
 import edu.cibertec.stockwarehouse.ordencompra.domain.dto.OrdenCompraDetalleDTO;

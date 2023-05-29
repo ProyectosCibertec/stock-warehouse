@@ -3,6 +3,7 @@ package edu.cibertec.stockwarehouse.empleado.domain.model;
 import edu.cibertec.stockwarehouse.cabecerainventario.domain.model.CabeceraInventario;
 import edu.cibertec.stockwarehouse.cargo.domain.model.Cargo;
 import lombok.Data;
+import org.hibernate.annotations.Cascade;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;

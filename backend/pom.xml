@@ -12,7 +12,9 @@
     <artifactId>stock-warehouse</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>stock-warehouse</name>
-    <description>Stock management system with purpose for implementing a full-stack application with Angular and Java with Spring boot</description>
+    <description>Stock management system with purpose for implementing a full-stack application with Angular and Java
+        with Spring boot
+    </description>
     <properties>
         <java.version>11</java.version>
         <maven.compiler.source>11</maven.compiler.source>
@@ -55,6 +57,11 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>1.0.2</version>
         </dependency>
     </dependencies>
 

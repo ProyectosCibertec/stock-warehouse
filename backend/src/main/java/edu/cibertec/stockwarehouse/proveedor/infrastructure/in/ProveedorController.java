@@ -1,6 +1,6 @@
 package edu.cibertec.stockwarehouse.proveedor.infrastructure.in;
 
-import edu.cibertec.stockwarehouse.proveedor.application.service.ProveedorService;
+import edu.cibertec.stockwarehouse.proveedor.application.ProveedorService;
 import edu.cibertec.stockwarehouse.proveedor.domain.dto.ProveedorCreateDTO;
 import edu.cibertec.stockwarehouse.proveedor.domain.dto.ProveedorDTO;
 import edu.cibertec.stockwarehouse.proveedor.domain.dto.ProveedorUpdateDTO;

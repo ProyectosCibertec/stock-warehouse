@@ -1,4 +1,4 @@
-package edu.cibertec.stockwarehouse.proveedor.application.service;
+package edu.cibertec.stockwarehouse.proveedor.application;
 
 import edu.cibertec.stockwarehouse.proveedor.domain.dto.ProveedorCreateDTO;
 import edu.cibertec.stockwarehouse.proveedor.domain.dto.ProveedorDTO;

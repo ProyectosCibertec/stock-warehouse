@@ -12,7 +12,6 @@ import java.util.Set;
 @Getter
 @Setter
 public class TipoUsuario {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_tipo_usuario")
@@ -38,8 +37,4 @@ public class TipoUsuario {
         }
         return nombreEstado;
     }
-
-    @OneToMany(mappedBy = "tipoUsuario")
-    private Set<Usuario> usuario;
-
 }
