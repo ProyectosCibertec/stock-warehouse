@@ -6,10 +6,14 @@ describe('ListarProveedorComponent', () => {
   let component: ListarProveedorComponent;
   let fixture: ComponentFixture<ListarProveedorComponent>;
 
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ ListarProveedorComponent ]
+    })
+    .compileComponents();
+  });
+
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [ListarProveedorComponent]
-    });
     fixture = TestBed.createComponent(ListarProveedorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
