@@ -13,4 +13,20 @@ export class ProveedorService {
   getProveedores(){
     return this.http.get<Proveedor[]>(this.url);
   }
+
+  createProveedor(proveedor: Proveedor){
+    return this.http.post<Proveedor>(this.url,proveedor);
+  }
+
+  getProveedorId(id:number){
+    return this.http.get<Proveedor>(this.url+"/"+id);
+  }
+
+  updateProveedor(proveedor: Proveedor){
+    return this.http.put<Proveedor>(this.url,proveedor);
+  }
+
+  deleteProveedor(proveedor: Proveedor){
+    return this.http.delete<Proveedor>(this.url+"/"+proveedor.id);
+  }
 }
