@@ -1,7 +1,7 @@
 package edu.cibertec.stockwarehouse.cabecerainventario.infrastructure.in;
 
 
-import edu.cibertec.stockwarehouse.cabecerainventario.application.service.CabeceraInventarioService;
+import edu.cibertec.stockwarehouse.cabecerainventario.application.CabeceraInventarioService;
 import edu.cibertec.stockwarehouse.cabecerainventario.domain.dto.CabeceraInventarioCreateDTO;
 import edu.cibertec.stockwarehouse.cabecerainventario.domain.dto.CabeceraInventarioDTO;
 import edu.cibertec.stockwarehouse.cabecerainventario.domain.dto.CabeceraInventarioDetalleDTO;

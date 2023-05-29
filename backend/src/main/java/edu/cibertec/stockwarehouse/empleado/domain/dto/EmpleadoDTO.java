@@ -1,5 +1,6 @@
 package edu.cibertec.stockwarehouse.empleado.domain.dto;
 
+import edu.cibertec.stockwarehouse.cargo.domain.dto.CargoDTO;
 import edu.cibertec.stockwarehouse.cargo.domain.model.Cargo;
 import lombok.Data;
 
@@ -15,6 +16,6 @@ public class EmpleadoDTO implements Serializable {
     private String telefono;
     private Date fechaIngreso;
     private Date fechaCese;
-    private Cargo cargo;
+    private CargoDTO cargo;
     private int estado;
 }

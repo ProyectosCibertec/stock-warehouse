@@ -1,12 +1,12 @@
 package edu.cibertec.stockwarehouse.detalleordencompra.application.impl;
 
-import edu.cibertec.stockwarehouse.detalleordencompra.application.service.DetalleOrdenCompraService;
+import edu.cibertec.stockwarehouse.detalleordencompra.application.DetalleOrdenCompraService;
 import edu.cibertec.stockwarehouse.detalleordencompra.domain.dto.DetalleOrdenCompraCreateDTO;
 import edu.cibertec.stockwarehouse.detalleordencompra.domain.dto.DetalleOrdenCompraDTO;
 import edu.cibertec.stockwarehouse.detalleordencompra.domain.dto.DetalleOrdenCompraUpdateDTO;
 import edu.cibertec.stockwarehouse.detalleordencompra.domain.mapper.DetalleOrdenCompraMapper;
 import edu.cibertec.stockwarehouse.detalleordencompra.domain.model.DetalleOrdenCompra;
-import edu.cibertec.stockwarehouse.detalleordencompra.infrastructure.out.DetalleOrdenCompraRepositoy;
+import edu.cibertec.stockwarehouse.detalleordencompra.infrastructure.out.DetalleOrdenCompraRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +18,7 @@ import java.util.Optional;
 public class DetalleOrdenCompraServiceImpl implements DetalleOrdenCompraService {
 
     @Autowired
-    private DetalleOrdenCompraRepositoy detalleOrdenCompraRepositoy;
+    private DetalleOrdenCompraRepository detalleOrdenCompraRepositoy;
 
     @Override
     public List<DetalleOrdenCompraDTO> findAll() {

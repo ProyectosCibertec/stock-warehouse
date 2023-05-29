@@ -1,15 +1,12 @@
 package edu.cibertec.stockwarehouse.detalleinventario.domain.model;
 
-import edu.cibertec.stockwarehouse.Producto.domain.model.Producto;
+import edu.cibertec.stockwarehouse.producto.domain.model.Producto;
 import edu.cibertec.stockwarehouse.cabecerainventario.domain.model.CabeceraInventario;
-import edu.cibertec.stockwarehouse.ordencompra.domain.model.OrdenCompra;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Data

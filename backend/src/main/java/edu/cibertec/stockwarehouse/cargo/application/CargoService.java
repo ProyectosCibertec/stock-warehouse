@@ -1,8 +1,6 @@
 package edu.cibertec.stockwarehouse.cargo.application;
 
-import edu.cibertec.stockwarehouse.cargo.domain.dto.CargoCreateDTO;
 import edu.cibertec.stockwarehouse.cargo.domain.dto.CargoDTO;
-import edu.cibertec.stockwarehouse.cargo.domain.dto.CargoUpdateDTO;
 
 import java.util.List;
 
@@ -11,9 +9,9 @@ public interface CargoService {
 
     List<CargoDTO> findAll();
 
-    CargoDTO save(CargoCreateDTO cargoCreateDTO);
+    CargoDTO save(CargoDTO cargoDTO);
 
-    CargoDTO update(CargoUpdateDTO cargoUpdateDTO);
+    CargoDTO update(CargoDTO cargoDTO);
 
     void delete(int id);
 }

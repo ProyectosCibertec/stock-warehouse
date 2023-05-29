@@ -1,8 +1,6 @@
 package edu.cibertec.stockwarehouse.empleado.application;
 
-import edu.cibertec.stockwarehouse.empleado.domain.dto.EmpleadoCreateDTO;
 import edu.cibertec.stockwarehouse.empleado.domain.dto.EmpleadoDTO;
-import edu.cibertec.stockwarehouse.empleado.domain.dto.EmpleadoUpdateDTO;
 
 import java.util.List;
 
@@ -11,9 +9,9 @@ public interface EmpleadoService {
 
     List<EmpleadoDTO> findAll();
 
-    EmpleadoDTO save(EmpleadoCreateDTO empleadoCreateDTO);
+    EmpleadoDTO save(EmpleadoDTO empleadoDTO);
 
-    EmpleadoDTO update(EmpleadoUpdateDTO empleadoUpdateDTO);
+    EmpleadoDTO update(EmpleadoDTO empleadoDTO);
 
     void delete(int id);
 }
