@@ -1,0 +1,62 @@
+
+<div class="container col-md-10">
+
+    <div class="card-header mt-2 opacity-25">
+      <h1 class="text-dark text-center"> registrar-orden-compra!</h1>
+    </div>
+    <mat-card>
+      <form action="" class="m-3">  
+        <div class="example-container mx-4 d-flex justify-content-between"> 
+            <mat-form-field hintLabel="Max 10 characters" class="example-full-width">
+              <mat-label>Nro. de Orden de Compra:</mat-label>
+              <input matInput type="text"  #input maxlength="10" placeholder="nro_orden_compra" [(ngModel)]="modelOrdenCompra.nro_orden_compra" name="nro_orden_compra" required>
+              <mat-hint class="text-dark" align="end">{{modelOrdenCompra.nro_orden_compra.length}}/10</mat-hint>
+            </mat-form-field>
+          </div>
+          <div class="example-container d-flex justify-content-around"> 
+              <mat-form-field class="example-full-width" >
+                <mat-label>Fecha de Orden de Compra:</mat-label>
+                <input matInput type="date" placeholder="fechaorden_compra" [(ngModel)]="modelOrdenCompra.fechaorden_compra" name="fechaorden_compra" required>
+                <mat-hint>Formato: dd/MM/YYYY</mat-hint>
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width" >
+                <mat-label>Fecha de Entrega:</mat-label>
+                <input matInput type="date" placeholder="fechaentrega" [(ngModel)]="modelOrdenCompra.fechaentrega" name="fechaentrega" required>
+                <mat-hint>Formato: dd/MM/YYYY</mat-hint>
+              </mat-form-field>
+          </div>
+          <div class="example-container d-flex justify-content-around"> 
+            <mat-form-field class="example-full-width " hintLabel="Max 25 characteres" >
+              <mat-label>Condiciones de Pago:</mat-label>
+              <input matInput type="text" #input maxlength="25" placeholder="condicionespago" [(ngModel)]="modelOrdenCompra.condicionespago" name="condicionespago" required>
+              <mat-hint class="text-dark" align="end">{{modelOrdenCompra.condicionespago.length}}/25</mat-hint>
+            </mat-form-field>
+        
+            <mat-form-field class="example-full-width " floatLabel="always">
+              <mat-label>Valor Total de la Orden:</mat-label>
+              <input matInput type="number" placeholder="valortotal_orden" class="example-right-align" [(ngModel)]="modelOrdenCompra.valortotal_orden" name="valortotal_orden" required>
+              <span matTextPrefix>$&nbsp;</span>
+              <span matTextSuffix>.00</span>
+            </mat-form-field>
+          </div>
+          <div class="example-container d-flex justify-content-around"> 
+            <mat-form-field class=" example-full-width " hintLabel="min 0 y max 3">
+              <mat-label>Estado:</mat-label>
+              <input matInput type="number" #input min="0" max="3" placeholder="Estado" [(ngModel)]="modelOrdenCompra.estado" name="estado" required>
+              <mat-hint class="text-dark" align="end">{{modelOrdenCompra.estado}}/1</mat-hint>
+            </mat-form-field>
+        
+          <mat-form-field class="example-full-width " hintLabel="min 1 y max 1000" >
+            <mat-label>Nombre del Proveedor:</mat-label>
+            <input matInput type="number" #input min="1" max="1000"  placeholder="id_proveedor" [(ngModel)]="modelOrdenCompra.proveedorId" name="nomproveedor" required>
+            <mat-hint class="text-dark" align="end">{{modelOrdenCompra.proveedorId}}/1000</mat-hint>
+          </mat-form-field>
+        </div>
+        <div class="example-container  d-flex justify-content-center mt-5 mb-3"> 
+          <button  color="basic" mat-raised-button (click)="guardarOrdenCompra(modelOrdenCompra)">Grabar<mat-icon class="text-dark">save</mat-icon></button>
+         </div>
+      </form>
+    </mat-card>
+  
+  </div>
