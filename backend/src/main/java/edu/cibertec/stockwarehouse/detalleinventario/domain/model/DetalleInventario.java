@@ -10,17 +10,12 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Table(name = "tb_detalleinventario")
 public class DetalleInventario {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_detalleInventario")
     private int id_detalleInventario;
-
-
 
     @Column(name = "nro_orden_compra")
     private String nro_orden_compra;
@@ -35,7 +30,6 @@ public class DetalleInventario {
     @Column(name = "observaciones")
     private String observaciones;
 
-
     @Column(name = "estado")
     private int estado;
 
@@ -43,7 +37,6 @@ public class DetalleInventario {
     @ManyToOne()
     @JoinColumn(name = "id_cab_inventario")
     private CabeceraInventario cabecerainventario;
-
 
     //método para asignar nombre a los estados
     public String NombreEstado() {

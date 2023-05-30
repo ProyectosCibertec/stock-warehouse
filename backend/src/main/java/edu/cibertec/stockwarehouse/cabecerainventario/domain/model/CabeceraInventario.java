@@ -1,21 +1,16 @@
 package edu.cibertec.stockwarehouse.cabecerainventario.domain.model;
 
 import edu.cibertec.stockwarehouse.empleado.domain.model.Empleado;
-import lombok.*;
+import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Getter
-@Setter
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Table(name = "tb_cabecerainventario")
 public class CabeceraInventario {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_cab_inventario")
@@ -35,7 +30,6 @@ public class CabeceraInventario {
 
     @Column(name = "estado")
     private int estado;
-
 
     //método para asignar nombre a los estados
     public String NombreEstado() {

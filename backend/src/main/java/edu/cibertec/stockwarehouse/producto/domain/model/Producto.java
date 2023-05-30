@@ -9,10 +9,6 @@ import java.util.Set;
 
 @Entity
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
 @Table(name = "tb_producto")
 public class Producto {
     @Id
@@ -38,9 +34,4 @@ public class Producto {
 
     @Column(name = "estado")
     private int estado;
-
-    @OneToMany(mappedBy = "producto", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    private Set<DetalleOrdenCompra> detalleOrdenCompras;
-
-
 }

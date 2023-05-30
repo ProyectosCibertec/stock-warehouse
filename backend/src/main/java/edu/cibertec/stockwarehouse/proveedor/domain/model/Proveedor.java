@@ -14,7 +14,6 @@ import java.util.Set;
 @NoArgsConstructor
 @Table(name = "tb_proveedor")
 public class Proveedor {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_proveedor")

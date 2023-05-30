@@ -1,21 +1,15 @@
 package edu.cibertec.stockwarehouse.ordencompra.domain.model;
 
-import edu.cibertec.stockwarehouse.detalleordencompra.domain.model.DetalleOrdenCompra;
 import edu.cibertec.stockwarehouse.proveedor.domain.model.Proveedor;
-import lombok.*;
+import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.Set;
 
 @Entity
 @Data
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
 @Table(name = "tb_Ordencompra")
 public class OrdenCompra {
     @Id
@@ -46,15 +40,9 @@ public class OrdenCompra {
     private int estado;
 
     //relacionar ordencompra y proveedor
-    @ManyToOne( fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_proveedor")
     private Proveedor proveedor;
-
-
-    //relacionar ordencompra y detalleordencompra
-    @OneToMany(mappedBy = "ordencompra", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-    private Set<DetalleOrdenCompra> detallesOrdenCompra;
-
 
     // método para asignar nombre a los estados
     public String NombreEstado() {
@@ -71,6 +59,4 @@ public class OrdenCompra {
         }
         return nombreEstado;
     }
-
-
 }
