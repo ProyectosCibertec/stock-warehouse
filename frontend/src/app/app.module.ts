@@ -5,9 +5,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ActualizarProveedorComponent } from './proveedor/componentes/actualizar-proveedor/actualizar-proveedor.component';
 import { ListarProveedorComponent } from './proveedor/componentes/listar-proveedor/listar-proveedor.component';
-import { CabecerainventarioComponent } from './cabecerainventario/cabecerainventario.component';
-import { DetalleinventarioComponent } from './detalleinventario/detalleinventario.component';
+import { RegistrarProveedorComponent } from './proveedor/componentes/registrar-proveedor/registrar-proveedor.component';
 
 
 
@@ -15,8 +15,8 @@ import { DetalleinventarioComponent } from './detalleinventario/detalleinventari
   declarations: [
     AppComponent,
     ListarProveedorComponent,
-    CabecerainventarioComponent,
-    DetalleinventarioComponent,
+    RegistrarProveedorComponent,
+    ActualizarProveedorComponent
   ],
   imports: [
     BrowserModule,

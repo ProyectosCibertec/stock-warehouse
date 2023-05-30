@@ -1,14 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ActualizarProveedorComponent } from './proveedor/componentes/actualizar-proveedor/actualizar-proveedor.component';
 import { ListarProveedorComponent } from './proveedor/componentes/listar-proveedor/listar-proveedor.component';
-import { CabecerainventarioComponent } from './cabecerainventario/cabecerainventario.component';
-import { DetalleinventarioComponent } from './detalleinventario/detalleinventario.component';
+
+import { RegistrarProveedorComponent } from './proveedor/componentes/registrar-proveedor/registrar-proveedor.component';
+
+ 
+
 
 
 const routes: Routes = [
-  {path:'proveedor', component:ListarProveedorComponent},
-  { path: 'cabecerainventario', component:CabecerainventarioComponent},
-  { path: 'detalleinventario', component:DetalleinventarioComponent}
+  {path:'proveedores', component:ListarProveedorComponent},
+  { path:'registrarProveedor',  component: RegistrarProveedorComponent},
+  { path:'actualizarProveedor',  component: ActualizarProveedorComponent},
+ 
 ];
 
 @NgModule({

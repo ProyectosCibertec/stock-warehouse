@@ -1,9 +1,7 @@
 package edu.cibertec.stockwarehouse.cargo.application.impl;
 
 import edu.cibertec.stockwarehouse.cargo.application.CargoService;
-import edu.cibertec.stockwarehouse.cargo.domain.dto.CargoCreateDTO;
 import edu.cibertec.stockwarehouse.cargo.domain.dto.CargoDTO;
-import edu.cibertec.stockwarehouse.cargo.domain.dto.CargoUpdateDTO;
 import edu.cibertec.stockwarehouse.cargo.domain.mapper.CargoMapper;
 import edu.cibertec.stockwarehouse.cargo.domain.model.Cargo;
 import edu.cibertec.stockwarehouse.cargo.infrastructure.out.CargoRepository;
@@ -18,7 +16,6 @@ import java.util.Optional;
 public class CargoServiceImpl implements CargoService {
     @Autowired
     private CargoRepository cargoRepository;
-
 
     @Override
     public CargoDTO find(int id) {
@@ -35,14 +32,14 @@ public class CargoServiceImpl implements CargoService {
     }
 
     @Override
-    public CargoDTO save(CargoCreateDTO cargoCreateDTO) {
-        Cargo cargo = CargoMapper.instance.cargoCreateDTOACargo(cargoCreateDTO);
+    public CargoDTO save(CargoDTO cargoDTO) {
+        Cargo cargo = CargoMapper.instance.cargoCreateDTOACargo(cargoDTO);
         return CargoMapper.instance.cargoACargoDTO(cargoRepository.save(cargo));
     }
 
     @Override
-    public CargoDTO update(CargoUpdateDTO cargoUpdateDTO) {
-        Cargo cargo = CargoMapper.instance.cargoUpdateDTOACargo(cargoUpdateDTO);
+    public CargoDTO update(CargoDTO cargoDTO) {
+        Cargo cargo = CargoMapper.instance.cargoUpdateDTOACargo(cargoDTO);
         return CargoMapper.instance.cargoACargoDTO(cargoRepository.save(cargo));
     }
 

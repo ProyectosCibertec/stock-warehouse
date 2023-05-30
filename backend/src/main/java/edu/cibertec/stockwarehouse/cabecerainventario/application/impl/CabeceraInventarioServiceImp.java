@@ -1,6 +1,6 @@
 package edu.cibertec.stockwarehouse.cabecerainventario.application.impl;
 
-import edu.cibertec.stockwarehouse.cabecerainventario.application.service.CabeceraInventarioService;
+import edu.cibertec.stockwarehouse.cabecerainventario.application.CabeceraInventarioService;
 import edu.cibertec.stockwarehouse.cabecerainventario.domain.dto.CabeceraInventarioCreateDTO;
 import edu.cibertec.stockwarehouse.cabecerainventario.domain.dto.CabeceraInventarioDTO;
 import edu.cibertec.stockwarehouse.cabecerainventario.domain.dto.CabeceraInventarioDetalleDTO;
@@ -10,7 +10,6 @@ import edu.cibertec.stockwarehouse.cabecerainventario.domain.model.CabeceraInven
 import edu.cibertec.stockwarehouse.cabecerainventario.infrastructure.out.CabeceraInventarioRepository;
 import edu.cibertec.stockwarehouse.detalleinventario.domain.mapper.DetalleInventarioMapper;
 import edu.cibertec.stockwarehouse.detalleinventario.infrastructure.out.DetalleInventarioRepository;
-import edu.cibertec.stockwarehouse.empleado.application.EmpleadoService;
 import edu.cibertec.stockwarehouse.empleado.domain.model.Empleado;
 import edu.cibertec.stockwarehouse.empleado.infrastructure.out.EmpleadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -38,9 +38,6 @@ public class Proveedor {
     @Column(name = "estado")
     private int estado;
 
-    @OneToMany(mappedBy = "proveedor")
-    private Set<OrdenCompra> ordenes;
-
     public String NombreEstado() {
         String nombreEstado = null;
         switch (estado) {

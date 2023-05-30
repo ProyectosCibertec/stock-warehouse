@@ -1,9 +1,7 @@
 package edu.cibertec.stockwarehouse.cargo.infrastructure.in;
 
 import edu.cibertec.stockwarehouse.cargo.application.CargoService;
-import edu.cibertec.stockwarehouse.cargo.domain.dto.CargoCreateDTO;
 import edu.cibertec.stockwarehouse.cargo.domain.dto.CargoDTO;
-import edu.cibertec.stockwarehouse.cargo.domain.dto.CargoUpdateDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,13 +26,13 @@ public class CargoController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<CargoDTO> registrarCargo(@RequestBody CargoCreateDTO cargoCreateDTO) {
-        return new ResponseEntity<>(cargoService.save(cargoCreateDTO), HttpStatus.CREATED);
+    public ResponseEntity<CargoDTO> registrarCargo(@RequestBody CargoDTO cargoDTO) {
+        return new ResponseEntity<>(cargoService.save(cargoDTO), HttpStatus.CREATED);
     }
 
     @PutMapping("/")
-    public ResponseEntity<CargoDTO> actualizarCargo(@RequestBody CargoUpdateDTO cargoUpdateDTO) {
-        return new ResponseEntity<>(cargoService.update(cargoUpdateDTO), HttpStatus.CREATED);
+    public ResponseEntity<CargoDTO> actualizarCargo(@RequestBody CargoDTO cargoDTO) {
+        return new ResponseEntity<>(cargoService.update(cargoDTO), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}")

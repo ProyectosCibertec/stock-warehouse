@@ -1,6 +1,6 @@
 package edu.cibertec.stockwarehouse.detalleinventario.infrastructure.in;
 
-import edu.cibertec.stockwarehouse.detalleinventario.application.service.DetalleInventarioService;
+import edu.cibertec.stockwarehouse.detalleinventario.application.DetalleInventarioService;
 import edu.cibertec.stockwarehouse.detalleinventario.domain.dto.DetalleInventarioCreateDTO;
 import edu.cibertec.stockwarehouse.detalleinventario.domain.dto.DetalleInventarioDTO;
 import edu.cibertec.stockwarehouse.detalleinventario.domain.dto.DetalleInventarioUpdateDTO;
