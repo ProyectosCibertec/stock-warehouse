@@ -1,8 +1,8 @@
 package edu.cibertec.stockwarehouse.ordencompra.application.impl;
 
 import edu.cibertec.stockwarehouse.detalleordencompra.domain.mapper.DetalleOrdenCompraMapper;
-import edu.cibertec.stockwarehouse.detalleordencompra.infrastructure.out.DetalleOrdenCompraRepositoy;
-import edu.cibertec.stockwarehouse.ordencompra.application.service.OrdenCompraService;
+import edu.cibertec.stockwarehouse.detalleordencompra.infrastructure.out.DetalleOrdenCompraRepository;
+import edu.cibertec.stockwarehouse.ordencompra.application.OrdenCompraService;
 import edu.cibertec.stockwarehouse.ordencompra.domain.dto.OrdenCompraDetalleDTO;
 import edu.cibertec.stockwarehouse.ordencompra.domain.dto.OrdenCompraCreateDTO;
 import edu.cibertec.stockwarehouse.ordencompra.domain.dto.OrdenCompraDTO;
@@ -31,7 +31,7 @@ public class OrdenCompraServiceImpl implements OrdenCompraService {
     private ProveedorRepository proveedorRepository;
 
     @Autowired
-    private DetalleOrdenCompraRepositoy detalleOrdenCompraRepositoy;
+    private DetalleOrdenCompraRepository detalleOrdenCompraRepositoy;
 
     @Override
     public List<OrdenCompraDTO> findAll() {

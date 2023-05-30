@@ -1,9 +1,7 @@
 package edu.cibertec.stockwarehouse.empleado.infrastructure.in;
 
 import edu.cibertec.stockwarehouse.empleado.application.EmpleadoService;
-import edu.cibertec.stockwarehouse.empleado.domain.dto.EmpleadoCreateDTO;
 import edu.cibertec.stockwarehouse.empleado.domain.dto.EmpleadoDTO;
-import edu.cibertec.stockwarehouse.empleado.domain.dto.EmpleadoUpdateDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,13 +26,13 @@ public class EmpleadoController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<EmpleadoDTO> registrarEmpleado(@RequestBody EmpleadoCreateDTO empleadoCreateDTO) {
-        return new ResponseEntity<>(empleadoService.save(empleadoCreateDTO), HttpStatus.CREATED);
+    public ResponseEntity<EmpleadoDTO> registrarEmpleado(@RequestBody EmpleadoDTO empleadoDTO) {
+        return new ResponseEntity<>(empleadoService.save(empleadoDTO), HttpStatus.CREATED);
     }
 
     @PutMapping("/")
-    public ResponseEntity<EmpleadoDTO> actualizarEmpleado(@RequestBody EmpleadoUpdateDTO empleadoUpdateDTO) {
-        return new ResponseEntity<>(empleadoService.update(empleadoUpdateDTO), HttpStatus.CREATED);
+    public ResponseEntity<EmpleadoDTO> actualizarEmpleado(@RequestBody EmpleadoDTO empleadoDTO) {
+        return new ResponseEntity<>(empleadoService.update(empleadoDTO), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}")
