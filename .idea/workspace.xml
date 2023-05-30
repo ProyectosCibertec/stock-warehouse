@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88a0639c-ff40-4279-95fc-4e7ee765faff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/cabecerainventario/domain/dto/CabeceraInventarioDetalleDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/cabecerainventario/application/impl/CabeceraInventarioServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/cabecerainventario/application/impl/CabeceraInventarioServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/cabecerainventario/application/service/CabeceraInventarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/cabecerainventario/application/service/CabeceraInventarioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/cabecerainventario/domain/mapper/CabeceraInventarioMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/cabecerainventario/domain/mapper/CabeceraInventarioMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/cabecerainventario/infrastructure/in/CabeceraInventarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/cabecerainventario/infrastructure/in/CabeceraInventarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/detalleinventario/domain/dto/DetalleInventarioCreateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/detalleinventario/domain/dto/DetalleInventarioCreateDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/detalleinventario/domain/dto/DetalleInventarioDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/detalleinventario/domain/dto/DetalleInventarioDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/detalleinventario/domain/dto/DetalleInventarioUpdateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/detalleinventario/domain/dto/DetalleInventarioUpdateDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/detalleinventario/infrastructure/out/DetalleInventarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/edu/cibertec/stockwarehouse/detalleinventario/infrastructure/out/DetalleInventarioRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,25 +32,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/ALFREDO SOTO NOLAZCO/CIBERTEC/CIBERTEC/2023/CICLO VI/DESARROLLO DE APLICACIONES WEB II/ProyectoDAWII/stock-warehouse&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;d684f8108698ad177985518dcab8f94b&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Jorge Chavez Gue/Documents/6TO CICLO/DESARROLLO DE APLICACIONES WEB II/Sesion_9/HiperMaxi-API",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "spring.configuration.checksum": "d684f8108698ad177985518dcab8f94b",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="StockWarehouseApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="11" />

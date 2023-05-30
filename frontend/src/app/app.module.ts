@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListarProveedorComponent } from './proveedor/componentes/listar-proveedor/listar-proveedor.component';
+import { CabecerainventarioComponent } from './cabecerainventario/cabecerainventario.component';
+import { DetalleinventarioComponent } from './detalleinventario/detalleinventario.component';
 
 
 
@@ -13,6 +15,8 @@ import { ListarProveedorComponent } from './proveedor/componentes/listar-proveed
   declarations: [
     AppComponent,
     ListarProveedorComponent,
+    CabecerainventarioComponent,
+    DetalleinventarioComponent,
   ],
   imports: [
     BrowserModule,
