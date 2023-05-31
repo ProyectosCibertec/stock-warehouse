@@ -16,5 +16,5 @@ public interface ProveedorService {
 
     ProveedorDTO actualizarProveedor(ProveedorUpdateDTO proveedorUpdateDTO);
 
-    String eliminarProveedor(long id);
+    void delete(long id);
 }

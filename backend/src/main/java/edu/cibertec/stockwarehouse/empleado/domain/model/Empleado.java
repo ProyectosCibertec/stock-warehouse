@@ -42,7 +42,7 @@ public class Empleado {
     private Date fechaCese;
 
     @ManyToOne
-    @JoinColumn(name = "id_cargo", nullable = false)
+    @JoinColumn(name = "id_cargo", nullable = true)
     private Cargo cargo;
 
     @Column(name = "estado")
