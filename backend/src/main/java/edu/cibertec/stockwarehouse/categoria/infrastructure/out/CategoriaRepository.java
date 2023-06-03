@@ -1,4 +1,4 @@
-package edu.cibertec.stockwarehouse.categoria.infraestructure.out;
+package edu.cibertec.stockwarehouse.categoria.infrastructure.out;
 
 import edu.cibertec.stockwarehouse.categoria.domain.model.Categoria;
 import org.springframework.data.jpa.repository.JpaRepository;

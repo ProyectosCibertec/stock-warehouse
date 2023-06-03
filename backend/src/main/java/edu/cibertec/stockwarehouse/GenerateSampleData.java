@@ -5,7 +5,7 @@ import edu.cibertec.stockwarehouse.cabecerainventario.infrastructure.out.Cabecer
 import edu.cibertec.stockwarehouse.cargo.domain.model.Cargo;
 import edu.cibertec.stockwarehouse.cargo.infrastructure.out.CargoRepository;
 import edu.cibertec.stockwarehouse.categoria.domain.model.Categoria;
-import edu.cibertec.stockwarehouse.categoria.infraestructure.out.CategoriaRepository;
+import edu.cibertec.stockwarehouse.categoria.infrastructure.out.CategoriaRepository;
 import edu.cibertec.stockwarehouse.detalleinventario.infrastructure.out.DetalleInventarioRepository;
 import edu.cibertec.stockwarehouse.detalleordencompra.infrastructure.out.DetalleOrdenCompraRepository;
 import edu.cibertec.stockwarehouse.empleado.domain.model.Empleado;

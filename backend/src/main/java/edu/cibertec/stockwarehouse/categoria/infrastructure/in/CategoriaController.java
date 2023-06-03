@@ -1,4 +1,4 @@
-package edu.cibertec.stockwarehouse.categoria.infraestructure.in;
+package edu.cibertec.stockwarehouse.categoria.infrastructure.in;
 
 import edu.cibertec.stockwarehouse.categoria.aplication.CategoriaService;
 import edu.cibertec.stockwarehouse.categoria.domain.dto.CategoriaCreateDTO;
