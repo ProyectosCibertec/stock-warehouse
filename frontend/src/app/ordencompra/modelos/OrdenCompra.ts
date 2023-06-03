@@ -1,6 +1,3 @@
-import { DateAdapter, MatDateFormats } from "@angular/material/core";
-import { MatDatepicker } from "@angular/material/datepicker";
-
 export class OrdenCompra {
 
     id_orden_compra:number ;
@@ -10,7 +7,7 @@ export class OrdenCompra {
    condicionespago:string;
     valortotal_orden:number;
     estado:number;
-    nomproveedor:string;
+    proveedor:any;
 
 
    constructor(){
@@ -21,7 +18,30 @@ export class OrdenCompra {
     this.condicionespago = "";
     this.valortotal_orden = 0;
     this.estado = 0;
-    this.nomproveedor = "";
+    this.proveedor = {};
         
+    }
+
+    // método para asignar nombre a los estados
+ NombreEstado(estado:number):string {
+
+         let nombreEstado:string = "";
+
+        switch (estado) {
+            case 0:
+                nombreEstado = "Generado";
+                break;
+            case 1:
+                nombreEstado = "Recepcionado";
+                break;
+            case 2:
+                nombreEstado = "Anulado";
+                break;
+            default:
+                nombreEstado = "Otros";
+        }
+
+        return nombreEstado;
+
     }
 }

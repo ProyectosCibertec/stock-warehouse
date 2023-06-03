@@ -16,21 +16,15 @@ public interface OrdenCompraMapper {
 
     OrdenCompraMapper instancia = Mappers.getMapper(OrdenCompraMapper.class);
 
-    @Mapping(target = "nomproveedor", source = "proveedor.razonSocial")
-    OrdenCompraDTO ordenCompraAOrdenCompraDTO(OrdenCompra ordenCompra);
 
+    OrdenCompraDTO ordenCompraAOrdenCompraDTO(OrdenCompra ordenCompra);
 
     OrdenCompra ordenCompraDTOAOrdenCompra(OrdenCompraDTO ordenCompraDTO);
 
+    OrdenCompra ordenCompraCreateDTOAOrdenCompra(OrdenCompraCreateDTO oredenOrdenCompraCreateDTO);
 
-    @Mapping(target = "proveedor.id", source = "ordenOrdenCompraCreateDTO.proveedorId")
-    OrdenCompra ordenCompraCreateDTOAOrdenCompra(OrdenCompraCreateDTO ordenOrdenCompraCreateDTO);
-
-
-    @Mapping(target = "proveedor.id", source = "ordenCompraUpdateDTO.proveedorId")
     OrdenCompra ordenCompraUpdateDTOAOrdenCompra(OrdenCompraUpdateDTO ordenCompraUpdateDTO);
 
-    @Mapping(target = "nomproveedor", source = "proveedor.razonSocial")
     List<OrdenCompraDTO> listaOrdenesCompraAOrdenCompraDTO(List<OrdenCompra> listaOrdenCompras);
 
     OrdenCompraDetalleDTO OrdenComprasADetalleOrdenPorOrdenCompraDTO(OrdenCompra ordenCompra);

@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { OrdenCompra } from '../modelos/OrdenCompra';
 import { HttpClient } from '@angular/common/http';
-import { OrdenCompraCreate } from '../modelos/OrdenCompraCreate';
-import { OrdenCompraUpdate } from '../modelos/OrdenCompraUpdate';
 
 @Injectable({
   providedIn: 'root'
@@ -18,16 +16,16 @@ export class OrdenCompraService {
     
   }
 
-  registrarOrdenCompra(ordenCompraCreate:OrdenCompraCreate) { 
-    return this.httpClient.post<OrdenCompraCreate>(this.url,ordenCompraCreate);
+  registrarOrdenCompra(ordenCompra:OrdenCompra) { 
+    return this.httpClient.post<OrdenCompra>(this.url,ordenCompra);
   }
 
   obtenerOrdenCompra(id:number){
-    return this.httpClient.get<OrdenCompraUpdate>(this.url+"/"+id);
+    return this.httpClient.get<OrdenCompra>(this.url+"/"+id);
   }
 
-  actualizarOrdenCompra(ordenCompraUpdate:OrdenCompraUpdate){
-    return this.httpClient.put<OrdenCompraUpdate>(this.url, ordenCompraUpdate);
+  actualizarOrdenCompra(ordenCompra:OrdenCompra){
+    return this.httpClient.put<OrdenCompra>(this.url, ordenCompra);
   }
 
   deleteOrdenCompra(OrdenCompra:OrdenCompra){
@@ -37,3 +35,4 @@ export class OrdenCompraService {
 
   
 }
+

@@ -1,5 +1,6 @@
 package edu.cibertec.stockwarehouse.producto.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import edu.cibertec.stockwarehouse.categoria.domain.model.Categoria;
 import edu.cibertec.stockwarehouse.detalleordencompra.domain.model.DetalleOrdenCompra;
 import lombok.*;
@@ -40,6 +41,7 @@ public class Producto {
     private int estado;
 
     @OneToMany(mappedBy = "producto", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JsonIgnore
     private Set<DetalleOrdenCompra> detalleOrdenCompras;
 
 

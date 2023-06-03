@@ -9,10 +9,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./listar-orden-compra.component.css']
 })
 export class ListarOrdenCompraComponent implements OnInit {
-
   
   ordenesCompra?:OrdenCompra[];
-  //ordenesCompra: any[] = [];
+  ordencompra = new OrdenCompra();
+
 
   constructor(private ordenCompraService:OrdenCompraService, private router:Router){
     this.ordenesCompra=[];
@@ -24,7 +24,7 @@ export class ListarOrdenCompraComponent implements OnInit {
 
  private getObtenerOrdenesdeCompra(){
     this.ordenCompraService.getObtenerListaDeOrdenesCompra().subscribe(
-      data =>{
+      data =>{ 
         this.ordenesCompra = data;
         console.log(data);
       },
@@ -48,6 +48,7 @@ export class ListarOrdenCompraComponent implements OnInit {
       data=>{this.ordenesCompra=this.ordenesCompra!.filter(p=>p!==ordenCompra)}
     )
   }
+
 }
 
 

@@ -68,8 +68,8 @@ public class OrdenCompraServiceImpl implements OrdenCompraService {
     public OrdenCompraDTO save(OrdenCompraCreateDTO ordenCompraCreateDTO) {
 
         OrdenCompra ordenCompra = OrdenCompraMapper.instancia.ordenCompraCreateDTOAOrdenCompra(ordenCompraCreateDTO);
-        Proveedor proveedor = proveedorRepository.findById(ordenCompraCreateDTO.getProveedorId())
-                .orElseThrow(() -> new NoResultException("No se encontro el proveedor con id: " + ordenCompraCreateDTO.getProveedorId()));
+        Proveedor proveedor = proveedorRepository.findById(ordenCompraCreateDTO.getProveedor().getId())
+                .orElseThrow(() -> new NoResultException("No se encontro el proveedor con id: " + ordenCompraCreateDTO.getProveedor().getId()));
         ordenCompra.setProveedor(proveedor);
 
         return OrdenCompraMapper.instancia.ordenCompraAOrdenCompraDTO(ordenCompraRepository.save(ordenCompra));
