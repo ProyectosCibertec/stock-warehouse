@@ -1,0 +1,728 @@
+[33mcommit 40a031aef38e2a32c73a2f92345adfc09030168f[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/jorge[m[33m, [m[1;32mmaster[m[33m)[m
+Merge: e775111 c3c8d00
+Author: Wilmer Quispe <69778355+quispewilmer@users.noreply.github.com>
+Date:   Tue May 30 01:32:19 2023 -0500
+
+    Merge pull request #26 from ProyectosCibertec/feature/nelson
+    
+    Feature/nelson
+
+[33mcommit c3c8d000dde44857d332d90a489c8982e917a286[m[33m ([m[1;31morigin/feature/nelson[m[33m)[m
+Merge: 60d9e81 e775111
+Author: Nelson <95717851+nelcriollo@users.noreply.github.com>
+Date:   Tue May 30 01:30:49 2023 -0500
+
+    Merge branch 'master' into feature/nelson
+
+[33mcommit 60d9e815214f2678583ce99273859f548ce474fe[m
+Author: ncmendoza <nelzoncriollo@gmail.com>
+Date:   Tue May 30 00:55:55 2023 -0500
+
+    se realizo el CRUD de orden de compra en el front
+
+[33mcommit 8c49af82f61baac82d92f1061e2d929740076e49[m
+Author: Nelson <95717851+nelcriollo@users.noreply.github.com>
+Date:   Tue May 30 00:53:58 2023 -0500
+
+    Delete .gitignore
+
+[33mcommit e775111e30dbcfca6baa00787f771fa25bf668e3[m
+Merge: c1cde4a be244d4
+Author: Wilmer Quispe <69778355+quispewilmer@users.noreply.github.com>
+Date:   Mon May 29 01:04:09 2023 -0500
+
+    Merge pull request #25 from ProyectosCibertec/feature/wilmer
+    
+    Feature/wilmer
+
+[33mcommit be244d4b4920faea3bee9889d8ca0127de9f5eb0[m
+Author: quispewilmer <wilmerquispecode@gmail.com>
+Date:   Mon May 29 01:03:03 2023 -0500
+
+    Add API refinement
+
+[33mcommit 1f2bbfbae478a1240de2e7fa6a086a33f272dc00[m
+Merge: 292f32a c1cde4a
+Author: quispewilmer <wilmerquispecode@gmail.com>
+Date:   Sun May 28 19:40:13 2023 -0500
+
+    Merge branch 'master' into feature/wilmer
+
+[33mcommit c1cde4a1a59ed97287cefeaaffad0788b7272598[m
+Merge: 65453cc 8683daf
+Author: Wilmer Quispe <69778355+quispewilmer@users.noreply.github.com>
+Date:   Sun May 28 19:04:58 2023 -0500
+
+    Merge pull request #24 from ProyectosCibertec/feature/alfredo
+    
+    Se terminó la versión de prueba página Proveedor
+
+[33mcommit 8683dafbdcb8bde6b816a0230fc66f6acfacd819[m
+Author: ASOTON2705 <i202020496@cibertec.edu.pe>
+Date:   Sat May 27 02:33:05 2023 -0500
+
+    Se terminó la versión de prueba página Proveedor
+
+[33mcommit 4ac1cdd6ff02b893d360b231bc5a51e3328548e5[m
+Author: ncmendoza <nelzoncriollo@gmail.com>
+Date:   Fri May 26 23:51:57 2023 -0500
+
+    se bajo los cambios actualizados de la masster
+
+[33mcommit 04e012dd3a69b0d3050c0d973ff3799e475ed736[m
+Merge: 715b79a 65453cc
+Author: ncmendoza <nelzoncriollo@gmail.com>
+Date:   Fri May 26 23:51:27 2023 -0500
+
+    se bajo los cambios actualizados de la masster
+
+[33mcommit 715b79a406126b4f7b15c3c6dfaf0cfdfa74c326[m
+Author: Nelson <95717851+nelcriollo@users.noreply.github.com>
+Date:   Fri May 26 20:57:25 2023 -0500
+
+    Delete README.md
+
+[33mcommit 2e42064b498497751904d32d079c2467ee534b98[m
+Author: Nelson <95717851+nelcriollo@users.noreply.github.com>
+Date:   Fri May 26 20:57:08 2023 -0500
+
+    Delete LICENSE
+
+[33mcommit 292f32a6b8251ce3bc537fbe6bf50409e9dc0f5f[m
+Author: quispewilmer <wilmerquispecode@gmail.com>
+Date:   Fri May 26 18:49:56 2023 -0500
+
+    Refactor some files
+
+[33mcommit 65453cc3f4fdac27ae9c2e5bb094b79ebcbd7b0b[m
+Merge: f30ea9e 325fc40
+Author: Wilmer Quispe <69778355+quispewilmer@users.noreply.github.com>
+Date:   Tue May 23 22:09:36 2023 -0500
+
+    Merge pull request #23 from ProyectosCibertec/feature/alfredo
+    
+    Feature/alfredo
+
+[33mcommit 325fc400ab0e9b4a18557d16b34861c0a13b3a3f[m
+Merge: 5ec5b56 f30ea9e
+Author: ASOTON2705 <129144315+ASOTON2705@users.noreply.github.com>
+Date:   Tue May 23 22:09:06 2023 -0500
+
+    Merge branch 'master' into feature/alfredo
+
+[33mcommit 5ec5b5664a56414cd5c7993d6781f2fc680d0d79[m
+Merge: 0b529ac 812ee21
+Author: ASOTON2705 <i202020496@cibertec.edu.pe>
+Date:   Tue May 23 19:27:24 2023 -0500
+
+    cambios 23/05
+
+[33mcommit f30ea9e936ce3b43e7943c86dafa18f16f274ad6[m
+Merge: 812ee21 c650706
+Author: Wilmer Quispe <69778355+quispewilmer@users.noreply.github.com>
+Date:   Tue May 23 19:26:46 2023 -0500
+
+    Merge pull request #22 from ProyectosCibertec/feature/jorge
+    
+    Feature/jorge
+
+[33mcommit 0b529ac17d2d49a4fd8227ab636eadc62155932f[m
+Author: ASOTON2705 <i202020496@cibertec.edu.pe>
+Date:   Tue May 23 19:05:04 2023 -0500
+
+    Se elabore la estructura del front y se logró conexión exitosa con el back primera prueba version beta
+
+[33mcommit 979f7319ff13acfdb8f530c431ded5152837e47b[m
+Author: ASOTON2705 <i202020496@cibertec.edu.pe>
+Date:   Tue May 23 16:00:37 2023 -0500
+
+    Actualización front
+
+[33mcommit c6507062da7436f1f6765ad35a9214ce526740d6[m[33m ([m[1;31morigin/feature/jorge[m[33m)[m
+Merge: 8bfde8d 3c1003f
+Author: JorgeChavezG <jorge10009@hotmail.com>
+Date:   Tue May 23 00:49:57 2023 -0500
+
+    Merge branch 'feature/jorge' of https://github.com/ProyectosCibertec/stock-warehouse into feature/jorge
+
+[33mcommit 8bfde8df0375436f338d4ee1caaaee7ba0c22a0f[m
+Author: JorgeChavezG <jorge10009@hotmail.com>
+Date:   Sun May 21 22:08:44 2023 -0500
+
+    Jorge
+    
+    Ultimo avance jorge
+
+[33mcommit 812ee2109a122cdc5e184248cac0999989a4c5d1[m
+Merge: d99e0ae 6db93c7
+Author: Wilmer Quispe <69778355+quispewilmer@users.noreply.github.com>
+Date:   Mon May 22 20:29:41 2023 -0500
+
+    Merge pull request #21 from ProyectosCibertec/feature/alfredo
+    
+    estructura de front
+
+[33mcommit 6db93c7d5b909e862769f532dd61614d7490763c[m
+Author: ASOTON2705 <i202020496@cibertec.edu.pe>
+Date:   Mon May 22 17:57:42 2023 -0500
+
+    estructura de front
+
+[33mcommit 3c1003fa98bc506bc73524157f3accf2f5009d92[m
+Merge: 9014bde d99e0ae
+Author: JorgeChavezG <jorge10009@hotmail.com>
+Date:   Sun May 21 22:09:14 2023 -0500
+
+    Merge branch 'master' into feature/jorge
+
+[33mcommit 9014bde04a3a3e7ae3497ac263b65bfcf2e6d794[m
+Author: JorgeChavezG <jorge10009@hotmail.com>
+Date:   Sun May 21 22:08:44 2023 -0500
+
+    Jorge
+    
+    Ultimo avance jorge
+
+[33mcommit d99e0ae46622b925ee75cf019b1508cbb052e3b7[m
+Merge: 98eb2c6 e9b97c1
+Author: Wilmer Quispe <69778355+quispewilmer@users.noreply.github.com>
+Date:   Fri May 19 19:59:44 2023 -0500
+
+    Merge pull request #20 from ProyectosCibertec/feature/jorge
+    
+    Feature/jorge
+
+[33mcommit e9b97c1e2b7ad30b8d3da5cf88981d5e50e26ed0[m
+Author: JorgeChavezG <jorge10009@hotmail.com>
+Date:   Fri May 19 10:08:19 2023 -0500
+
+    ultimos cambios
+
+[33mcommit bd29dda36a37b6b7622789d9612578c7f2ec7df7[m
+Author: JorgeChavezG <jorge10009@hotmail.com>
+Date:   Thu May 18 23:55:15 2023 -0500
+
+    jorge
+    
+    ultimos cambios
+
+[33mcommit ce4c35cefd20a545edc33abd43aa16bd85411b46[m
+Merge: c647b72 98eb2c6
+Author: JorgeChavezG <jorge10009@hotmail.com>
+Date:   Thu May 18 22:40:18 2023 -0500
+
+    Merge branch 'master' into feature/jorge
+    
+    # Conflicts:
+    #       .idea/encodings.xml
+    #       .idea/misc.xml
+    #       backend/src/main/java/edu/cibertec/stockwarehouse/cabecerainventario/application/impl/CabeceraInventarioServiceImp.java
+    #       backend/src/main/java/edu/cibertec/stockwarehouse/cabecerainventario/domain/mapper/CabeceraInventarioMapper.java
+    #       backend/src/main/java/edu/cibertec/stockwarehouse/detalleinventario/domain/model/DetalleInventario.java
+    #       backend/src/main/java/edu/cibertec/stockwarehouse/detalleinventario/infrastructure/out/DetalleInventarioRepository.java
+
+[33mcommit 98eb2c6e1198279e7e2f7903b2100faac39cf5aa[m
+Merge: 4d15b57 4b00852
+Author: Wilmer Quispe <69778355+quispewilmer@users.noreply.github.com>
+Date:   Thu May 18 22:07:34 2023 -0500
+
+    Merge pull request #19 from ProyectosCibertec/feature/alfredo
+    
+    Feature/alfredo
+
+[33mcommit c647b7265ee50d8c1f5f1595ae14bac4dfe86d93[m
+Author: JorgeChavezG <jorge10009@hotmail.com>
+Date:   Thu May 18 21:57:37 2023 -0500
+
+    jorge
+    
+    actualización de detalleInventario
+
+[33mcommit 4b00852ace77cb7ff5478e4774e6eceea7e3ff25[m
+Merge: cedd298 4d15b57
+Author: ASOTON2705 <i202020496@cibertec.edu.pe>
+Date:   Thu May 18 13:17:19 2023 -0500
+
+    nuevo cambio
+
+[33mcommit cedd298e0ffe25a55502cef815a92b63db155e8a[m
+Merge: 4a965b5 46cdbdb
+Author: ASOTON2705 <i202020496@cibertec.edu.pe>
+Date:   Thu May 18 12:57:58 2023 -0500
+
+    último cambio
+
+[33mcommit 4a965b5b077ea843a26b815d51590ecfcde08090[m
+Author: ASOTON2705 <i202020496@cibertec.edu.pe>
+Date:   Thu May 18 12:46:59 2023 -0500
+
+    actualización de campo fecha de cese y de entidad detalleinventario
+
+[33mcommit 4d15b5747837fcfe314c586bd9185e344b884992[m
+Author: ASOTON2705 <129144315+ASOTON2705@users.noreply.github.com>
+Date:   Tue May 16 23:48:42 2023 -0500
+
+    Delete StockWarehouse.iml
+
+[33mcommit bfe7abd11f1b5cfa5ff093183dbffd9b682ee765[m
+Author: ASOTON2705 <129144315+ASOTON2705@users.noreply.github.com>
+Date:   Tue May 16 23:48:13 2023 -0500
+
+    Delete .idea directory
+
+[33mcommit 46cdbdb0329f4e143d08b74c2e98cb3804c6822e[m
+Author: ASOTON2705 <129144315+ASOTON2705@users.noreply.github.com>
+Date:   Tue May 16 23:47:00 2023 -0500
+
+    Delete .idea directory
+
+[33mcommit 3a77a6de657dc67596e33e3dc7e6d8fc76292046[m
+Author: ASOTON2705 <i202020496@cibertec.edu.pe>
+Date:   Tue May 16 23:45:38 2023 -0500
+
+    cambios
+
+[33mcommit 5aad5495b8e95a06b1687c489ba79cb260fd7f15[m
+Merge: 9c0027c 9556e01
+Author: ASOTON2705 <i202020496@cibertec.edu.pe>
+Date:   Tue May 16 23:38:53 2023 -0500
+
+    cambio
+
+[33mcommit 9c0027c29e24fc906bae11ff6bb930c5312e0335[m
+Author: ASOTON2705 <i202020496@cibertec.edu.pe>
+Date:   Tue May 16 23:33:53 2023 -0500
+
+    cambios
+
+[33mcommit 356f49d8afeb7792f83638c511423b66a9e9a53d[m
+Author: ASOTON2705 <i202020496@cibertec.edu.pe>
+Date:   Tue May 16 23:29:34 2023 -0500
+
+    cambio2
+
+[33mcommit 9556e01dd0f58d0c7600fca1b2703bf0daf5af19[m
+Author: ASOTON2705 <129144315+ASOTON2705@users.noreply.github.com>
+Date:   Tue May 16 23:07:58 2023 -0500
+
+    Delete StockWarehouse.iml
+
+[33mcommit 030e0313857253753bf2bdd1ab1297bdf56015a3[m
+Author: ASOTON2705 <129144315+ASOTON2705@users.noreply.github.com>
+Date:   Tue May 16 23:07:29 2023 -0500
+
+    Delete .idea directory
+
+[33mcommit b4b74ec2a57ff4221298fba1765dc9992649bad2[m
+Merge: a180173 d6b355e
+Author: ASOTON2705 <i202020496@cibertec.edu.pe>
+Date:   Tue May 16 23:03:02 2023 -0500
+
+    cambio
+
+[33mcommit a180173db340827da4a50bafd8439c4c467e61a1[m
+Author: ASOTON2705 <i202020496@cibertec.edu.pe>
+Date:   Tue May 16 22:59:04 2023 -0500
+
+    ultimo cambio
+
+[33mcommit 14b2423061796045b2e27cc7b738f33ff336f169[m
+Author: Nelson <95717851+nelcriollo@users.noreply.github.com>
+Date:   Tue May 16 19:31:51 2023 -0500
+
+    Delete StockWarehouse.iml
+    
+    se elimina el archivo StockWarehouse.iml
+
+[33mcommit f3d551ef2e1c396744cf5ca0ac5c7263c5c8ced5[m
+Author: Nelson <95717851+nelcriollo@users.noreply.github.com>
+Date:   Tue May 16 19:31:17 2023 -0500
+
+    Delete .idea directory
+    
+    se elimina la carpeta. idea
+
+[33mcommit d6b355e63c3fe8036d754eb37ac3ffda29484472[m
+Merge: 6598195 21fce16
+Author: Wilmer Quispe <69778355+quispewilmer@users.noreply.github.com>
+Date:   Tue May 16 18:57:16 2023 -0500
+
+    Merge pull request #18 from ProyectosCibertec/feature/nelson
+    
+    se completo el CRUD de Detalle de Orden de Compra y Orden de Compra
+
+[33mcommit 21fce163cfd71ff393750fbef08c15620281f8ad[m
+Author: ncmendoza <nelzoncriollo@gmail.com>
+Date:   Sat May 13 22:53:33 2023 -0500
+
+    se completo el CRUD de Detalle de Orden de Compra y Orden de Compra
+
+[33mcommit 4c2b5e0625bee542a74babefdbb3260662e8dcc7[m
+Merge: cd62ef7 44931ec
+Author: JorgeChavezG <jorge10009@hotmail.com>
+Date:   Fri May 12 19:44:28 2023 -0500
+
+    Merge remote-tracking branch 'origin/feature/jorge' into feature/jorge
+
+[33mcommit 659819593f7910c7ce2e5d53f355f600be16b2b3[m
+Merge: a4e2db7 44931ec
+Author: Wilmer Quispe <69778355+quispewilmer@users.noreply.github.com>
+Date:   Thu May 11 01:38:55 2023 -0500
+
+    Merge pull request #17 from ProyectosCibertec/feature/jorge
+    
+    Jorge
+
+[33mcommit 44931ecbabe8423fc6a9d02326c8f1b7421d5bf4[m
+Merge: 81f923e a4e2db7
+Author: quispewilmer <wilmerquispecode@gmail.com>
+Date:   Thu May 11 01:38:28 2023 -0500
+
+    Merge branch 'master' into feature/jorge
+    
+    # Conflicts:
+    #       backend/src/main/java/edu/cibertec/stockwarehouse/cabecerainventario/domain/dto/CabeceraInventarioCreateDTO.java
+    #       backend/src/main/java/edu/cibertec/stockwarehouse/cabecerainventario/domain/dto/CabeceraInventarioDTO.java
+    #       backend/src/main/java/edu/cibertec/stockwarehouse/cabecerainventario/domain/dto/CabeceraInventarioUpdateDTO.java
+    #       backend/src/main/java/edu/cibertec/stockwarehouse/cabecerainventario/domain/mapper/CabeceraInventarioMapper.java
+
+[33mcommit cd62ef7f477129029ff46591045cfa29a318d49f[m
+Merge: 81f923e a4e2db7
+Author: JorgeChavezG <jorge10009@hotmail.com>
+Date:   Wed May 10 19:02:14 2023 -0500
+
+    Merge branch 'master' into feature/jorge
+
+[33mcommit 81f923e572916e86b553e00ab5955884d2211297[m
+Author: JorgeChavezG <jorge10009@hotmail.com>
+Date:   Wed May 10 17:09:21 2023 -0500
+
+    Jorge
+    
+    avance 2
+
+[33mcommit a4e2db7bed476ab3c2889f478fd931f559e7c9d7[m
+Merge: 6197f9a a9a2d7b
+Author: Wilmer Quispe <69778355+quispewilmer@users.noreply.github.com>
+Date:   Mon May 8 23:15:09 2023 -0500
+
+    Merge pull request #15 from ProyectosCibertec/feature/enzo
+    
+    Feature/enzo
+
+[33mcommit a9a2d7b4a47783a31742ddad1fbcf092bd2befbd[m[33m ([m[1;31morigin/feature/enzo[m[33m)[m
+Merge: fd8fb5e 6197f9a
+Author: quispewilmer <wilmerquispecode@gmail.com>
+Date:   Mon May 8 23:14:43 2023 -0500
+
+    Merge branch 'master' into feature/enzo
+
+[33mcommit 6197f9a82936912c6095715ae787f5304a84f7be[m
+Merge: 9c672cd 93edd74
+Author: Wilmer Quispe <69778355+quispewilmer@users.noreply.github.com>
+Date:   Mon May 8 23:06:29 2023 -0500
+
+    Merge pull request #16 from ProyectosCibertec/feature/wilmer
+    
+    Feature/wilmer
+
+[33mcommit 93edd7458fa3a618fa803c6a621feec099c15b93[m
+Merge: 154dcc4 9c672cd
+Author: quispewilmer <wilmerquispecode@gmail.com>
+Date:   Mon May 8 23:00:53 2023 -0500
+
+    Merge branch 'master' into feature/wilmer
+
+[33mcommit fd8fb5eaddcb86d01bc3a18f0414a2d967f895f6[m
+Author: EnzoRobles <enzorobles2000@gmail.com>
+Date:   Mon May 8 21:58:15 2023 -0500
+
+    Add Empleado in Usuario
+
+[33mcommit 154dcc43af5db9c7785b2c89227400b56c4da75f[m
+Author: quispewilmer <wilmerquispecode@gmail.com>
+Date:   Mon May 8 21:25:49 2023 -0500
+
+    Add Angular project
+
+[33mcommit fb94e9602bf109e50238a174046b3dca42e9a022[m
+Author: quispewilmer <wilmerquispecode@gmail.com>
+Date:   Mon May 8 21:14:17 2023 -0500
+
+    Add backend and frontend folders
+
+[33mcommit 9c672cd4dbe385f9e14e1e7fa478e61528336381[m
+Merge: 770dc36 74ebb33
+Author: Wilmer Quispe <69778355+quispewilmer@users.noreply.github.com>
+Date:   Mon May 8 19:49:47 2023 -0500
+
+    Merge pull request #14 from ProyectosCibertec/feature/alfredo
+    
+    Se cambio el nombre de la tb_empleado
+
+[33mcommit 9c05bda5bc2992aa83f54aab3a4880788e74da3b[m
+Merge: 5c74a13 8ddead3
+Author: EnzoRobles <enzorobles2000@gmail.com>
+Date:   Mon May 8 19:11:42 2023 -0500
+
+    Merge remote-tracking branch 'origin/feature/enzo' into feature/enzo
+
+[33mcommit 5c74a13a406700c399d140420b2aaf318fb6919d[m
+Merge: 32351dc de1a9f7
+Author: EnzoRobles <enzorobles2000@gmail.com>
+Date:   Mon May 8 19:05:54 2023 -0500
+
+    Merge branch 'master' into feature/enzo
+
+[33mcommit 770dc360cd20371739ba4ceaa923c48a5a830326[m
+Merge: 019ca60 8ddead3
+Author: Wilmer Quispe <69778355+quispewilmer@users.noreply.github.com>
+Date:   Mon May 8 18:54:47 2023 -0500
+
+    Merge pull request #13 from ProyectosCibertec/feature/enzo
+    
+    Add Usuario y Tipo Usuario - back CRUD
+
+[33mcommit 8ddead336949c141b73e5096b2a16f38cf4dff46[m
+Merge: 32351dc 019ca60
+Author: EnzoRobles <118784864+EnzoRobles@users.noreply.github.com>
+Date:   Mon May 8 18:52:50 2023 -0500
+
+    Merge branch 'master' into feature/enzo
+
+[33mcommit 74ebb33838bf4463f89f43b5f1f4fd02e8062b9e[m
+Author: ASOTON2705 <i202020496@cibertec.edu.pe>
+Date:   Mon May 8 18:00:01 2023 -0500
+
+    Se cambio el nombre de la tb_empleado
+
+[33mcommit 019ca602b18f30bc9f3a1274c072113fab84b347[m
+Merge: 3192005 004c29c
+Author: Wilmer Quispe <69778355+quispewilmer@users.noreply.github.com>
+Date:   Mon May 8 00:02:48 2023 -0500
+
+    Merge pull request #12 from ProyectosCibertec/feature/rayda
+    
+    Final de Producto y Categoria
+
+[33mcommit 32351dcd3dfcdf2027f1ea38f3f7b9914923d536[m
+Author: EnzoRobles <enzorobles2000@gmail.com>
+Date:   Sun May 7 22:43:21 2023 -0500
+
+    Add Usuario y Tipo Usuario - back CRUD
+
+[33mcommit 004c29c5faf7673f954d9dc69fcf8302cd999465[m[33m ([m[1;31morigin/feature/rayda[m[33m)[m
+Author: rayda2002 <110987286+rayda2002@users.noreply.github.com>
+Date:   Sun May 7 22:02:21 2023 -0500
+
+    Final de Producto y Categoria
+
+[33mcommit 31920053fce16ef9e34728e8ef4cdb25935901d3[m
+Merge: f1d7f96 fca0239
+Author: Wilmer Quispe <69778355+quispewilmer@users.noreply.github.com>
+Date:   Sun May 7 21:36:31 2023 -0500
+
+    Merge pull request #11 from ProyectosCibertec/feature/nelson
+    
+    Feature/nelson
+
+[33mcommit fca0239be5bb11242b2aaea0ff244c72c9456fe9[m
+Author: ncmendoza <nelzoncriollo@gmail.com>
+Date:   Sun May 7 21:12:15 2023 -0500
+
+    se completo el mantenimiento  de orden de compra, ya se puede registrar y actualizar en tablas relacionadas, se uso anotaciones de la libreria mapstruct.org
+
+[33mcommit f1d7f96dec492ad8634c55aee641b087daa13336[m
+Merge: 5c693d8 7afddd1
+Author: Wilmer Quispe <69778355+quispewilmer@users.noreply.github.com>
+Date:   Sat May 6 00:32:02 2023 -0500
+
+    Merge pull request #10 from ProyectosCibertec/feature/alfredo
+    
+    Primeras APIS y DTOS proveedor
+
+[33mcommit 7afddd148a9a9207ce6ecb116245c9f75c21b811[m
+Merge: f42eab2 5c693d8
+Author: Wilmer Quispe <69778355+quispewilmer@users.noreply.github.com>
+Date:   Sat May 6 00:31:56 2023 -0500
+
+    Merge branch 'master' into feature/alfredo
+
+[33mcommit b74b6dab18ad09e6c920b37498642ff372b3a215[m
+Author: ncmendoza <nelzoncriollo@gmail.com>
+Date:   Fri May 5 01:58:58 2023 -0500
+
+    se agrega el mantenimiento de Detalle de orden de compra
+
+[33mcommit f42eab2c042d5e34760c43f9b2b54af4aaa56067[m
+Author: ASOTON2705 <i202020496@cibertec.edu.pe>
+Date:   Fri May 5 01:45:44 2023 -0500
+
+    Primeras APIS y DTOS proveedor
+
+[33mcommit 5c693d8e1d1260eeed41703cdb5bf48a4cd5e165[m
+Merge: ff14ae8 fa620e1
+Author: Wilmer Quispe <69778355+quispewilmer@users.noreply.github.com>
+Date:   Fri May 5 00:45:13 2023 -0500
+
+    Merge pull request #9 from ProyectosCibertec/feature/jorge
+    
+    jorge
+
+[33mcommit fa620e1fa8ee52faac402e21074d7ee13fd6b4e1[m
+Author: JorgeChavezG <jorge10009@hotmail.com>
+Date:   Fri May 5 00:44:39 2023 -0500
+
+    jorge
+    
+    plugin
+
+[33mcommit ff14ae84ba7afd8cdfd1c1874534089817fc7573[m
+Merge: f890059 444d2c6
+Author: Wilmer Quispe <69778355+quispewilmer@users.noreply.github.com>
+Date:   Fri May 5 00:23:42 2023 -0500
+
+    Merge pull request #7 from ProyectosCibertec/feature/jorge
+    
+    Feature/jorge
+
+[33mcommit 444d2c6d8a2118a9aa99dca2b040ae99d69a863f[m
+Merge: b83cf28 f890059
+Author: JorgeChavezG <jorge10009@hotmail.com>
+Date:   Fri May 5 00:15:26 2023 -0500
+
+    Merge branch 'master' into feature/jorge
+    
+    # Conflicts:
+    #       src/main/resources/application.properties
+
+[33mcommit f890059d3716a9ac4035dafa5dacb3176d5c609d[m
+Merge: 4327e6b b976afd
+Author: Wilmer Quispe <69778355+quispewilmer@users.noreply.github.com>
+Date:   Fri May 5 00:10:51 2023 -0500
+
+    Merge pull request #8 from ProyectosCibertec/feature/nelson
+    
+    se agrega el mantenimiento de orden de compra
+
+[33mcommit b976afd1458af6f58834fd9149c0ec94155b6866[m
+Author: ncmendoza <nelzoncriollo@gmail.com>
+Date:   Fri May 5 00:07:31 2023 -0500
+
+    se agrega el mantenimiento de orden de compra
+
+[33mcommit b83cf282df763fbf1f8b40770a64d44b3834ec29[m
+Author: JorgeChavezG <jorge10009@hotmail.com>
+Date:   Thu May 4 23:57:17 2023 -0500
+
+    jorge
+    
+    ultimos cambios
+
+[33mcommit 4327e6b90829ba8fb6898caf27c4d76e2afdb96b[m
+Merge: 2c0b474 306e600
+Author: Wilmer Quispe <69778355+quispewilmer@users.noreply.github.com>
+Date:   Tue May 2 23:15:18 2023 -0500
+
+    Merge pull request #6 from ProyectosCibertec/feature/wilmer
+    
+    Feature/wilmer
+
+[33mcommit 7b0b7a963d406a5638238ca1c0ad7078b8fafb0b[m
+Author: JorgeChavezG <jorge10009@hotmail.com>
+Date:   Tue May 2 23:04:00 2023 -0500
+
+    jorge
+    
+    Implementación de entidades y paquetes
+
+[33mcommit 306e60007cbf89180168aef5459b51961041cf09[m
+Merge: 77b02f7 67ecd5b
+Author: quispewilmer <wilmerquispecode@gmail.com>
+Date:   Tue May 2 23:00:17 2023 -0500
+
+    Merge remote-tracking branch 'origin/feature/wilmer' into feature/wilmer
+
+[33mcommit 77b02f7abef9d6caf83e544108ac60bca817c1ed[m
+Author: quispewilmer <wilmerquispecode@gmail.com>
+Date:   Tue May 2 22:37:18 2023 -0500
+
+    Add API refinement
+
+[33mcommit 2c0b474510bfe979ecb6b07a7d08c413ec96bfdc[m
+Merge: d9b7bd6 67ecd5b
+Author: Wilmer Quispe <69778355+quispewilmer@users.noreply.github.com>
+Date:   Tue May 2 20:25:43 2023 -0500
+
+    Merge pull request #4 from ProyectosCibertec/feature/wilmer
+    
+    Feature/wilmer
+
+[33mcommit 67ecd5babb205f82a44de33b93e9f6d3b0dab0b5[m
+Merge: 3db2d31 d9b7bd6
+Author: Wilmer Quispe <69778355+quispewilmer@users.noreply.github.com>
+Date:   Tue May 2 20:25:09 2023 -0500
+
+    Merge pull request #3 from ProyectosCibertec/master
+    
+    Merge pull request #2 from ProyectosCibertec/feature/wilmer
+
+[33mcommit 3db2d31f6ceeb59c8f52473e088756fd980b60b3[m
+Author: quispewilmer <wilmerquispecode@gmail.com>
+Date:   Tue May 2 20:20:54 2023 -0500
+
+    Ignore .properties files
+
+[33mcommit 2972aef2e8e2ff0cf80c30bb152282882a981de1[m
+Author: quispewilmer <wilmerquispecode@gmail.com>
+Date:   Tue May 2 20:16:01 2023 -0500
+
+    Edit application.properties
+
+[33mcommit d9b7bd618a6a94aa33453d989e05c483773283a2[m
+Merge: de1a9f7 68e5ef2
+Author: Wilmer Quispe <69778355+quispewilmer@users.noreply.github.com>
+Date:   Tue May 2 20:14:53 2023 -0500
+
+    Merge pull request #2 from ProyectosCibertec/feature/wilmer
+    
+    Feature/wilmer
+
+[33mcommit 68e5ef205f0490b94d321dab833c9a880d12a15b[m
+Author: quispewilmer <wilmerquispecode@gmail.com>
+Date:   Tue May 2 20:11:22 2023 -0500
+
+    Add springfox and mapstruct dependencies
+
+[33mcommit d20322ed1d2efe4d0bc61373952c1d1fc71b9bb0[m
+Author: quispewilmer <wilmerquispecode@gmail.com>
+Date:   Tue May 2 20:07:23 2023 -0500
+
+    Add cargo and empleado entities, repositories and services
+
+[33mcommit de1a9f7738f2316308741d1e6b81cd158cdc8321[m
+Merge: a7b485e 9d44df6
+Author: Wilmer Quispe <69778355+quispewilmer@users.noreply.github.com>
+Date:   Mon May 1 23:31:04 2023 -0500
+
+    Merge pull request #1 from ProyectosCibertec/feature/alfredo
+    
+    se creo entidad y repositorio producto
+
+[33mcommit 9d44df6adfa0378d0fff2095cac1b3b25704f573[m
+Author: ASOTON2705 <i202020496@cibertec.edu.pe>
+Date:   Mon May 1 23:16:22 2023 -0500
+
+    se creo entidad y repositorio producto
+
+[33mcommit a7b485e6ed4c3f0c48c9d900166b479c7d53d4d8[m
+Author: ncmendoza <nelzoncriollo@gmail.com>
+Date:   Mon May 1 15:01:02 2023 -0500
+
+    se agrega el proyecto
+
+[33mcommit 85faab0b1ec93f30e97b6859b4b5f555aef28cb7[m
+Author: Wilmer Quispe <69778355+quispewilmer@users.noreply.github.com>
+Date:   Sat Apr 15 00:20:47 2023 -0500
+
+    Initial commit
