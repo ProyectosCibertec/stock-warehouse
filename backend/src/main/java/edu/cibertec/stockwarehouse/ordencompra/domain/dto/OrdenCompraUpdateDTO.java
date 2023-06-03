@@ -1,5 +1,6 @@
 package edu.cibertec.stockwarehouse.ordencompra.domain.dto;
 
+import edu.cibertec.stockwarehouse.proveedor.domain.model.Proveedor;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -33,5 +34,5 @@ public class OrdenCompraUpdateDTO {
 
     private int estado;
 
-    private long proveedorId;
+    private Proveedor proveedor;
 }

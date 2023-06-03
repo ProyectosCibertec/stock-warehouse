@@ -1,5 +1,6 @@
 package edu.cibertec.stockwarehouse.ordencompra.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import edu.cibertec.stockwarehouse.detalleordencompra.domain.model.DetalleOrdenCompra;
 import edu.cibertec.stockwarehouse.proveedor.domain.model.Proveedor;
 import lombok.*;
@@ -46,31 +47,15 @@ public class OrdenCompra {
     private int estado;
 
     //relacionar ordencompra y proveedor
-    @ManyToOne( fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_proveedor")
     private Proveedor proveedor;
 
 
     //relacionar ordencompra y detalleordencompra
+
     @OneToMany(mappedBy = "ordencompra", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JsonIgnore
     private Set<DetalleOrdenCompra> detallesOrdenCompra;
-
-
-    // método para asignar nombre a los estados
-    public String NombreEstado() {
-        String nombreEstado = null;
-        switch (estado) {
-            case 0:
-                nombreEstado = "Enviado al proveedor";
-                break;
-            case 1:
-                nombreEstado = "Recibido";
-                break;
-            default:
-                nombreEstado = "Cancelado";
-        }
-        return nombreEstado;
-    }
-
 
 }

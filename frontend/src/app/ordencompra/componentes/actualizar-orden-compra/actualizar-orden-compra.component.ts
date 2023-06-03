@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdenCompraService } from '../../servicios/orden-compra.service';
 import { Router } from '@angular/router';
+import { ProveedorService } from 'src/app/proveedor/servicios/proveedor.service';
+import { Proveedor } from 'src/app/proveedor/modelos/Proveedor';
 import { OrdenCompra } from '../../modelos/OrdenCompra';
-import { OrdenCompraUpdate } from '../../modelos/OrdenCompraUpdate';
 
 @Component({
   selector: 'app-actualizar-orden-compra',
@@ -11,27 +12,40 @@ import { OrdenCompraUpdate } from '../../modelos/OrdenCompraUpdate';
 })
 export class ActualizarOrdenCompraComponent implements OnInit {
 
-  ordenCompraUpdate = new OrdenCompraUpdate();
-
-
-  constructor(private router: Router, private ordencompraService: OrdenCompraService){}
+   proveedores?:Proveedor[];
+   ordenCompra = new OrdenCompra();
+   
+  constructor(private router: Router, private ordencompraService: OrdenCompraService,private proveedorService:ProveedorService){}
   ngOnInit(): void {
+    this.getProveedores();
     this.editar();
   }
 
   editar(){
     let id = JSON.parse(localStorage.getItem('id') as string);
     this.ordencompraService.obtenerOrdenCompra(id).subscribe(
-      data=>{this.ordenCompraUpdate = data;
+      data=>{this.ordenCompra = data;
       });
   }
 
-  actualizarOrdenCompra(ordenCompraUpdate:OrdenCompraUpdate){
-    this.ordencompraService.actualizarOrdenCompra(ordenCompraUpdate).subscribe(dato=>{
-      this.ordenCompraUpdate = dato;
+  actualizarOrdenCompra(ordenCompra:OrdenCompra){
+    this.ordencompraService.actualizarOrdenCompra(ordenCompra).subscribe(dato=>{
+      this.ordenCompra = dato;
       this.router.navigate(['ordenesCompra']);
     });
 
 }
+
+getProveedores(){
+this.proveedorService.getProveedores().subscribe(
+  data=>{
+    this.proveedores=data;
+    console.log(data);
+  },
+  error=>{
+    console.log(error);
+  }
+
+);}
 
 }

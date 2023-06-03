@@ -1,7 +1,7 @@
 package edu.cibertec.stockwarehouse.detalleordencompra.domain.model;
 
-import edu.cibertec.stockwarehouse.producto.domain.model.Producto;
 import edu.cibertec.stockwarehouse.ordencompra.domain.model.OrdenCompra;
+import edu.cibertec.stockwarehouse.producto.domain.model.Producto;
 import lombok.*;
 
 import javax.persistence.*;
@@ -11,8 +11,6 @@ import java.math.BigDecimal;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Table(name = "tb_detalleordencompra")
 public class DetalleOrdenCompra {
 
@@ -34,36 +32,15 @@ public class DetalleOrdenCompra {
     private int estado;
 
     //relacion detalleordencompra y  producto
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_orden_compra")
     private OrdenCompra ordencompra;
 
 
     //relacion detalleordencompra y  ordenCompra
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_producto")
     private Producto producto;
 
 
-    //método para cálcular el costo del tetalle
-    public BigDecimal calcularCostoDetalleOrden(BigDecimal precio_unitario, BigDecimal costo_detalleorden) {
-        BigDecimal costo = precio_unitario.multiply(costo_detalleorden);
-        return costo;
-    }
-
-    //método para asignar nombre a los estados
-    public String NombreEstado() {
-        String nombreEstado = null;
-        switch (estado) {
-            case 0:
-                nombreEstado = "Activo";
-                break;
-            case 1:
-                nombreEstado = "Anulado";
-                break;
-            default:
-                nombreEstado = "";
-        }
-        return nombreEstado;
-    }
 }

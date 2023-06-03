@@ -1,11 +1,9 @@
 package edu.cibertec.stockwarehouse.tipousuario.domain.model;
 
-import edu.cibertec.stockwarehouse.usuario.domain.model.Usuario;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Table(name = "tb_tipo_usuario")
