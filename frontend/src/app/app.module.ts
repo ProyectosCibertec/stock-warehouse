@@ -11,6 +11,9 @@ import { ListarOrdenCompraComponent } from './ordencompra/componentes/listar-ord
 import { RegistrarOrdenCompraComponent } from './ordencompra/componentes/registrar-orden-compra/registrar-orden-compra.component';
 import { ActualizarOrdenCompraComponent } from './ordencompra/componentes/actualizar-orden-compra/actualizar-orden-compra.component';
 import {MaterialModule} from './app.material.module';
+import { ActualizarCabeceraInventarioComponent } from './cabecerainventario/componentes/actualizar-cabecera-inventario/actualizar-cabecera-inventario.component';
+import { RegistrarCabeceraInventarioComponent } from './cabecerainventario/componentes/registrar-cabecera-inventario/registrar-cabecera-inventario.component';
+import { ListarCabeceraInventarioComponent } from './cabecerainventario/componentes/listar-cabecera-inventario/listar-cabecera-inventario.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,9 @@ import {MaterialModule} from './app.material.module';
     ListarOrdenCompraComponent,
     RegistrarOrdenCompraComponent,
     ActualizarOrdenCompraComponent,
+    ActualizarCabeceraInventarioComponent,
+    RegistrarCabeceraInventarioComponent,
+    ListarCabeceraInventarioComponent,
     RegistrarProveedorComponent,
     ActualizarProveedorComponent
   ],
