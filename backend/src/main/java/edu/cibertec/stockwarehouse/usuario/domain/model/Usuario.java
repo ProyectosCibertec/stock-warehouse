@@ -4,7 +4,6 @@ import edu.cibertec.stockwarehouse.empleado.domain.model.Empleado;
 import edu.cibertec.stockwarehouse.tipousuario.domain.model.TipoUsuario;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 

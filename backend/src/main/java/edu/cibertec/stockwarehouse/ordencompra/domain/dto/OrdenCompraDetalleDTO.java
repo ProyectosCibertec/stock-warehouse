@@ -38,5 +38,5 @@ public class OrdenCompraDetalleDTO {
 
     private String nomproveedor;
 
-   private List<DetalleOrdenCompraDTO> listaDetallesDTO =  new ArrayList<>();
+    private List<DetalleOrdenCompraDTO> listaDetallesDTO = new ArrayList<>();
 }

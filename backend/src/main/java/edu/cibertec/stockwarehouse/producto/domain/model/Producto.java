@@ -39,7 +39,7 @@ public class Producto {
     @Column(name = "estado")
     private int estado;
 
-    @OneToMany(mappedBy = "producto", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "producto", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Set<DetalleOrdenCompra> detalleOrdenCompras;
 
 

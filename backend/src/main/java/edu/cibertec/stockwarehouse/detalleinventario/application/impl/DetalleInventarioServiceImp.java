@@ -19,6 +19,7 @@ public class DetalleInventarioServiceImp implements DetalleInventarioService {
 
     @Autowired
     private DetalleInventarioRepository detalleInventarioRepository;
+
     @Override
     public List<DetalleInventarioDTO> findAll() {
         return DetalleInventarioMapper.instancia.listaDetalleInventarioADetalleInventarioDTO(detalleInventarioRepository.findAll());
@@ -26,10 +27,10 @@ public class DetalleInventarioServiceImp implements DetalleInventarioService {
 
     @Override
     public DetalleInventarioDTO findByID(int id) {
-         Optional<DetalleInventario> detalleInventarioOptional = detalleInventarioRepository.findById(id);
-        if(detalleInventarioOptional.isPresent()){
+        Optional<DetalleInventario> detalleInventarioOptional = detalleInventarioRepository.findById(id);
+        if (detalleInventarioOptional.isPresent()) {
             return DetalleInventarioMapper.instancia.detalleInvantarioDetalleInventarioDTO(detalleInventarioOptional.get());
-        } else{
+        } else {
             throw new NoResultException("No se encontro el detalle con id: " + id);
         }
     }
@@ -55,10 +56,10 @@ public class DetalleInventarioServiceImp implements DetalleInventarioService {
     public void delete(int id) {
         Optional<DetalleInventario> detalleInventarioOptional = detalleInventarioRepository.findById(id);
 
-        if (detalleInventarioOptional.isPresent()){
+        if (detalleInventarioOptional.isPresent()) {
             detalleInventarioRepository.delete(detalleInventarioOptional.get());
-        }else {
-            throw new NoResultException("No se encontro el Detalle de inventario con id: "+ id);
+        } else {
+            throw new NoResultException("No se encontro el Detalle de inventario con id: " + id);
         }
 
     }

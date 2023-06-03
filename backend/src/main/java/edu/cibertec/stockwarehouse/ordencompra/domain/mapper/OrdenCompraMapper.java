@@ -1,8 +1,8 @@
 package edu.cibertec.stockwarehouse.ordencompra.domain.mapper;
 
-import edu.cibertec.stockwarehouse.ordencompra.domain.dto.OrdenCompraDetalleDTO;
 import edu.cibertec.stockwarehouse.ordencompra.domain.dto.OrdenCompraCreateDTO;
 import edu.cibertec.stockwarehouse.ordencompra.domain.dto.OrdenCompraDTO;
+import edu.cibertec.stockwarehouse.ordencompra.domain.dto.OrdenCompraDetalleDTO;
 import edu.cibertec.stockwarehouse.ordencompra.domain.dto.OrdenCompraUpdateDTO;
 import edu.cibertec.stockwarehouse.ordencompra.domain.model.OrdenCompra;
 import org.mapstruct.Mapper;

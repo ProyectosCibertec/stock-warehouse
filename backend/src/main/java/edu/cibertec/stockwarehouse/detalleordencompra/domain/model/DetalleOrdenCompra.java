@@ -1,7 +1,7 @@
 package edu.cibertec.stockwarehouse.detalleordencompra.domain.model;
 
-import edu.cibertec.stockwarehouse.producto.domain.model.Producto;
 import edu.cibertec.stockwarehouse.ordencompra.domain.model.OrdenCompra;
+import edu.cibertec.stockwarehouse.producto.domain.model.Producto;
 import lombok.*;
 
 import javax.persistence.*;

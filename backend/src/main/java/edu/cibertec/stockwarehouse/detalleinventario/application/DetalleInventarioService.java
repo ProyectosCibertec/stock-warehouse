@@ -4,14 +4,13 @@ import edu.cibertec.stockwarehouse.detalleinventario.domain.dto.DetalleInventari
 import edu.cibertec.stockwarehouse.detalleinventario.domain.dto.DetalleInventarioDTO;
 import edu.cibertec.stockwarehouse.detalleinventario.domain.dto.DetalleInventarioUpdateDTO;
 
-
 import java.util.List;
 
 public interface DetalleInventarioService {
 
     List<DetalleInventarioDTO> findAll();
 
-    DetalleInventarioDTO findByID (int id);
+    DetalleInventarioDTO findByID(int id);
 
     DetalleInventarioDTO save(DetalleInventarioCreateDTO detalleInventarioCreateDTO);
 

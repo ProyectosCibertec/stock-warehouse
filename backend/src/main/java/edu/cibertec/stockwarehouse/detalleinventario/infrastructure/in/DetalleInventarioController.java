@@ -30,7 +30,7 @@ public class DetalleInventarioController {
 
     @PostMapping("/")
     public ResponseEntity<DetalleInventarioDTO> registrarDetalleInventario(@RequestBody DetalleInventarioCreateDTO
-                                                                                     detalleInventarioCreateDTO) {
+                                                                                   detalleInventarioCreateDTO) {
         return new ResponseEntity<>(detalleInventarioService.save(detalleInventarioCreateDTO), HttpStatus.CREATED);
     }
 
