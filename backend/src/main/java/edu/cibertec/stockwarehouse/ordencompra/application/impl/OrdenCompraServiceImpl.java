@@ -3,9 +3,9 @@ package edu.cibertec.stockwarehouse.ordencompra.application.impl;
 import edu.cibertec.stockwarehouse.detalleordencompra.domain.mapper.DetalleOrdenCompraMapper;
 import edu.cibertec.stockwarehouse.detalleordencompra.infrastructure.out.DetalleOrdenCompraRepository;
 import edu.cibertec.stockwarehouse.ordencompra.application.OrdenCompraService;
-import edu.cibertec.stockwarehouse.ordencompra.domain.dto.OrdenCompraDetalleDTO;
 import edu.cibertec.stockwarehouse.ordencompra.domain.dto.OrdenCompraCreateDTO;
 import edu.cibertec.stockwarehouse.ordencompra.domain.dto.OrdenCompraDTO;
+import edu.cibertec.stockwarehouse.ordencompra.domain.dto.OrdenCompraDetalleDTO;
 import edu.cibertec.stockwarehouse.ordencompra.domain.dto.OrdenCompraUpdateDTO;
 import edu.cibertec.stockwarehouse.ordencompra.domain.mapper.OrdenCompraMapper;
 import edu.cibertec.stockwarehouse.ordencompra.domain.model.OrdenCompra;
@@ -68,8 +68,8 @@ public class OrdenCompraServiceImpl implements OrdenCompraService {
     public OrdenCompraDTO save(OrdenCompraCreateDTO ordenCompraCreateDTO) {
 
         OrdenCompra ordenCompra = OrdenCompraMapper.instancia.ordenCompraCreateDTOAOrdenCompra(ordenCompraCreateDTO);
-        Proveedor proveedor = proveedorRepository.findById(ordenCompraCreateDTO.getProveedorId())
-                .orElseThrow(() -> new NoResultException("No se encontro el proveedor con id: " + ordenCompraCreateDTO.getProveedorId()));
+        Proveedor proveedor = proveedorRepository.findById(ordenCompraCreateDTO.getProveedor().getId())
+                .orElseThrow(() -> new NoResultException("No se encontro el proveedor con id: " + ordenCompraCreateDTO.getProveedor().getId()));
         ordenCompra.setProveedor(proveedor);
 
         return OrdenCompraMapper.instancia.ordenCompraAOrdenCompraDTO(ordenCompraRepository.save(ordenCompra));

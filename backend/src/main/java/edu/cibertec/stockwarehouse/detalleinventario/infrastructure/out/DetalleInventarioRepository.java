@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface DetalleInventarioRepository extends JpaRepository<DetalleInventario,Integer> {
+public interface DetalleInventarioRepository extends JpaRepository<DetalleInventario, Integer> {
 
     List<DetalleInventario> findBycabecerainventario(CabeceraInventario cabeceraInventario);
 }

@@ -1,12 +1,10 @@
 package edu.cibertec.stockwarehouse.proveedor.domain.model;
 
-import edu.cibertec.stockwarehouse.ordencompra.domain.model.OrdenCompra;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Data
 @Entity

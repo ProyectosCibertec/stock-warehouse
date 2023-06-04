@@ -1,7 +1,6 @@
 package edu.cibertec.stockwarehouse.empleado.domain.dto;
 
 import edu.cibertec.stockwarehouse.cargo.domain.dto.CargoDTO;
-import edu.cibertec.stockwarehouse.cargo.domain.model.Cargo;
 import lombok.Data;
 
 import java.io.Serializable;

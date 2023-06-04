@@ -40,23 +40,7 @@ public class OrdenCompra {
     private int estado;
 
     //relacionar ordencompra y proveedor
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_proveedor")
     private Proveedor proveedor;
-
-    // método para asignar nombre a los estados
-    public String NombreEstado() {
-        String nombreEstado = null;
-        switch (estado) {
-            case 0:
-                nombreEstado = "Enviado al proveedor";
-                break;
-            case 1:
-                nombreEstado = "Recibido";
-                break;
-            default:
-                nombreEstado = "Cancelado";
-        }
-        return nombreEstado;
-    }
 }

@@ -1,5 +1,6 @@
 package edu.cibertec.stockwarehouse.ordencompra.domain.dto;
 
+import edu.cibertec.stockwarehouse.proveedor.domain.model.Proveedor;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -8,10 +9,6 @@ import javax.persistence.TemporalType;
 import java.math.BigDecimal;
 import java.util.Date;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
 public class OrdenCompraDTO {
 
@@ -30,9 +27,9 @@ public class OrdenCompraDTO {
 
     private BigDecimal valortotal_orden;
 
-    private int estado;
+    private int  estado;
 
-    private String nomproveedor;
+    private Proveedor proveedor;
 
 
 }

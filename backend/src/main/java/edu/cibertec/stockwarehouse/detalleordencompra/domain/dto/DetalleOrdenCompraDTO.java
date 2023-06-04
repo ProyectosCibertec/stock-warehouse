@@ -1,13 +1,12 @@
 package edu.cibertec.stockwarehouse.detalleordencompra.domain.dto;
 
+import edu.cibertec.stockwarehouse.ordencompra.domain.model.OrdenCompra;
+import edu.cibertec.stockwarehouse.producto.domain.model.Producto;
 import lombok.*;
 
 import java.math.BigDecimal;
 
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+
 @Data
 public class DetalleOrdenCompraDTO {
 
@@ -21,8 +20,9 @@ public class DetalleOrdenCompraDTO {
 
     private int estado;
 
-    private int ordencompraid;
+    private OrdenCompra ordencompra;
 
-    private int productoid;
+    private Producto producto;
+
 
 }

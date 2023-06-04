@@ -10,6 +10,7 @@ import edu.cibertec.stockwarehouse.detalleinventario.infrastructure.out.DetalleI
 import edu.cibertec.stockwarehouse.detalleordencompra.infrastructure.out.DetalleOrdenCompraRepository;
 import edu.cibertec.stockwarehouse.empleado.domain.model.Empleado;
 import edu.cibertec.stockwarehouse.empleado.infrastructure.out.EmpleadoRepository;
+import edu.cibertec.stockwarehouse.ordencompra.domain.model.OrdenCompra;
 import edu.cibertec.stockwarehouse.ordencompra.infrastructure.out.OrdenCompraRepository;
 import edu.cibertec.stockwarehouse.producto.infrastructure.out.ProductoRepository;
 import edu.cibertec.stockwarehouse.proveedor.domain.model.Proveedor;
@@ -138,5 +139,6 @@ public class GenerateSampleData implements CommandLineRunner {
                     return usuario;
                 }).collect(Collectors.toList());
         usuarioRepository.saveAll(usuarios);
+
     }
 }

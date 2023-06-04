@@ -1,5 +1,6 @@
 package edu.cibertec.stockwarehouse.proveedor.application.impl;
 
+import edu.cibertec.stockwarehouse.ordencompra.domain.model.OrdenCompra;
 import edu.cibertec.stockwarehouse.proveedor.application.ProveedorService;
 import edu.cibertec.stockwarehouse.proveedor.domain.dto.ProveedorCreateDTO;
 import edu.cibertec.stockwarehouse.proveedor.domain.dto.ProveedorDTO;
@@ -10,6 +11,7 @@ import edu.cibertec.stockwarehouse.proveedor.infrastructure.out.ProveedorReposit
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.NoResultException;
 import java.util.List;
 import java.util.Optional;
 
@@ -53,15 +55,13 @@ public class ProveedorServiceImpl implements ProveedorService {
     }
 
     @Override
-    public String eliminarProveedor(long id) {
+    public void delete(long id) {
         Optional<Proveedor> proveedorOptional = proveedorRepository.findById(id);
-        String resultado;
+
         if (proveedorOptional.isPresent()) {
             proveedorRepository.delete(proveedorOptional.get());
-            resultado = "Registro Eliminado";
         } else {
-            resultado = "No se pudo realizar la eliminación";
+            throw new NoResultException("No se encontro el proveedor con id: " + id);
         }
-        return resultado;
     }
 }

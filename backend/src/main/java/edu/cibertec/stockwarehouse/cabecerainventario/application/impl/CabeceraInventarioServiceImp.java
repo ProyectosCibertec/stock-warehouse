@@ -39,15 +39,14 @@ public class CabeceraInventarioServiceImp implements CabeceraInventarioService {
     }
 
 
-
     @Override
     public CabeceraInventarioDTO findByID(int id) {
         Optional<CabeceraInventario> cabecerainventarioOptional = cabeceraInventarioRepository.findById(id);
 
-        if(cabecerainventarioOptional.isPresent()){
+        if (cabecerainventarioOptional.isPresent()) {
             return CabeceraInventarioMapper.instancia.cabeceraInventarioACabeceraInventarioDTO(cabecerainventarioOptional.get());
-        } else{
-            throw new NoResultException("No se encontro la Cabecera de inventario con id"+ id);
+        } else {
+            throw new NoResultException("No se encontro la Cabecera de inventario con id" + id);
         }
 
     }
@@ -56,7 +55,7 @@ public class CabeceraInventarioServiceImp implements CabeceraInventarioService {
     public CabeceraInventarioDTO save(CabeceraInventarioCreateDTO cabeceraInventarioCreateDTO) {
         CabeceraInventario cabeceraInventario = CabeceraInventarioMapper.instancia.cabeceraInventarioCreateDTOACabeceraInventario(cabeceraInventarioCreateDTO);
         Empleado empleado = empleadoRepository.findById(cabeceraInventarioCreateDTO.getIdempleado())
-                .orElseThrow(()-> new NoResultException("No se encontro empleado con id:" + cabeceraInventarioCreateDTO.getIdempleado()));
+                .orElseThrow(() -> new NoResultException("No se encontro empleado con id:" + cabeceraInventarioCreateDTO.getIdempleado()));
         cabeceraInventario.setEmpleado(empleado);
 
         return CabeceraInventarioMapper.instancia.cabeceraInventarioACabeceraInventarioDTO(cabeceraInventarioRepository.save(cabeceraInventario));
@@ -72,7 +71,7 @@ public class CabeceraInventarioServiceImp implements CabeceraInventarioService {
     @Override
     public CabeceraInventarioDetalleDTO cabeceraInventarioConDetalle(int id) {
         CabeceraInventario cabeceraInventario = cabeceraInventarioRepository.findById(id).orElse(null);
-        if(cabeceraInventario == null){
+        if (cabeceraInventario == null) {
             return null;
         }
         CabeceraInventarioDetalleDTO cabeceraInventarioDetalleDTO = CabeceraInventarioMapper.instancia.CabeceraInventarioADetalleInventarioDTO(cabeceraInventario);
@@ -86,10 +85,10 @@ public class CabeceraInventarioServiceImp implements CabeceraInventarioService {
     public void delete(int id) {
         Optional<CabeceraInventario> cabeceraInventarioOptional = cabeceraInventarioRepository.findById(id);
 
-        if (cabeceraInventarioOptional.isPresent()){
+        if (cabeceraInventarioOptional.isPresent()) {
             cabeceraInventarioRepository.delete(cabeceraInventarioOptional.get());
         } else {
-            throw new NoResultException("No se encontro la cabecera de inventario con id: "+id);
+            throw new NoResultException("No se encontro la cabecera de inventario con id: " + id);
         }
 
     }

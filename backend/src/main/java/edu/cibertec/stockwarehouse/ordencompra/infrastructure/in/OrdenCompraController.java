@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/ordenCompra")
+@CrossOrigin(origins = "http://localhost:4200")
 public class OrdenCompraController {
 
     @Autowired
@@ -46,7 +47,7 @@ public class OrdenCompraController {
     }
 
     @DeleteMapping("/{id}")
-    public void eliminarOrdeCompra(@PathVariable(value = "id") int id) {
+    public void eliminarOrdenCompra(@PathVariable(value = "id") int id) {
         ordenCompraService.delete(id);
     }
 }
