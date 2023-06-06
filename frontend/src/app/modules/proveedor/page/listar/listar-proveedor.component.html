@@ -1,0 +1,36 @@
+
+<div [style.display]="'flex'" [style.justifyContent]="'center'" [style.alignItems]="'center'">
+    <h1 class="fw-bold mb-0">Listar Proveedores</h1>
+    <a class="btn btn-success mx-4" [routerLink]="['registrar']">Agregar</a>
+</div>
+    <table class="table table-striped mt-5">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Razón Social</th>
+                <th>Ruc</th>
+                <th>Email</th>
+                <th>Dirección</th>
+                <th>Teléfono</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>    
+        </thead>
+        <tbody>
+            <tr *ngFor="let proveedor of proveedores">
+                <td>{{proveedor.id}}</td>
+                <td>{{proveedor.razonSocial}}</td>
+                <td>{{proveedor.ruc}}</td>
+                <td>{{proveedor.email}}</td>
+                <td>{{proveedor.direccion}}</td>
+                <td>{{proveedor.telefono}}</td>
+                <td>{{proveedor.estado}}</td>
+                <td [style.display]="'flex'" [style.justifyContent]="'space-around'">
+                    <a class="btn btn-warning" routerLink="actualizar/{{proveedor.id}}">Actualizar</a>
+                    <button (click)="deleteProveedor(proveedor)" class="btn btn-danger">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+

@@ -1,0 +1,38 @@
+<div class="container col-md-6">
+    <div class="card-header">
+        <h3> Registrar Empleados</h3>
+    </div>
+    <div class="card-body">
+        <form action="">
+            <div class="form-group">
+                <label for="">Nombre:</label>
+                <input type="text" [(ngModel)]="modelEmpleado.nombre" name="nombre" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Apellido:</label>
+                <input type="text" [(ngModel)]="modelEmpleado.apellido" name="apellido" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Email:</label>
+                <input type="text" [(ngModel)]="modelEmpleado.correo" name="correo" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Teléfono:</label>
+                <input type="text" [(ngModel)]="modelEmpleado.telefono" name="telefono" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Fecha Ingreso:</label>
+                <input type="date" [(ngModel)]="modelEmpleado.fechaIngreso" name="fechaCese" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Cargo:</label>
+                <input type="text" [(ngModel)]="modelEmpleado.cargo.id" name="cargo" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Estado:</label>
+                <input type="text" [(ngModel)]="modelEmpleado.estado" name="estado" class="form-control">
+            </div>
+            <button (click)="guardar(modelEmpleado)" class="btn btn.danger">Guardar</button>
+        </form>
+    </div>
+</div>

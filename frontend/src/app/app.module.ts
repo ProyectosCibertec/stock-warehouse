@@ -5,15 +5,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './app.material.module';
-import { ActualizarEmpleadoComponent } from './empleado/componentes/actualizar-empleado/actualizar-empleado.component';
-import { ListarEmpleadoComponent } from './empleado/componentes/listar-empleado/listar-empleado.component';
-import { RegistrarEmpleadoComponent } from './empleado/componentes/registrar-empleado/registrar-empleado.component';
-import { ActualizarOrdenCompraComponent } from './ordencompra/componentes/actualizar-orden-compra/actualizar-orden-compra.component';
-import { ListarOrdenCompraComponent } from './ordencompra/componentes/listar-orden-compra/listar-orden-compra.component';
-import { RegistrarOrdenCompraComponent } from './ordencompra/componentes/registrar-orden-compra/registrar-orden-compra.component';
-import { ActualizarProveedorComponent } from './proveedor/componentes/actualizar-proveedor/actualizar-proveedor.component';
-import { ListarProveedorComponent } from './proveedor/componentes/listar-proveedor/listar-proveedor.component';
-import { RegistrarProveedorComponent } from './proveedor/componentes/registrar-proveedor/registrar-proveedor.component';
+import { ListarEmpleadoComponent } from './modules/empleado/page/listar/listar-empleado.component';
+import { RegistrarEmpleadoComponent } from './modules/empleado/page/registrar/registrar-empleado.component';
+import { ActualizarOrdenCompraComponent } from './modules/ordencompra/page/actualizar/actualizar-orden-compra.component';
+import { ListarOrdenCompraComponent } from './modules/ordencompra/page/listar/listar-orden-compra.component';
+import { RegistrarOrdenCompraComponent } from './modules/ordencompra/page/registrar/registrar-orden-compra.component';
+import { ActualizarProveedorComponent } from './modules/proveedor/page/actualizar/actualizar-proveedor.component';
+import { ListarProveedorComponent } from './modules/proveedor/page/listar/listar-proveedor.component';
+import { RegistrarProveedorComponent } from './modules/proveedor/page/registrar/registrar-proveedor.component';
+import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component';
+import { ContentLayoutComponent } from './layout/content-layout/content-layout.component';
+import { ActualizarEmpleadoComponent } from "./modules/empleado/page/actualizar/actualizar-empleado.component";
 
 @NgModule({
   declarations: [
@@ -26,7 +28,10 @@ import { RegistrarProveedorComponent } from './proveedor/componentes/registrar-p
     ActualizarProveedorComponent,
     ListarEmpleadoComponent,
     RegistrarEmpleadoComponent,
-    ActualizarEmpleadoComponent
+    ActualizarEmpleadoComponent,
+    ActualizarProveedorComponent,
+    AuthLayoutComponent,
+    ContentLayoutComponent
   ],
   imports: [
     BrowserModule,

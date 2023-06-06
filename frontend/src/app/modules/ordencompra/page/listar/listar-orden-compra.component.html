@@ -1,0 +1,36 @@
+<div [style.display]="'flex'" [style.justifyContent]="'center'" [style.alignItems]="'center'">
+  <h1 class="fw-bold mb-0">Listar Ordenes de Compra</h1>
+  <a class="btn btn-success mx-4" [routerLink]="['registrar']">Agregar</a>
+</div>
+  <table class="table table-striped mt-5">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">OrdenCompra</th>
+        <th scope="col">FechaOrden</th>
+        <th scope="col">FechaEntrega</th>
+        <th scope="col">Pago</th>
+        <th scope="col">Total</th>
+        <th scope="col">Proveedor</th>
+        <th scope="col">Estado</th>
+        <th class="" scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ordenCompra of ordenesCompra">
+        <th scope="row">{{ordenCompra.id_orden_compra}}</th>
+        <td>{{ordenCompra.nro_orden_compra}}</td>
+        <td>{{ordenCompra.fechaorden_compra}}</td>
+        <td>{{ordenCompra.fechaentrega}}</td>
+        <td>{{ordenCompra.condicionespago}}</td>
+        <td>{{ordenCompra.valortotal_orden}}</td>
+        <td>{{ordenCompra.proveedor.razonSocial}}</td>
+        <td>{{ordencompra.NombreEstado(ordenCompra.estado)}}</td>
+        <td><button class="bg-body" (click)="editarOrdenCompra(ordenCompra)"><mat-icon class="text-success">drive_file_rename_outline</mat-icon></button>&nbsp;&nbsp;
+            <button class="bg-body"><mat-icon class="text-primary">visibility</mat-icon></button>&nbsp;&nbsp;
+            <button class="bg-body" (click)="eliminarOrdeCompra(ordenCompra)"><mat-icon class="text-danger">delete_forever</mat-icon></button>
+          </td>
+      </tr>
+      
+    </tbody>
+  </table>
