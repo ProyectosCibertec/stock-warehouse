@@ -14,6 +14,10 @@ import { RegistrarOrdenCompraComponent } from './ordencompra/componentes/registr
 import { ActualizarProveedorComponent } from './proveedor/componentes/actualizar-proveedor/actualizar-proveedor.component';
 import { ListarProveedorComponent } from './proveedor/componentes/listar-proveedor/listar-proveedor.component';
 import { RegistrarProveedorComponent } from './proveedor/componentes/registrar-proveedor/registrar-proveedor.component';
+import { ActualizarProductoComponent } from './producto/componentes/actualizar-producto/actualizar-producto.component';
+import { ListarProductoComponent } from './producto/componentes/listar-producto/listar-producto.component';
+import { RegistrarProductoComponent } from './producto/componentes/registrar-producto/registrar-producto.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +30,10 @@ import { RegistrarProveedorComponent } from './proveedor/componentes/registrar-p
     ActualizarProveedorComponent,
     ListarEmpleadoComponent,
     RegistrarEmpleadoComponent,
-    ActualizarEmpleadoComponent
+    ActualizarEmpleadoComponent,
+    ListarProductoComponent,
+    RegistrarProductoComponent,
+    ActualizarProductoComponent
   ],
   imports: [
     BrowserModule,
