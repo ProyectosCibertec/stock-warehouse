@@ -9,6 +9,9 @@ import { RegistrarOrdenCompraComponent } from './ordencompra/componentes/registr
 import { ActualizarProveedorComponent } from './proveedor/componentes/actualizar-proveedor/actualizar-proveedor.component';
 import { ListarProveedorComponent } from './proveedor/componentes/listar-proveedor/listar-proveedor.component';
 import { RegistrarProveedorComponent } from './proveedor/componentes/registrar-proveedor/registrar-proveedor.component';
+import { ActualizarProductoComponent } from './producto/componentes/actualizar-producto/actualizar-producto.component';
+import { ListarProductoComponent } from './producto/componentes/listar-producto/listar-producto.component';
+import { RegistrarProductoComponent } from './producto/componentes/registrar-producto/registrar-producto.component';
 
 const routes: Routes = [
   { path:'proveedores', component:ListarProveedorComponent},
@@ -20,6 +23,9 @@ const routes: Routes = [
   { path: 'empleados', component: ListarEmpleadoComponent },
   { path: 'registrarEmpleado', component: RegistrarEmpleadoComponent},
   { path: 'actualizarEmpleado', component: ActualizarEmpleadoComponent},
+  { path:'productos', component:ListarProductoComponent},
+  { path:'registrarProducto',  component: RegistrarProductoComponent},
+  { path:'actualizarProducto',  component: ActualizarProductoComponent},
 ];
 
 @NgModule({
