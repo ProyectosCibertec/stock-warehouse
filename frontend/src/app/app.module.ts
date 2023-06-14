@@ -20,6 +20,9 @@ import { ActualizarTipoUsuarioComponent } from "./tipo-usuario/componentes/actua
 import { ListarUsuarioComponent } from "./usuario/componentes/listar-usuario/listar-usuario.component";
 import { RegistrarUsuarioComponent } from "./usuario/componentes/registrar-usuario/registrar-usuario.component";
 import { ActualizarUsuarioComponent } from "./usuario/componentes/actualizar-usuario/actualizar-usuario.component";
+import { ActualizarProductoComponent } from './producto/componentes/actualizar-producto/actualizar-producto.component';
+import { ListarProductoComponent } from './producto/componentes/listar-producto/listar-producto.component';
+import { RegistrarProductoComponent } from './producto/componentes/registrar-producto/registrar-producto.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { ActualizarUsuarioComponent } from "./usuario/componentes/actualizar-usu
     ActualizarProveedorComponent,
     ListarEmpleadoComponent,
     RegistrarEmpleadoComponent,
-    ActualizarEmpleadoComponent
+    ActualizarEmpleadoComponent,
+    ListarProductoComponent,
+    RegistrarProductoComponent,
+    ActualizarProductoComponent
   ],
   imports: [
     BrowserModule,
