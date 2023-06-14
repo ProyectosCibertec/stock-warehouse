@@ -1,7 +1,7 @@
 package edu.cibertec.stockwarehouse.auth.infrastructure;
 
-import edu.cibertec.stockwarehouse.auth.domain.JwtRequest;
-import edu.cibertec.stockwarehouse.auth.domain.JwtResponse;
+import edu.cibertec.stockwarehouse.auth.domain.LoginDTO;
+import edu.cibertec.stockwarehouse.auth.domain.TokenDTO;
 import edu.cibertec.stockwarehouse.config.JwtTokenUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin
-public class JwtAuthenticationController {
+public class LoginController {
 
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -26,8 +26,8 @@ public class JwtAuthenticationController {
     @Autowired
     private UserDetailsService userDetailsService;
 
-    @RequestMapping(value = "/auth", method = RequestMethod.POST)
-    public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public ResponseEntity<?> createAuthenticationToken(@RequestBody LoginDTO authenticationRequest) throws Exception {
 
         authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
 
@@ -36,7 +36,7 @@ public class JwtAuthenticationController {
 
         final String token = jwtTokenUtil.generateToken(userDetails);
 
-        return ResponseEntity.ok(new JwtResponse(token));
+        return ResponseEntity.ok(new TokenDTO(token));
     }
 
     private void authenticate(String username, String password) throws Exception {

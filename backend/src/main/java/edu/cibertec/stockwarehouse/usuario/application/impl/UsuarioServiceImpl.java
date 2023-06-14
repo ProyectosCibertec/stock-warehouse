@@ -11,6 +11,7 @@ import edu.cibertec.stockwarehouse.usuario.domain.mapper.UsuarioMapper;
 import edu.cibertec.stockwarehouse.usuario.domain.model.Usuario;
 import edu.cibertec.stockwarehouse.usuario.infrastructure.out.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -29,6 +30,8 @@ public class UsuarioServiceImpl implements UsuarioService {
     @Autowired
     private EmpleadoRepository empleadoRepository;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Override
     public List<UsuarioDto> listarUsuarios() {
@@ -39,16 +42,13 @@ public class UsuarioServiceImpl implements UsuarioService {
     public UsuarioDto obtenerUsuarioPorId(long id) {
         Optional<Usuario> usuario = usuarioRepository.findById(id);
         UsuarioDto usuarioDto;
-        if (usuario.isPresent()) {
-            usuarioDto = UsuarioMapper.INSTANCE.usuarioAUsuarioDto(usuario.get());
-        } else {
-            usuarioDto = null;
-        }
+        usuarioDto = usuario.map(UsuarioMapper.INSTANCE::usuarioAUsuarioDto).orElse(null);
         return usuarioDto;
     }
 
     @Override
     public UsuarioDto registrarProducto(UsuarioCreateDto usuarioCreateDto) {
+        usuarioCreateDto.setContrasena_usuario(passwordEncoder.encode(usuarioCreateDto.getContrasena_usuario()));
         Usuario usuario = UsuarioMapper.INSTANCE.usaurioCreateDtoAUsuario(usuarioCreateDto);
         return getUsuarioDto(usuario);
     }

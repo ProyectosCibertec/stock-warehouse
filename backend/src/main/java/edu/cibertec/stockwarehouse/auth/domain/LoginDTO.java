@@ -2,18 +2,18 @@ package edu.cibertec.stockwarehouse.auth.domain;
 
 import java.io.Serializable;
 
-public class JwtRequest implements Serializable {
+public class LoginDTO implements Serializable {
 
     private static final long serialVersionUID = 5926468583005150707L;
 
     private String username;
     private String password;
 
-    public JwtRequest() {
+    public LoginDTO() {
 
     }
 
-    public JwtRequest(String username, String password) {
+    public LoginDTO(String username, String password) {
         this.setUsername(username);
         this.setPassword(password);
     }
