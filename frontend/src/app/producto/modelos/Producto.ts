@@ -17,7 +17,7 @@ export class Producto{
         this.codigobarra="";
         this.descripcion="";
         this.marca="";
-	this.stock=0;
+	    this.stock=0;
         this.estado=0;
     }
 }
