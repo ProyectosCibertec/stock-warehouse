@@ -1,9 +1,9 @@
-package edu.cibertec.stockwarehouse.tipousuario.controller;
+package edu.cibertec.stockwarehouse.tipousuario.infrastructure.in;
 
-import edu.cibertec.stockwarehouse.tipousuario.dtos.TipoUsuarioCreateDto;
-import edu.cibertec.stockwarehouse.tipousuario.dtos.TipoUsuarioDto;
-import edu.cibertec.stockwarehouse.tipousuario.dtos.TipoUsuarioUpdateDto;
-import edu.cibertec.stockwarehouse.tipousuario.service.TipoUsuarioService;
+import edu.cibertec.stockwarehouse.tipousuario.application.TipoUsuarioService;
+import edu.cibertec.stockwarehouse.tipousuario.domain.dto.TipoUsuarioCreateDto;
+import edu.cibertec.stockwarehouse.tipousuario.domain.dto.TipoUsuarioDto;
+import edu.cibertec.stockwarehouse.tipousuario.domain.dto.TipoUsuarioUpdateDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
