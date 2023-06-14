@@ -1,1 +1,49 @@
-<p>registrar-usuario works!</p>
+<div class="container col-md-6">
+  <div class="card">
+    <div class="card-header">
+      <h3>Registrar Usuario</h3>
+    </div>
+    <div class="card-body">
+      <form>
+        <div class="form-group">
+          <label for="">Empleado</label>
+          <select name="idEmpleado" [(ngModel)]="modelUsuario.idEmpleado" class="form-control">
+            <option value="" disabled>Elige el empleado</option>
+            <option *ngFor="let empleado of empleados" [ngValue]="empleado.id">{{empleado.nombre}} {{empleado.apellido}}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="">Tipo de usuario</label>
+          <select name="idTipoUsuario" [(ngModel)]="modelUsuario.idTipoUsuario" class="form-control">
+            <option value="" disabled>Elige un tipo de usuario</option>
+            <option *ngFor="let tipoUsuario of tiposUsuario" [ngValue]="tipoUsuario.idTipoUsuario">{{tipoUsuario.nombreTipoUsuario}}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="login_usuario">Usuario:</label>
+          <input type="text" id="login_usuario" [(ngModel)]="modelUsuario.login_usuario" name="login_usuario" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="contrasena_usuario">Contraseña:</label>
+          <input type="text" id="contrasena_usuario" [(ngModel)]="modelUsuario.contrasena_usuario" name="contrasena_usuario" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="estado">Estado:</label>
+          <mat-select id="estado" [(ngModel)]="modelUsuario.estado" name="estado" required class="form-control">
+            <mat-option [value]="0">Registrado</mat-option>
+            <mat-option [value]="1">Activo</mat-option>
+            <mat-option [value]="2">Dado de Baja</mat-option>
+          </mat-select>
+        </div>
+
+        <div class="text-left">
+          <button (click)="guardarUsuario(modelUsuario)" class="btn btn-danger mt-3">Guardar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
