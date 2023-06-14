@@ -1,1 +1,42 @@
-<p>listar-usuario works!</p>
+<style>
+    .btn-margin-right {
+    margin-right: 10px; /* Puedes ajustar el valor según tu preferencia */
+  }
+  </style>
+  
+  <div class="mt-3">
+    
+    <button (click)="nuevoUsuario()" class="btn btn-warning">Agregar</button>
+    
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Tipo Usuario</th>
+            <th scope="col">Nombre completo</th>
+            <th scope="col">Usuario</th>
+            <th scope="col">Contraseña</th>
+            <th scope="col">Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let usuario of usuarios">
+            <th scope="row">{{usuario.id_usuario}}</th>
+            <td>{{usuario.nombreTipoUsuario}}</td>
+            <td>{{usuario.nombreCompletoEmpleado}}</td>
+            <td>{{usuario.login_usuario}}</td>
+            <td>{{usuario.contrasena_usuario}}</td>
+            <td>
+              <span *ngIf="usuario.estado === 0">Registrado</span>
+              <span *ngIf="usuario.estado === 1">Activo</span>
+              <span *ngIf="usuario.estado === 2">Dado de baja</span>
+            </td>
+            <td>
+              <button (click)="editarUsuario(usuario)" class="btn btn-warning btn-margin-right">Actualizar</button>
+              <button (click)="eliminarUsuario(usuario)" class="btn btn-danger">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
