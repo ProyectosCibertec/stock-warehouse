@@ -1,10 +1,9 @@
-package edu.cibertec.stockwarehouse.usuario.controller;
+package edu.cibertec.stockwarehouse.usuario.infrastructure.in;
 
-
-import edu.cibertec.stockwarehouse.usuario.dtos.UsuarioCreateDto;
-import edu.cibertec.stockwarehouse.usuario.dtos.UsuarioDto;
-import edu.cibertec.stockwarehouse.usuario.dtos.UsuarioUpdateDto;
-import edu.cibertec.stockwarehouse.usuario.service.UsuarioService;
+import edu.cibertec.stockwarehouse.usuario.application.UsuarioService;
+import edu.cibertec.stockwarehouse.usuario.domain.dto.UsuarioCreateDto;
+import edu.cibertec.stockwarehouse.usuario.domain.dto.UsuarioDto;
+import edu.cibertec.stockwarehouse.usuario.domain.dto.UsuarioUpdateDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
