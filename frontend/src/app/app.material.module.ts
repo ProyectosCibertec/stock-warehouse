@@ -28,7 +28,7 @@ import {NgIf} from '@angular/common';
       MatNativeDateModule,
       MatInputModule,
       MatDatepickerModule,
-      NgIf,
+      NgIf
     ],
     exports : [
       BrowserAnimationsModule,
@@ -43,7 +43,7 @@ import {NgIf} from '@angular/common';
       MatNativeDateModule,
       MatInputModule,
       MatDatepickerModule,
-      NgIf,
+      NgIf
     ]
   })
 export class MaterialModule{}
