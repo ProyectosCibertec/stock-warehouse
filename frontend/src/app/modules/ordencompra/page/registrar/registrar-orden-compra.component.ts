@@ -11,30 +11,30 @@ import { ProveedorService } from 'src/app/data/service/proveedor.service';
   styleUrls: ['./registrar-orden-compra.component.css']
 })
 export class RegistrarOrdenCompraComponent implements OnInit {
+  proveedores?: Proveedor[];
+  modelOrdenCompra = new OrdenCompra();
 
-  proveedores?:Proveedor[];
-modelOrdenCompra = new OrdenCompra();
+  constructor(private router: Router, private ordenCompraService: OrdenCompraService, private proveedorService: ProveedorService) { }
 
-constructor(private router: Router, private ordenCompraService: OrdenCompraService,private proveedorService:ProveedorService){}
   ngOnInit(): void {
-    
     this.getProveedores();
   }
 
-  guardarOrdenCompra( ordenCompra: OrdenCompra) {
+  guardarOrdenCompra(ordenCompra: OrdenCompra) {
     this.ordenCompraService.registrarOrdenCompra(ordenCompra).subscribe(data => {
       this.router.navigate(['ordencompra']);
     });
   }
 
-  getProveedores(){
+  getProveedores() {
     this.proveedorService.getProveedores().subscribe(
-      data=>{
-        this.proveedores=data;
+      data => {
+        this.proveedores = data;
         console.log(data);
       },
-      error=>{
+      error => {
         console.log(error);
       }
-);}
+    );
+  }
 }

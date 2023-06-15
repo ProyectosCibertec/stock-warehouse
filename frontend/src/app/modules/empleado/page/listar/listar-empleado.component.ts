@@ -9,7 +9,6 @@ import { EmpleadoService } from 'src/app/data/service/empleado.service';
   styleUrls: ['./listar-empleado.component.css']
 })
 export class ListarEmpleadoComponent implements OnInit {
-
   empleados?: Empleado[];
 
   constructor(private empleadoService: EmpleadoService) { }

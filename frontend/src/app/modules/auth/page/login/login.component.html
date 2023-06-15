@@ -1,1 +1,31 @@
-<p>login works!</p>
+<div class="container vh-100">
+  <div class="col mx-0 d-flex justify-content-center align-items-center vh-100">
+    <div class="row d-flex gx-5 mt-4 justify-content-center">
+      <div class="col-md-2"></div>
+      <div class="col-md-8">
+        <div class="card rounded-5 p-3" style="background-color: #FFFFFF">
+          <div class="card-body text-center">
+            <div class="card text-center" style="background-color: rgba(0, 0, 0, 0); border: 0;">
+              <div class="card-body">
+                <img alt="Icono Emilima" src="assets/stock-warehouse.svg" class="w-50">
+                <h1 class="text-center text-dark fw-bold mt-2" [style.fontSize]="'2em'">STOCK WAREHOUSE</h1>
+              </div>
+            </div>
+            <form class="my-form" [formGroup]="loginForm">
+              <mat-form-field class="full-width">
+                <mat-label>Usuario</mat-label>
+                <input matInput placeholder="Usuario" name="user" formControlName="username">
+              </mat-form-field>
+              <mat-form-field class="full-width">
+                <mat-label>Contraseña</mat-label>
+                <input matInput type="password" placeholder="Contraseña" name="password" formControlName="password">
+              </mat-form-field>
+            </form>
+            <button mat-raised-button color="primary" (click)="login()">INICIAR SESIÓN</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</div>

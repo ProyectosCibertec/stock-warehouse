@@ -3,7 +3,11 @@ package edu.cibertec.stockwarehouse.auth.infrastructure;
 import edu.cibertec.stockwarehouse.auth.domain.LoginDTO;
 import edu.cibertec.stockwarehouse.auth.domain.TokenDTO;
 import edu.cibertec.stockwarehouse.config.JwtTokenUtil;
+import edu.cibertec.stockwarehouse.usuario.application.UsuarioService;
+import edu.cibertec.stockwarehouse.usuario.domain.dto.UsuarioCreateDto;
+import edu.cibertec.stockwarehouse.usuario.domain.dto.UsuarioDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -15,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin
-public class LoginController {
+public class AuthController {
 
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -26,9 +30,11 @@ public class LoginController {
     @Autowired
     private UserDetailsService userDetailsService;
 
+    @Autowired
+    private UsuarioService usuarioService;
+
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ResponseEntity<?> createAuthenticationToken(@RequestBody LoginDTO authenticationRequest) throws Exception {
-
         authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
 
         final UserDetails userDetails = userDetailsService

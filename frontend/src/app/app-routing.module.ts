@@ -2,21 +2,25 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component';
 import { ContentLayoutComponent } from './layout/content-layout/content-layout.component';
+import { AuthGuard } from './core/guard/auth.guard';
+import { LoginGuard } from './core/guard/login.guard';
 
 const routes: Routes = [
-  /*{
+  {
     path: '',
-    redirectTo: "auth/login",
+    redirectTo: 'auth/login',
     pathMatch: 'full'
-  },*/
+  },
   {
     path: 'auth',
     component: AuthLayoutComponent,
+    canActivate: [LoginGuard('empleado')],
     loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
   },
   {
     path: '',
     component: ContentLayoutComponent,
+    canActivate: [AuthGuard('auth/login')],
     children: [
       {
         path: 'empleado',
@@ -40,11 +44,11 @@ const routes: Routes = [
       }
     ]
   },
-  /*{
+  {
     path: '**',
-    redirectTo: "auth/login",
+    redirectTo: 'auth/login',
     pathMatch: 'full'
-  },*/
+  },
 ];
 
 @NgModule({

@@ -1,6 +1,6 @@
-import { HttpClientModule } from "@angular/common/http";
+import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +16,8 @@ import { RegistrarProveedorComponent } from './modules/proveedor/page/registrar/
 import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component';
 import { ContentLayoutComponent } from './layout/content-layout/content-layout.component';
 import { ActualizarEmpleadoComponent } from "./modules/empleado/page/actualizar/actualizar-empleado.component";
+import { LoginComponent } from "./modules/auth/page/login/login.component";
+import { CoreModule } from "./core/core.module";
 
 @NgModule({
   declarations: [
@@ -31,16 +33,19 @@ import { ActualizarEmpleadoComponent } from "./modules/empleado/page/actualizar/
     ActualizarEmpleadoComponent,
     ActualizarProveedorComponent,
     AuthLayoutComponent,
-    ContentLayoutComponent
+    ContentLayoutComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     MaterialModule,
+    CoreModule
   ],
-  providers: [],
+  providers: [ ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
