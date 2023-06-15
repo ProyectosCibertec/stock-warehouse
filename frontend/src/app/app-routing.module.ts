@@ -25,6 +25,7 @@ const routes: Routes = [
   { path: 'empleados', component: ListarEmpleadoComponent },
   { path: 'registrarEmpleado', component: RegistrarEmpleadoComponent},
   { path: 'actualizarEmpleado', component: ActualizarEmpleadoComponent},
+
 ];
 
 @NgModule({
