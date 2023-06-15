@@ -1,5 +1,6 @@
 package edu.cibertec.stockwarehouse.cabecerainventario.domain.dto;
 
+import edu.cibertec.stockwarehouse.empleado.domain.model.Empleado;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,6 +25,6 @@ public class CabeceraInventarioCreateDTO {
 
     private int estado;
 
-    private int idempleado;
+    private Empleado empleado;
 
 }

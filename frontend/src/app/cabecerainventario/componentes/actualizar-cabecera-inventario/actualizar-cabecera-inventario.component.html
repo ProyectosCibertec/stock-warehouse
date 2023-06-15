@@ -1,48 +1,55 @@
 <div class="container col-md-10">
     <div class="card-header mt-2 opacity-25">
-      <h1 class="text-dark text-center"> Actualizar Cabecera de inventario!</h1>
+      <h1 class="text-dark text-center"> ACTUALIZA INVENTARIO</h1>
     </div>
     <mat-card>
       <form action="" class="m-3">  
 
         <div class="example-container d-flex justify-content-around"> 
-          <mat-form-field hintLabel="Max 10 characters" class="example-full-width">
+          <mat-form-field  class="example-full-width">
             <mat-label>ID. de Inventario:</mat-label>
-            <input matInput type="number" placeholder="id_cab_inventario" [(ngModel)]="cabeceraInventarioUpdate.id_cab_inventario" name="id_cab_inventario" required readonly>
+            <input matInput type="number" placeholder="id_cab_inventario" [(ngModel)]="cabeceraInventario.id_cab_inventario" name="id_cab_inventario" required readonly>
           </mat-form-field>
         </div>
 
         <div class="example-container mx-4 d-flex justify-content-between"> 
-          <mat-form-field hintLabel="Max 10 characters" class="example-full-width">
+          <mat-form-field  class="example-full-width">
             <mat-label> Tipo de Inventario:</mat-label>
-            <input matInput type="number"   placeholder="tipo_inventario" [(ngModel)]="cabeceraInventarioUpdate.tipo_inventario" name="tipo_inventario" required>
-            
+            <mat-select [(ngModel)]="cabeceraInventario.tipo_inventario" name="tipo_inventario" required>
+              <mat-option  [value]="0"> Entrada </mat-option>
+              <mat-option  [value]="1"> Salida </mat-option>
+            </mat-select>            
           </mat-form-field>
-        </div>
-        <div class="example-container d-flex justify-content-around"> 
+        
             <mat-form-field class="example-full-width" >
               <mat-label>Fecha de Inventario:</mat-label>
-              <input matInput type="date" placeholder="fecha_cab_inventario" [(ngModel)]="cabeceraInventarioUpdate.fecha_cab_inventario" name="fecha_cab_inventario" required>
+              <input matInput type="date" placeholder="fecha_cab_inventario" [(ngModel)]="cabeceraInventario.fecha_cab_inventario" name="fecha_cab_inventario" required>
               <mat-hint>Formato: dd/MM/YYYY</mat-hint>
             </mat-form-field>
 
           </div>  
         
         <div class="example-container d-flex justify-content-around"> 
-          <mat-form-field class=" example-full-width " hintLabel="min 0 y max 3">
+          <mat-form-field class=" example-full-width " >
             <mat-label>Estado:</mat-label>
-            <input matInput type="number" #input min="0" max="3" placeholder="Estado" [(ngModel)]="cabeceraInventarioUpdate.estado" name="estado" required>
-            <mat-hint class="text-dark" align="end">{{cabeceraInventarioUpdate.estado}}/1</mat-hint>
+            <mat-select [(ngModel)]="cabeceraInventario.estado" name="estado" required>
+              <mat-option  [value]="0"> Realizado </mat-option>
+              <mat-option  [value]="1"> Pendiente </mat-option>
+              <mat-option  [value]="2"> Anulado </mat-option>
+            </mat-select>
           </mat-form-field>
       
-        <mat-form-field class="example-full-width " hintLabel="min 1 y max 1000" >
+        <mat-form-field class="example-full-width ">
           <mat-label>Nombre del Empleado:</mat-label>
-          <input matInput type="number" #input min="1" max="1000"  placeholder="id_empleado" [(ngModel)]="cabeceraInventarioUpdate.id_empleado" name="id_empleado" required>
-          <mat-hint class="text-dark" align="end">{{cabeceraInventarioUpdate.id_empleado}}/1000</mat-hint>
+          <mat-select [(ngModel)]="cabeceraInventario.empleado.id" name="nomempleado" id="nomempleado">
+            <mat-option *ngFor="let empleado of empleados"[value]="empleado.id">
+              {{empleado.nombre}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
       </div>
       <div class="example-container  d-flex justify-content-center mt-5 mb-3"> 
-        <button  color="basic" mat-raised-button (click)="actualizarCabeceraInventario(cabeceraInventarioUpdate)">Grabar<mat-icon class="text-dark">save</mat-icon></button>
+        <button  color="basic" mat-raised-button (click)="actualizarCabeceraInventario(cabeceraInventario)">Grabar<mat-icon class="text-dark">save</mat-icon></button>
        </div>
       </form>
     </mat-card>

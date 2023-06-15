@@ -12,7 +12,7 @@ export class ListarCabeceraInventarioComponent implements OnInit {
 
   
   cabecerasInventario?:CabeceraInventario[];
-  //cabecerasInventario: any[] = [];
+  cabecerainventario = new CabeceraInventario();
 
   constructor(private cabeceraInventarioService:CabeceraInventarioService, private router:Router){
     this.cabecerasInventario=[];

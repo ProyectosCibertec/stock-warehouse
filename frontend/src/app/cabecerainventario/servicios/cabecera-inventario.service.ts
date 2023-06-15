@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CabeceraInventario } from '../modelos/CabeceraInventario';
 import { HttpClient } from '@angular/common/http';
-import { CabeceraInventarioCreate } from '../modelos/CabeceraInventarioCreate';
-import { CabeceraInventarioUpdate } from '../modelos/CabeceraInventarioUpdate';
+
 
 
 @Injectable({
@@ -19,16 +18,16 @@ export class CabeceraInventarioService {
     
   }
 
-  registrarCabeceraInventario(cabeceraInventarioCreate:CabeceraInventarioCreate) { 
-    return this.httpClient.post<CabeceraInventarioCreate>(this.url,cabeceraInventarioCreate);
+  registrarCabeceraInventario(cabeceraInventario:CabeceraInventario) { 
+    return this.httpClient.post<CabeceraInventario>(this.url,cabeceraInventario);
   }
 
   obtenerCabeceraInventario(id:number){
-    return this.httpClient.get<CabeceraInventarioUpdate>(this.url+"/"+id);
+    return this.httpClient.get<CabeceraInventario>(this.url+"/"+id);
   }
 
-  actualizarCabeceraInventario(cabeceraInventarioUpdate:CabeceraInventarioUpdate){
-    return this.httpClient.put<CabeceraInventarioUpdate>(this.url, cabeceraInventarioUpdate);
+  actualizarCabeceraInventario(cabeceraInventario:CabeceraInventario){
+    return this.httpClient.put<CabeceraInventario>(this.url, cabeceraInventario);
   }
 
   deleteCabeceraInventario(CabeceraInventario:CabeceraInventario){

@@ -40,7 +40,7 @@ public class ProveedorController {
     }
 
     @DeleteMapping("/{proveedorId}")
-    public ResponseEntity<String> eliminarProveedor(@PathVariable("proveedorId") long proveedorId) {
-        return new ResponseEntity<>(proveedorService.eliminarProveedor(proveedorId), HttpStatus.OK);
+    public void eliminarProveedor(@PathVariable("proveedorId") long id) {
+        proveedorService.delete(id);
     }
 }

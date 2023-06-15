@@ -16,10 +16,10 @@
     <tbody>
       <tr *ngFor="let cabeceraInventario of cabecerasInventario">
         <th scope="row">{{cabeceraInventario.id_cab_inventario}}</th>
-        <td>{{cabeceraInventario.tipo_inventario}}</td>
+        <td>{{cabecerainventario.NombreInventario(cabeceraInventario.tipo_inventario)}}</td>
         <td>{{cabeceraInventario.fecha_cab_inventario}}</td>
-        <td>{{cabeceraInventario.nomempleado}}</td>
-        <td>{{cabeceraInventario.estado}}</td>
+        <td>{{cabeceraInventario.empleado.nombre+" "+cabeceraInventario.empleado.apellido}}</td>
+        <td>{{cabecerainventario.NombreEstado(cabeceraInventario.estado)}}</td>
         <td><button class="bg-body" (click)="editarCabeceraInventario(cabeceraInventario)"><mat-icon class="text-success">drive_file_rename_outline</mat-icon></button>&nbsp;&nbsp;
             <button class="bg-body"><mat-icon class="text-primary">visibility</mat-icon></button>&nbsp;&nbsp;
             <button class="bg-body" (click)="eliminarCabeceraInventario(cabeceraInventario)"><mat-icon class="text-danger">delete_forever</mat-icon></button>

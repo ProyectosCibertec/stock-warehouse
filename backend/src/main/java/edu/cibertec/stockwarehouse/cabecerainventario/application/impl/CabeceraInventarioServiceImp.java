@@ -55,8 +55,8 @@ public class CabeceraInventarioServiceImp implements CabeceraInventarioService {
     @Override
     public CabeceraInventarioDTO save(CabeceraInventarioCreateDTO cabeceraInventarioCreateDTO) {
         CabeceraInventario cabeceraInventario = CabeceraInventarioMapper.instancia.cabeceraInventarioCreateDTOACabeceraInventario(cabeceraInventarioCreateDTO);
-        Empleado empleado = empleadoRepository.findById(cabeceraInventarioCreateDTO.getIdempleado())
-                .orElseThrow(()-> new NoResultException("No se encontro empleado con id:" + cabeceraInventarioCreateDTO.getIdempleado()));
+        Empleado empleado = empleadoRepository.findById(cabeceraInventarioCreateDTO.getEmpleado().getId())
+                .orElseThrow(()-> new NoResultException("No se encontro empleado con id:" + cabeceraInventarioCreateDTO.getEmpleado().getId()));
         cabeceraInventario.setEmpleado(empleado);
 
         return CabeceraInventarioMapper.instancia.cabeceraInventarioACabeceraInventarioDTO(cabeceraInventarioRepository.save(cabeceraInventario));

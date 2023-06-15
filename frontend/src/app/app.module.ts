@@ -4,6 +4,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ActualizarEmpleadoComponent } from './empleado/componentes/actualizar-empleado/actualizar-empleado.component';
+import { ListarEmpleadoComponent } from './empleado/componentes/listar-empleado/listar-empleado.component';
+import { RegistrarEmpleadoComponent } from './empleado/componentes/registrar-empleado/registrar-empleado.component';
 import { ActualizarProveedorComponent } from './proveedor/componentes/actualizar-proveedor/actualizar-proveedor.component';
 import { ListarProveedorComponent } from './proveedor/componentes/listar-proveedor/listar-proveedor.component';
 import { RegistrarProveedorComponent } from './proveedor/componentes/registrar-proveedor/registrar-proveedor.component';
@@ -26,7 +29,10 @@ import { ListarCabeceraInventarioComponent } from './cabecerainventario/componen
     RegistrarCabeceraInventarioComponent,
     ListarCabeceraInventarioComponent,
     RegistrarProveedorComponent,
-    ActualizarProveedorComponent
+    ActualizarProveedorComponent,
+    ListarEmpleadoComponent,
+    RegistrarEmpleadoComponent,
+    ActualizarEmpleadoComponent
   ],
   imports: [
     BrowserModule,

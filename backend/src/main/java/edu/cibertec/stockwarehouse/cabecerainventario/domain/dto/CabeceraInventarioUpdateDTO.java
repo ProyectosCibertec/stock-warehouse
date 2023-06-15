@@ -1,5 +1,6 @@
 package edu.cibertec.stockwarehouse.cabecerainventario.domain.dto;
 
+import edu.cibertec.stockwarehouse.empleado.domain.model.Empleado;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -17,6 +18,6 @@ public class CabeceraInventarioUpdateDTO {
     @Temporal(value = TemporalType.DATE)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fecha_cab_inventario;
-    private int idempleado;
+    private Empleado empleado;
     private int estado;
 }

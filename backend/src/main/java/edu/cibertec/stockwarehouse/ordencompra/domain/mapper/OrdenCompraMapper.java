@@ -23,8 +23,8 @@ public interface OrdenCompraMapper {
     OrdenCompra ordenCompraDTOAOrdenCompra(OrdenCompraDTO ordenCompraDTO);
 
 
-    @Mapping(target = "proveedor.id", source = "oredenOrdenCompraCreateDTO.proveedorId")
-    OrdenCompra ordenCompraCreateDTOAOrdenCompra(OrdenCompraCreateDTO oredenOrdenCompraCreateDTO);
+    @Mapping(target = "proveedor.id", source = "ordenOrdenCompraCreateDTO.proveedorId")
+    OrdenCompra ordenCompraCreateDTOAOrdenCompra(OrdenCompraCreateDTO ordenOrdenCompraCreateDTO);
 
 
     @Mapping(target = "proveedor.id", source = "ordenCompraUpdateDTO.proveedorId")

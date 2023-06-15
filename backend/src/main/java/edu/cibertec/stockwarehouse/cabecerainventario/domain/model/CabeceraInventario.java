@@ -29,7 +29,7 @@ public class CabeceraInventario {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fecha_cab_inventario;
 
-    @ManyToOne
+    @ManyToOne( fetch = FetchType.LAZY)
     @JoinColumn(name = "id_empleado")
     private Empleado empleado;
 

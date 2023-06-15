@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CabeceraInventarioService } from '../../servicios/cabecera-inventario.service';
 import { Router } from '@angular/router';
+import { EmpleadoService } from 'src/app/empleado/servicios/empleado.service';
 import { CabeceraInventario } from '../../modelos/CabeceraInventario';
-import { CabeceraInventarioUpdate } from '../../modelos/CabeceraInventarioUpdate';
+
+import { Empleado } from 'src/app/empleado/modelos/Empleado';
 
 @Component({
   selector: 'app-actualizar-cabecera-inventario',
@@ -11,27 +13,42 @@ import { CabeceraInventarioUpdate } from '../../modelos/CabeceraInventarioUpdate
 })
 export class ActualizarCabeceraInventarioComponent implements OnInit {
 
-  cabeceraInventarioUpdate = new CabeceraInventarioUpdate();
+ 
 
+  empleados?:Empleado[];
+  cabeceraInventario = new CabeceraInventario();
 
-  constructor(private router: Router, private cabecerainventarioService: CabeceraInventarioService){}
+  constructor(private router: Router, private cabecerainventarioService: CabeceraInventarioService, private empleadoService:EmpleadoService){}
   ngOnInit(): void {
+    this.getEmpleados();
     this.editar();
   }
 
   editar(){
     let id = JSON.parse(localStorage.getItem('id') as string);
     this.cabecerainventarioService.obtenerCabeceraInventario(id).subscribe(
-      data=>{this.cabeceraInventarioUpdate = data;
+      data=>{this.cabeceraInventario = data;
       });
   }
 
-  actualizarCabeceraInventario(cabeceraInventarioUpdate:CabeceraInventarioUpdate){
-    this.cabecerainventarioService.actualizarCabeceraInventario(cabeceraInventarioUpdate).subscribe(dato=>{
-      this.cabeceraInventarioUpdate = dato;
+  actualizarCabeceraInventario(cabeceraInventario:CabeceraInventario){
+    this.cabecerainventarioService.actualizarCabeceraInventario(cabeceraInventario).subscribe(dato=>{
+      this.cabeceraInventario = dato;
       this.router.navigate(['cabecerasInventario']);
     });
 
+}
+
+getEmpleados(){
+  this.empleadoService.getEmpleados().subscribe(
+    data=>{
+      this.empleados=data;
+      console.log(data);
+    },
+    error=>{
+      console.log(error);
+    }
+  );
 }
 
 }

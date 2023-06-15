@@ -46,7 +46,7 @@ public class OrdenCompra {
     private int estado;
 
     //relacionar ordencompra y proveedor
-    @ManyToOne( fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_proveedor")
     private Proveedor proveedor;
 

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CabeceraInventarioService } from '../../servicios/cabecera-inventario.service';
-import { CabeceraInventarioCreate } from '../../modelos/CabeceraInventarioCreate';
+import { Empleado } from 'src/app/empleado/modelos/Empleado';
+import { CabeceraInventario } from '../../modelos/CabeceraInventario';
+import { EmpleadoService } from 'src/app/empleado/servicios/empleado.service';
 
 @Component({
   selector: 'app-registrar-cabecera-inventario',
@@ -10,16 +12,30 @@ import { CabeceraInventarioCreate } from '../../modelos/CabeceraInventarioCreate
 })
 export class RegistrarCabeceraInventarioComponent implements OnInit {
 
-modelCabeceraInventario = new CabeceraInventarioCreate();
+empleados?:Empleado[];
+modelCabeceraInventario = new CabeceraInventario();
 
-constructor(private router: Router, private cabeceraInventarioService: CabeceraInventarioService){}
+constructor(private router: Router, private cabeceraInventarioService: CabeceraInventarioService, private empleadoService:EmpleadoService){}
   ngOnInit(): void {
-    
+    this.getEmpleados();
   }
 
-  guardarCabeceraInventario( cabeceraInventarioCreate: CabeceraInventarioCreate) {
-    this.cabeceraInventarioService.registrarCabeceraInventario(cabeceraInventarioCreate).subscribe(data => {
+  guardarCabeceraInventario( cabeceraInventario: CabeceraInventario) {
+    this.cabeceraInventarioService.registrarCabeceraInventario(cabeceraInventario).subscribe(data => {
       this.router.navigate(['cabecerasInventario']);
     });
   }
+
+getEmpleados(){
+  this.empleadoService.getEmpleados().subscribe(
+    data=>{
+      this.empleados=data;
+      console.log(data);
+    },
+    error=>{
+      console.log(error);
+    }
+  );
+}
+
 }

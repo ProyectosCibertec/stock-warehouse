@@ -28,7 +28,7 @@ public class CabeceraInventarioController {
 
     @GetMapping("/inventariodetalle/{id}")
     public ResponseEntity<CabeceraInventarioDetalleDTO> listarCabeceraInventarioConDetalle(@PathVariable(value = "id") int id){
-        return new ResponseEntity<CabeceraInventarioDetalleDTO>(cabeceraInventarioService.cabeceraInventarioConDetalle(id),HttpStatus.OK);
+        return new ResponseEntity<>(cabeceraInventarioService.cabeceraInventarioConDetalle(id),HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
@@ -36,7 +36,7 @@ public class CabeceraInventarioController {
         return new ResponseEntity<>(cabeceraInventarioService.findByID(id),HttpStatus.OK);
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public ResponseEntity<CabeceraInventarioDTO> registrarCabeceraInventario(@RequestBody CabeceraInventarioCreateDTO cabeceraInventarioCreateDTO){
         return new ResponseEntity<>(cabeceraInventarioService.save(cabeceraInventarioCreateDTO),HttpStatus.CREATED);
     }
