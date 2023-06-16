@@ -1,6 +1,9 @@
 package edu.cibertec.stockwarehouse.ordencompra.application.impl;
 
+import edu.cibertec.stockwarehouse.detalleordencompra.domain.dto.DetalleOrdenCompraCreateDTO;
+import edu.cibertec.stockwarehouse.detalleordencompra.domain.dto.DetalleOrdenCompraDTO;
 import edu.cibertec.stockwarehouse.detalleordencompra.domain.mapper.DetalleOrdenCompraMapper;
+import edu.cibertec.stockwarehouse.detalleordencompra.domain.model.DetalleOrdenCompra;
 import edu.cibertec.stockwarehouse.detalleordencompra.infrastructure.out.DetalleOrdenCompraRepository;
 import edu.cibertec.stockwarehouse.ordencompra.application.OrdenCompraService;
 import edu.cibertec.stockwarehouse.ordencompra.domain.dto.OrdenCompraCreateDTO;
@@ -16,6 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.NoResultException;
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -65,6 +69,7 @@ public class OrdenCompraServiceImpl implements OrdenCompraService {
     }
 
     @Override
+    @Transactional
     public OrdenCompraDTO save(OrdenCompraCreateDTO ordenCompraCreateDTO) {
 
         OrdenCompra ordenCompra = OrdenCompraMapper.instancia.ordenCompraCreateDTOAOrdenCompra(ordenCompraCreateDTO);
@@ -72,7 +77,23 @@ public class OrdenCompraServiceImpl implements OrdenCompraService {
                 .orElseThrow(() -> new NoResultException("No se encontro el proveedor con id: " + ordenCompraCreateDTO.getProveedor().getId()));
         ordenCompra.setProveedor(proveedor);
 
-        return OrdenCompraMapper.instancia.ordenCompraAOrdenCompraDTO(ordenCompraRepository.save(ordenCompra));
+        OrdenCompra respuestaEntity =  ordenCompraRepository.save(ordenCompra);
+
+        //OrdenCompraDTO resp = OrdenCompraMapper.instancia.ordenCompraAOrdenCompraDTO();
+
+        for ( DetalleOrdenCompraCreateDTO ordendetalleDTO : ordenCompraCreateDTO.getOrdenCompraDetalleDTOList()) {
+            DetalleOrdenCompra ordeDetalle =
+                    DetalleOrdenCompraMapper.instancia.detalleOrdenCompraCreateDTOADetalleOrdenCompra(ordendetalleDTO);
+            ordeDetalle.setOrdencompra(respuestaEntity);
+            detalleOrdenCompraRepositoy.save(ordeDetalle);
+        }
+
+        OrdenCompraDTO resp = OrdenCompraMapper.instancia.ordenCompraAOrdenCompraDTO(ordenCompraRepository.getById(respuestaEntity.getId_orden_compra()));
+            resp.setOrdenCompraDetalleDTOList(
+                    DetalleOrdenCompraMapper.instancia.listaDetallesOrdenCompraADetalleOrdenCompraDTO(detalleOrdenCompraRepositoy.findByordencompra(respuestaEntity))
+                    );
+
+        return resp;
     }
 
     @Override

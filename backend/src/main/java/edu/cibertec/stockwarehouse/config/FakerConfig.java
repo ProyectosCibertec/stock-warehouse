@@ -9,7 +9,7 @@ import java.util.Locale;
 @Configuration
 public class FakerConfig {
     @Bean
-    Faker faker() {
+   Faker faker() {
         return new Faker(new Locale("es"));
-    }
+   }
 }
