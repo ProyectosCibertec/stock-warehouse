@@ -22,7 +22,7 @@ public class Producto {
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "id_categoria", nullable = false)
+    @JoinColumn(name = "id_categoria", nullable = true)
     private Categoria categoria;
 
     @Column(name = "codigobar_producto", length = 14, nullable = false)

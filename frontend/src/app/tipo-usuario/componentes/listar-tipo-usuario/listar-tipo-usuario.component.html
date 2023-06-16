@@ -1,0 +1,35 @@
+<style>
+  .btn-margin-right {
+  margin-right: 10px; /* Puedes ajustar el valor según tu preferencia */
+}
+</style>
+
+<div class="mt-3">
+  <button (click)="nuevoTipoUsuario()" class="btn btn-warning">Agregar</button>
+  
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Tipo Usuario</th>
+          <th scope="col">Estado</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tipoUsuario of tiposUsuario">
+          <th scope="row">{{tipoUsuario.idTipoUsuario}}</th>
+          <td>{{tipoUsuario.nombreTipoUsuario}}</td>
+          <td>
+            <span *ngIf="tipoUsuario.estado === 0">Registrado</span>
+            <span *ngIf="tipoUsuario.estado === 1">Activo</span>
+            <span *ngIf="tipoUsuario.estado === 2">Dado de baja</span>
+          </td>
+          <td>
+            <button (click)="editarTipoUsuario(tipoUsuario)" class="btn btn-warning btn-margin-right">Actualizar</button>
+            <button (click)="eliminarTipoUsuario(tipoUsuario)" class="btn btn-danger">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
