@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
-import { DetalleOrdenCompra } from '../modelos/DetalleOrdenCompra';
 import { HttpClient } from '@angular/common/http';
+import { DetalleOrdenCompra } from '../schema/detalleordencompra';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DetalleOrdenCompraService {
 
-  url:string = 'http://localhost:8080/api/detallesOrdenCompra/';
+  url:string = 'http://localhost:8080/api/detallesOrdenCompra';
 
   constructor(private httpClient:HttpClient) { }
 

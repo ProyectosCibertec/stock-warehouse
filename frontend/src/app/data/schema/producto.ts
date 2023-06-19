@@ -2,7 +2,6 @@ import { Categoria } from "./categoria";
 
 export class Producto{
     id: number;
-   
     categoria: Categoria;
     codigobarra: string;
     descripcion: string;
@@ -12,7 +11,6 @@ export class Producto{
 
     constructor(){
         this.id=0;
-        
         this.categoria= new Categoria;
         this.codigobarra="";
         this.descripcion="";

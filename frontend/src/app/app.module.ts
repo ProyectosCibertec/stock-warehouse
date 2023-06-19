@@ -8,6 +8,7 @@ import { ContentLayoutComponent } from "./layout/content-layout/content-layout.c
 import { AuthLayoutComponent } from "./layout/auth-layout/auth-layout.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -21,8 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule,
     MaterialModule,
-    CoreModule
-    BrowserModule, ToastrModule.forRoot(),
+    CoreModule,
+    BrowserModule, 
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

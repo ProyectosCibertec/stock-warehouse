@@ -12,6 +12,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { NgIf } from '@angular/common';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
 
 let modules = [
   MatSidenavModule,
@@ -25,7 +28,9 @@ let modules = [
   MatNativeDateModule,
   MatInputModule,
   MatDatepickerModule,
-  NgIf,
+  MatTableModule,
+  MatDialogModule,
+  MatPaginatorModule
 ]
 
 @NgModule({

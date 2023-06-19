@@ -7,19 +7,23 @@ import { RegistrarOrdenCompraComponent } from './page/registrar/registrar-orden-
 import { ListarOrdenCompraComponent } from './page/listar/listar-orden-compra.component';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/app/app.material.module';
+import { ProductoModalComponent } from './page/producto-modal/producto-modal.component';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
   declarations: [
     ActualizarOrdenCompraComponent,
     RegistrarOrdenCompraComponent,
-    ListarOrdenCompraComponent
+    ListarOrdenCompraComponent,
+    ProductoModalComponent
   ],
   imports: [
     CommonModule,
     OrdencompraRoutingModule,
     FormsModule,
-    MaterialModule
+    MaterialModule,
+    ToastrModule.forRoot(),
   ]
 })
 export class OrdencompraModule { }

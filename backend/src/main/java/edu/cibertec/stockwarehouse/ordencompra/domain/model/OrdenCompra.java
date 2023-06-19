@@ -1,5 +1,7 @@
 package edu.cibertec.stockwarehouse.ordencompra.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import edu.cibertec.stockwarehouse.detalleordencompra.domain.model.DetalleOrdenCompra;
 import edu.cibertec.stockwarehouse.proveedor.domain.model.Proveedor;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -7,6 +9,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Data
@@ -45,4 +48,10 @@ public class OrdenCompra {
     @ManyToOne
     @JoinColumn(name = "id_proveedor")
     private Proveedor proveedor;
+
+    //relacionar ordencompra y detalleordencompra
+
+    @OneToMany(mappedBy = "ordencompra", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JsonIgnore
+    private Set<DetalleOrdenCompra> detallesOrdenCompra;
 }

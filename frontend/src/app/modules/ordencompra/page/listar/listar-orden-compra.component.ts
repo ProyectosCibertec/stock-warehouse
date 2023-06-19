@@ -58,7 +58,7 @@ export class ListarOrdenCompraComponent implements OnInit {
 
   verDetallesOrdenCompra(ordenCompra: OrdenCompra): void {
     localStorage.setItem('id', ordenCompra.id_orden_compra.toString());
-    this.router.navigate(['verDetallesOrdenCompra']);
+    this.router.navigate(['detalle-orden-compra/ver-detalle']);
   }
 
   mostrarMensaje(mensaje: string, tipo: string): void {
