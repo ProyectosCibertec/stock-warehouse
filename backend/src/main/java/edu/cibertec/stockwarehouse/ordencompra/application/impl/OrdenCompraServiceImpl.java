@@ -1,7 +1,6 @@
 package edu.cibertec.stockwarehouse.ordencompra.application.impl;
 
 import edu.cibertec.stockwarehouse.detalleordencompra.domain.dto.DetalleOrdenCompraCreateDTO;
-import edu.cibertec.stockwarehouse.detalleordencompra.domain.dto.DetalleOrdenCompraDTO;
 import edu.cibertec.stockwarehouse.detalleordencompra.domain.mapper.DetalleOrdenCompraMapper;
 import edu.cibertec.stockwarehouse.detalleordencompra.domain.model.DetalleOrdenCompra;
 import edu.cibertec.stockwarehouse.detalleordencompra.infrastructure.out.DetalleOrdenCompraRepository;
@@ -50,7 +49,7 @@ public class OrdenCompraServiceImpl implements OrdenCompraService {
             return null;
         }
         OrdenCompraDetalleDTO ordenCompraDetalleDTO = OrdenCompraMapper.instancia.OrdenComprasADetalleOrdenPorOrdenCompraDTO(ordenCompra);
-        ordenCompraDetalleDTO.setListaDetallesDTO(detalleOrdenCompraRepositoy.findByordencompra(ordenCompra).stream()
+        ordenCompraDetalleDTO.setOrdenCompraDetalleDTOList(detalleOrdenCompraRepositoy.findByordencompra(ordenCompra).stream()
                 .map(DetalleOrdenCompraMapper.instancia::detalleOrdenCompraADetalleOrdenCompraDTO)
                 .collect(Collectors.toList()));
         return ordenCompraDetalleDTO;
@@ -79,7 +78,11 @@ public class OrdenCompraServiceImpl implements OrdenCompraService {
 
         OrdenCompra respuestaEntity =  ordenCompraRepository.save(ordenCompra);
 
-        //OrdenCompraDTO resp = OrdenCompraMapper.instancia.ordenCompraAOrdenCompraDTO();
+        // Generar número de compra
+        String numeroCompra = "OC" + String.format("%08d", respuestaEntity.getId_orden_compra());
+        respuestaEntity.setNro_orden_compra(numeroCompra);
+        ordenCompraRepository.save(respuestaEntity);
+
 
         for ( DetalleOrdenCompraCreateDTO ordendetalleDTO : ordenCompraCreateDTO.getOrdenCompraDetalleDTOList()) {
             DetalleOrdenCompra ordeDetalle =
@@ -88,19 +91,26 @@ public class OrdenCompraServiceImpl implements OrdenCompraService {
             detalleOrdenCompraRepositoy.save(ordeDetalle);
         }
 
-        OrdenCompraDTO resp = OrdenCompraMapper.instancia.ordenCompraAOrdenCompraDTO(ordenCompraRepository.getById(respuestaEntity.getId_orden_compra()));
-            resp.setOrdenCompraDetalleDTOList(
+        OrdenCompraDTO ordenCompraDTO = OrdenCompraMapper.instancia.ordenCompraAOrdenCompraDTO(ordenCompraRepository.getById(respuestaEntity.getId_orden_compra()));
+        ordenCompraDTO.setOrdenCompraDetalleDTOList(
                     DetalleOrdenCompraMapper.instancia.listaDetallesOrdenCompraADetalleOrdenCompraDTO(detalleOrdenCompraRepositoy.findByordencompra(respuestaEntity))
                     );
 
-        return resp;
+        return ordenCompraDTO;
     }
 
     @Override
     public OrdenCompraDTO update(OrdenCompraUpdateDTO ordenCompraUpdateDTO) {
 
         OrdenCompra ordenCompra = OrdenCompraMapper.instancia.ordenCompraUpdateDTOAOrdenCompra(ordenCompraUpdateDTO);
+
+        // Cargar nuevamente la colección de detalles de la orden de compra
+        int ordenCompraId = ordenCompra.getId_orden_compra();
+        OrdenCompra ordenCompraExistente = ordenCompraRepository.getById(ordenCompraId);
+        ordenCompra.setDetallesOrdenCompra(ordenCompraExistente.getDetallesOrdenCompra());
+
         return OrdenCompraMapper.instancia.ordenCompraAOrdenCompraDTO(ordenCompraRepository.save(ordenCompra));
+
     }
 
 

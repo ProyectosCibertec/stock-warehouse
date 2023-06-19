@@ -11,7 +11,9 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatInputModule} from '@angular/material/input';
-import {NgIf} from '@angular/common';
+import { MatTableModule } from '@angular/material/table';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import {NgIf} from '@angular/common';
       MatNativeDateModule,
       MatInputModule,
       MatDatepickerModule,
-      NgIf,
+      MatTableModule,
+      MatDialogModule,
+      MatPaginatorModule
     ],
     exports : [
       BrowserAnimationsModule,
@@ -42,8 +46,12 @@ import {NgIf} from '@angular/common';
       MatStepperModule,
       MatNativeDateModule,
       MatInputModule,
-      MatDatepickerModule,
-      NgIf,
-    ]
+      MatDatepickerModule
+      ,MatTableModule,
+      MatDialogModule,
+      MatPaginatorModule,
+
+    ],
+
   })
 export class MaterialModule{}

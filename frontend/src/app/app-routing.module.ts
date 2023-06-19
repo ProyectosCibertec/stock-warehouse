@@ -18,6 +18,7 @@ import { ActualizarUsuarioComponent } from './usuario/componentes/actualizar-usu
 import { ActualizarProductoComponent } from './producto/componentes/actualizar-producto/actualizar-producto.component';
 import { ListarProductoComponent } from './producto/componentes/listar-producto/listar-producto.component';
 import { RegistrarProductoComponent } from './producto/componentes/registrar-producto/registrar-producto.component';
+import { ListadDetalleOrdenCompraComponent } from './detalleordencompra/componentes/listad-detalle-orden-compra/listad-detalle-orden-compra.component';
 
 const routes: Routes = [
   { path: 'nuevoUsuario', component: RegistrarUsuarioComponent},
@@ -38,6 +39,8 @@ const routes: Routes = [
   { path:'productos', component:ListarProductoComponent},
   { path:'registrarProducto',  component: RegistrarProductoComponent},
   { path:'actualizarProducto',  component: ActualizarProductoComponent},
+  { path:'verDetallesOrdenCompra',  component: ListadDetalleOrdenCompraComponent},
+  
 ];
 
 @NgModule({

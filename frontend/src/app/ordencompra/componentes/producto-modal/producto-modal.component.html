@@ -1,0 +1,31 @@
+<h3 class="ms-3">Seleccionar Producto</h3>
+
+<table>
+  <tr>
+    <th>ID Producto</th>
+    <th>Descripción</th>
+    <th>Código de Barras</th>
+    <th>Categoría</th>
+    <th>Marca</th>
+    <th>Stock</th>
+    <th>Estado</th>
+    <th>Acciones</th>
+  </tr>
+    <tr *ngFor="let producto of productos" [ngClass]="{ 'selected-row': producto === productoSeleccionado }">
+      <td>{{ producto.id }}</td>
+      <td>{{ producto.descripcion }}</td>
+      <td>{{ producto.codigobarra }}</td>
+      <td>{{ producto.categoria.nombre }}</td>
+      <td>{{ producto.marca }}</td>
+      <td>{{ producto.stock }}</td>
+      <td>{{ producto.estado }}</td>
+      <td>
+        <button (click)="seleccionarProducto(producto)">Seleccionar</button>
+      </td>
+    </tr>
+  </table>
+  
+  <div class="button-container p-1">
+    <button (click)="confirmarSeleccion()">Confirmar</button>
+    <button (click)="cancelarSeleccion()">Cancelar</button>
+  </div>

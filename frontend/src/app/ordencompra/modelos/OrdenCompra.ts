@@ -8,6 +8,7 @@ export class OrdenCompra {
     valortotal_orden:number;
     estado:number;
     proveedor:any;
+    ordenCompraDetalleDTOList: Array<any>;
 
 
    constructor(){
@@ -19,6 +20,7 @@ export class OrdenCompra {
     this.valortotal_orden = 0;
     this.estado = 0;
     this.proveedor = {};
+    this.ordenCompraDetalleDTOList = [];    
         
     }
 
