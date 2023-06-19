@@ -19,9 +19,11 @@ import java.util.Optional;
 
 @Service
 public class DetalleOrdenCompraServiceImpl implements DetalleOrdenCompraService {
+    private final DetalleOrdenCompraRepository detalleOrdenCompraRepositoy;
 
-    @Autowired
-    private DetalleOrdenCompraRepository detalleOrdenCompraRepositoy;
+    public DetalleOrdenCompraServiceImpl(DetalleOrdenCompraRepository detalleOrdenCompraRepositoy) {
+        this.detalleOrdenCompraRepositoy = detalleOrdenCompraRepositoy;
+    }
 
     @Override
     public List<DetalleOrdenCompraDTO> findAll() {

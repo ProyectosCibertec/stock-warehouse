@@ -14,8 +14,11 @@ import java.util.Optional;
 
 @Service
 public class CargoServiceImpl implements CargoService {
-    @Autowired
-    private CargoRepository cargoRepository;
+    private final CargoRepository cargoRepository;
+
+    public CargoServiceImpl(CargoRepository cargoRepository) {
+        this.cargoRepository = cargoRepository;
+    }
 
     @Override
     public CargoDTO find(int id) {

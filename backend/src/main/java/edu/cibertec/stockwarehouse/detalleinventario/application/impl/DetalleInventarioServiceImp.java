@@ -16,9 +16,11 @@ import java.util.Optional;
 
 @Service
 public class DetalleInventarioServiceImp implements DetalleInventarioService {
+    private final DetalleInventarioRepository detalleInventarioRepository;
 
-    @Autowired
-    private DetalleInventarioRepository detalleInventarioRepository;
+    public DetalleInventarioServiceImp(DetalleInventarioRepository detalleInventarioRepository) {
+        this.detalleInventarioRepository = detalleInventarioRepository;
+    }
 
     @Override
     public List<DetalleInventarioDTO> findAll() {

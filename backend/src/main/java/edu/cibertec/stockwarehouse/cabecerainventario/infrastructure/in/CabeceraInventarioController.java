@@ -16,9 +16,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/cabeceraInventario")
 public class CabeceraInventarioController {
+    private final CabeceraInventarioService cabeceraInventarioService;
 
-    @Autowired
-    private CabeceraInventarioService cabeceraInventarioService;
+    public CabeceraInventarioController(CabeceraInventarioService cabeceraInventarioService) {
+        this.cabeceraInventarioService = cabeceraInventarioService;
+    }
 
     @GetMapping("")
     public ResponseEntity<List<CabeceraInventarioDTO>> listarCabeceraInventario() {

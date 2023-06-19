@@ -19,19 +19,17 @@ import java.util.Optional;
 
 @Service
 public class UsuarioServiceImpl implements UsuarioService {
+    private final UsuarioRepository usuarioRepository;
+    private final TipoUsuarioRepository tipoUsuarioRepository;
+    private final EmpleadoRepository empleadoRepository;
+    private final PasswordEncoder passwordEncoder;
 
-
-    @Autowired
-    private UsuarioRepository usuarioRepository;
-
-    @Autowired
-    private TipoUsuarioRepository tipoUsuarioRepository;
-
-    @Autowired
-    private EmpleadoRepository empleadoRepository;
-
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+    public UsuarioServiceImpl(UsuarioRepository usuarioRepository, TipoUsuarioRepository tipoUsuarioRepository, EmpleadoRepository empleadoRepository, PasswordEncoder passwordEncoder) {
+        this.usuarioRepository = usuarioRepository;
+        this.tipoUsuarioRepository = tipoUsuarioRepository;
+        this.empleadoRepository = empleadoRepository;
+        this.passwordEncoder = passwordEncoder;
+    }
 
     @Override
     public List<UsuarioDto> listarUsuarios() {

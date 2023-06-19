@@ -15,10 +15,11 @@ import java.util.Optional;
 
 @Service
 public class TipoUsuarioServiceImpl implements TipoUsuarioService {
+    private final TipoUsuarioRepository tipoUsuarioRepository;
 
-    @Autowired
-    private TipoUsuarioRepository tipoUsuarioRepository;
-
+    public TipoUsuarioServiceImpl(TipoUsuarioRepository tipoUsuarioRepository) {
+        this.tipoUsuarioRepository = tipoUsuarioRepository;
+    }
 
     @Override
     public List<TipoUsuarioDto> listarTipoUsuarios() {

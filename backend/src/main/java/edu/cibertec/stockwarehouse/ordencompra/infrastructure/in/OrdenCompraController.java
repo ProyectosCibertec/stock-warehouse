@@ -14,11 +14,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/ordenCompra")
-@CrossOrigin(origins = "http://localhost:4200")
 public class OrdenCompraController {
+    private final OrdenCompraService ordenCompraService;
 
-    @Autowired
-    private OrdenCompraService ordenCompraService;
+    public OrdenCompraController(OrdenCompraService ordenCompraService) {
+        this.ordenCompraService = ordenCompraService;
+    }
 
     @GetMapping("")
     public ResponseEntity<List<OrdenCompraDTO>> listarOrdenesCompra() {
