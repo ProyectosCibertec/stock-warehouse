@@ -40,7 +40,8 @@ public class UsuarioController {
     }
 
     @DeleteMapping("usuario/{id_usuario}")
-    public ResponseEntity eliminarOrdeCompra(@PathVariable(value = "id_usuario") long id_usuario) {
-        return new ResponseEntity<>(usuarioService.eliminarUsuario(id_usuario), HttpStatus.OK);
+    public ResponseEntity<Void> eliminarOrdeCompra(@PathVariable(value = "id_usuario") long id_usuario) {
+        usuarioService.eliminarUsuario(id_usuario);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }

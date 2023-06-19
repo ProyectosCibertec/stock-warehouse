@@ -11,11 +11,11 @@ export class EmpleadoService {
   url = 'http://localhost:8080/api/empleados';
 
   getEmpleados(){
-    return this.http.get<Empleado[]>(this.url+"/");
+    return this.http.get<Empleado[]>(this.url);
   }
 
   createEmpleado(empleado: Empleado){
-    return this.http.post<Empleado>(this.url+"/",empleado);
+    return this.http.post<Empleado>(this.url,empleado);
   }
 
   getEmpleadoId(id:number){
@@ -23,7 +23,7 @@ export class EmpleadoService {
   }
 
   updateEmpleado(empleado: Empleado){
-    return this.http.put<Empleado>(this.url+"/",empleado);
+    return this.http.put<Empleado>(this.url,empleado);
   }
 
   deleteEmpleado(empleado: Empleado){

@@ -16,7 +16,7 @@ public class CargoController {
     @Autowired
     private CargoService cargoService;
 
-    @GetMapping("/")
+    @GetMapping("")
     public ResponseEntity<List<CargoDTO>> listarCargos() {
         return new ResponseEntity<>(cargoService.findAll(), HttpStatus.OK);
     }
@@ -26,12 +26,12 @@ public class CargoController {
         return new ResponseEntity<>(cargoService.find(id), HttpStatus.OK);
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public ResponseEntity<CargoDTO> registrarCargo(@RequestBody CargoDTO cargoDTO) {
         return new ResponseEntity<>(cargoService.save(cargoDTO), HttpStatus.CREATED);
     }
 
-    @PutMapping("/")
+    @PutMapping("")
     public ResponseEntity<CargoDTO> actualizarCargo(@RequestBody CargoDTO cargoDTO) {
         return new ResponseEntity<>(cargoService.update(cargoDTO), HttpStatus.CREATED);
     }

@@ -1,0 +1,33 @@
+<div [style.display]="'flex'" [style.justifyContent]="'center'" [style.alignItems]="'center'">
+    <h1 class="fw-bold mb-0">Listar Productos</h1>
+    <a class="btn btn-success mx-4" [routerLink]="['registrar']">Agregar</a>
+</div>
+<table class="table table-striped mt-5">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Categoria</th>
+            <th>Codigo de Barra</th>
+            <th>Descripción</th>
+            <th>Marca</th>
+            <th>Stock</th>
+            <th>Estado</th>
+            <th [width]="'260px'">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let producto of productos">
+            <td>{{producto.id}}</td>
+            <td>{{producto.categoria.nombre}}</td>
+            <td>{{producto.codigobarra}}</td>
+            <td>{{producto.descripcion}}</td>
+            <td>{{producto.marca}}</td>
+            <td>{{producto.stock}}</td>
+            <td>{{producto.estado}}</td>
+            <td [style.display]="'flex'" [style.justifyContent]="'space-around'">
+                <button (click)="editar(producto)" class="btn btn-warning"> Actualizar</button>
+                <button (click)="eliminar(producto)" class="btn btn-danger"> Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

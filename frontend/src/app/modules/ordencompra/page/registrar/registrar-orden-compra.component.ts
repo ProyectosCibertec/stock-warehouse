@@ -22,7 +22,7 @@ export class RegistrarOrdenCompraComponent implements OnInit {
 
   guardarOrdenCompra(ordenCompra: OrdenCompra) {
     this.ordenCompraService.registrarOrdenCompra(ordenCompra).subscribe(data => {
-      this.router.navigate(['ordencompra']);
+      this.router.navigate(['orden-compra']);
     });
   }
 

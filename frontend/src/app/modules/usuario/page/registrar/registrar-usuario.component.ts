@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UsuarioService } from '../../servicios/usuario.service';
-import { Usuario } from '../../modelos/Usuario';
-import { TipoUsuarioService  } from 'src/app/tipo-usuario/servicios/tipo-usuarios.service';
-import { TipoUsuario } from 'src/app/tipo-usuario/modelos/Tipo-usuario';
-import { Empleado } from 'src/app/empleado/modelos/Empleado';
-import { EmpleadoService } from 'src/app/empleado/servicios/empleado.service';
+import { Empleado } from 'src/app/data/schema/empleado';
+import { TipoUsuario } from 'src/app/data/schema/tipousuario';
+import { Usuario } from 'src/app/data/schema/usuario';
+import { EmpleadoService } from 'src/app/data/service/empleado.service';
+import { TipoUsuarioService } from 'src/app/data/service/tipo-usuarios.service';
+import { UsuarioService } from 'src/app/data/service/usuario.service';
 
 @Component({
   selector: 'app-registrar-usuario',
@@ -28,7 +28,7 @@ export class RegistrarUsuarioComponent  implements OnInit{
     this.modelUsuario.idEmpleado = usuario.idEmpleado;
     console.log(usuario.idEmpleado);
     this.usuarioService.registrarUsuario(usuario).subscribe(data => {
-      this.router.navigate(['usuarios']);
+      this.router.navigate(['usuario']);
     });
   }
 

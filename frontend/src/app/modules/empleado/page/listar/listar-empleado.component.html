@@ -5,27 +5,23 @@
 <table class="table table-striped mt-5">
     <thead>
         <tr>
-            <th>Código</th>
             <th>Nombre</th>
             <th>Apellido</th>
             <th>Email</th>
             <th>Teléfono</th>
             <th>Fecha Ingreso</th>
-            <th>Fecha Cese</th>
             <th>Cargo</th>
             <th>Estado</th>
-            <th>Acciones</th>
+            <th [width]="'260px'">Acciones</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let empleado of empleados">
-            <td>{{empleado.id}}</td>
             <td>{{empleado.nombre}}</td>
             <td>{{empleado.apellido}}</td>
             <td>{{empleado.correo}}</td>
             <td>{{empleado.telefono}}</td>
             <td>{{empleado.fechaIngreso}}</td>
-            <td>{{empleado.fechaCese}}</td>
             <td>{{empleado.cargo.nombre}}</td>
             <td>{{empleado.estado}}</td>
             <td [style.display]="'flex'" [style.justifyContent]="'space-around'">

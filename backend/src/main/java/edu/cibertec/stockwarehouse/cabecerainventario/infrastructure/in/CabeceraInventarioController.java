@@ -20,7 +20,7 @@ public class CabeceraInventarioController {
     @Autowired
     private CabeceraInventarioService cabeceraInventarioService;
 
-    @GetMapping("/")
+    @GetMapping("")
     public ResponseEntity<List<CabeceraInventarioDTO>> listarCabeceraInventario() {
         return new ResponseEntity<>(cabeceraInventarioService.findAll(), HttpStatus.OK);
     }
@@ -35,12 +35,12 @@ public class CabeceraInventarioController {
         return new ResponseEntity<>(cabeceraInventarioService.findByID(id), HttpStatus.OK);
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public ResponseEntity<CabeceraInventarioDTO> registrarCabeceraInventario(@RequestBody CabeceraInventarioCreateDTO cabeceraInventarioCreateDTO) {
         return new ResponseEntity<>(cabeceraInventarioService.save(cabeceraInventarioCreateDTO), HttpStatus.CREATED);
     }
 
-    @PutMapping("/")
+    @PutMapping("")
     public ResponseEntity<CabeceraInventarioDTO> actualizarCabeceraInventario(@RequestBody CabeceraInventarioUpdateDTO cabeceraInventarioUpdateDTO) {
         return new ResponseEntity<>(cabeceraInventarioService.update(cabeceraInventarioUpdateDTO), HttpStatus.CREATED);
     }

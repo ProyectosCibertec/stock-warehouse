@@ -20,7 +20,7 @@ public class OrdenCompraController {
     @Autowired
     private OrdenCompraService ordenCompraService;
 
-    @GetMapping("/")
+    @GetMapping("")
     public ResponseEntity<List<OrdenCompraDTO>> listarOrdenesCompra() {
         return new ResponseEntity<>(ordenCompraService.findAll(), HttpStatus.OK);
     }
@@ -35,13 +35,13 @@ public class OrdenCompraController {
         return new ResponseEntity<>(ordenCompraService.findByID(id), HttpStatus.OK);
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public ResponseEntity<OrdenCompraDTO> registrarOrdenCompra(@RequestBody OrdenCompraCreateDTO
                                                                        ordenCompraCreateDTO) {
         return new ResponseEntity<>(ordenCompraService.save(ordenCompraCreateDTO), HttpStatus.CREATED);
     }
 
-    @PutMapping("/")
+    @PutMapping("")
     public ResponseEntity<OrdenCompraDTO> actualizarOrdeCompra(@RequestBody OrdenCompraUpdateDTO ordenCompraUpdateDTO) {
         return new ResponseEntity<>(ordenCompraService.update(ordenCompraUpdateDTO), HttpStatus.CREATED);
     }

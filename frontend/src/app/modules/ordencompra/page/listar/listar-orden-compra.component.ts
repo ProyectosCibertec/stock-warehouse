@@ -35,12 +35,12 @@ export class ListarOrdenCompraComponent implements OnInit {
   }
 
   nuevaOrdenCompra():void {
-    this.router.navigate(['ordencompra/registrar']);
+    this.router.navigate(['orden-compra/registrar']);
   }
 
   editarOrdenCompra(ordenCompra:OrdenCompra):void {
     localStorage.setItem('id', ordenCompra.id_orden_compra.toString());
-    this.router.navigate(['ordencompra/actualizar']);
+    this.router.navigate(['orden-compra/actualizar']);
   }
   
   eliminarOrdeCompra(ordenCompra:OrdenCompra):void {

@@ -2,8 +2,10 @@
     <mat-drawer #drawer mode="side" closed>
         <mat-card class="perfil-card">
             <mat-card-header>
-                <div mat-card-avatar class="perfil-header-image"></div>
-                <mat-card-title>Usuario</mat-card-title>
+                <div mat-card-avatar class="perfil-header-image">
+                    <img src="assets/stock-warehouse.svg" alt="">
+                </div>
+                <mat-card-title>{{username}}</mat-card-title>
                 <mat-card-subtitle>Nombre de usuario</mat-card-subtitle>
             </mat-card-header>
             <mat-card-actions>
@@ -16,9 +18,12 @@
                 <ng-template matStepContent>
                     <a routerLink="proveedor" class="nav-link">Proveedores</a>
                     <a routerLink="producto" class="nav-link">Productos</a>
-                    <a routerLink="ordencompra" class="nav-link">Ordenes de compra</a>
+                    <a routerLink="orden-compra" class="nav-link">Ordenes de compra</a>
                     <a routerLink="empleado" class="nav-link">Empleados</a>
                     <a routerLink="cargo" class="nav-link">Cargos</a>
+                    <a routerLink="categoria" class="nav-link">Categorías</a>
+                    <a routerLink="tipo-usuario" class="nav-link">Tipos de usuario</a>
+                    <a routerLink="usuario" class="nav-link">Usuarios</a>
                 </ng-template>
             </mat-step>
             <mat-step class="me-0">

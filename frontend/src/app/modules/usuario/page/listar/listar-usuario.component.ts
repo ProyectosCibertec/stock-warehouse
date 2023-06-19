@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from '../../servicios/usuario.service';
-import { Usuario } from '../../modelos/Usuario';
 import { Router } from '@angular/router';
+import { Usuario } from 'src/app/data/schema/usuario';
+import { UsuarioService } from 'src/app/data/service/usuario.service';
 @Component({
   selector: 'app-listar-usuario',
   templateUrl: './listar-usuario.component.html',
@@ -32,12 +32,12 @@ export class ListarUsuarioComponent implements OnInit {
   }
 
   nuevoUsuario():void {
-    this.router.navigate(['nuevoUsuario']);
+    this.router.navigate(['usuario/registrar']);
   }
 
   editarUsuario(usuario:Usuario):void {
     localStorage.setItem('id', usuario.id_usuario.toString());
-    this.router.navigate(['editarUsuario']);
+    this.router.navigate(['usuario/actualizar']);
   }
   
   eliminarUsuario(usuario: Usuario): void {
@@ -46,7 +46,6 @@ export class ListarUsuarioComponent implements OnInit {
         this.usuarios = this.usuarios!.filter(p => p !== usuario);
       },
       error => {
-        window.location.reload();
         console.log(error);
       }
     );

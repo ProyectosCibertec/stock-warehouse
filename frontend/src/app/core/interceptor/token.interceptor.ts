@@ -4,8 +4,7 @@ import {
     HttpRequest,
     HttpHandler,
     HttpEvent,
-    HttpInterceptor,
-    HttpHeaders
+    HttpInterceptor
 } from '@angular/common/http';
 import { AuthService } from 'src/app/data/service/auth.service';
 

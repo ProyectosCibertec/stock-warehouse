@@ -31,7 +31,7 @@ export class ActualizarOrdenCompraComponent implements OnInit {
   actualizarOrdenCompra(ordenCompra: OrdenCompra) {
     this.ordencompraService.actualizarOrdenCompra(ordenCompra).subscribe(dato => {
       this.ordenCompra = dato;
-      this.router.navigate(['ordencompra']);
+      this.router.navigate(['orden-compra']);
     });
 
   }

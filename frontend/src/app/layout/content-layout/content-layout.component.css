@@ -6,8 +6,3 @@
 .perfil-card {
     max-width: 350px;
 }
-
-.perfil-header-image {
-    background-image: url('../../img/logo.png');
-    background-size: cover;
-}

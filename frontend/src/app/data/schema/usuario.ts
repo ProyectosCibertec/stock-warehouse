@@ -1,5 +1,3 @@
-import { TipoUsuario } from "src/app/tipo-usuario/modelos/Tipo-usuario";
-
 export class Usuario{
     id_usuario: number;
     idTipoUsuario: number;

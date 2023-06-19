@@ -27,7 +27,7 @@ const routes: Routes = [
         loadChildren: () => import('./modules/empleado/empleado.module').then(m => m.EmpleadoModule)
       },
       {
-        path: 'ordencompra',
+        path: 'orden-compra',
         loadChildren: () => import('./modules/ordencompra/ordencompra.module').then(m => m.OrdencompraModule)
       },
       {
@@ -37,6 +37,18 @@ const routes: Routes = [
       {
         path: 'usuario',
         loadChildren: () => import('./modules/usuario/usuario.module').then(m => m.UsuarioModule)
+      },
+      {
+        path: 'tipo-usuario',
+        loadChildren: () => import('./modules/tipousuario/tipousuario.module').then(m => m.TipousuarioModule)
+      },
+      {
+        path: 'producto',
+        loadChildren: () => import('./modules/producto/producto.module').then(m => m.ProductoModule)
+      },
+      {
+        path: 'categoria',
+        loadChildren: () => import('./modules/categoria/categoria.module').then(m => m.CategoriaModule)
       },
       {
         path: 'cargo',

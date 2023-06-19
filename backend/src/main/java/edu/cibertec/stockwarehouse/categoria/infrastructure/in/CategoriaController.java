@@ -18,7 +18,7 @@ public class CategoriaController {
     @Autowired
     private CategoriaService categoriaService;
 
-    @GetMapping("/")
+    @GetMapping("")
     public ResponseEntity<List<CategoriaDTO>> listarCategorias() {
         return new ResponseEntity<>(categoriaService.findAll(), HttpStatus.OK);
     }
@@ -28,12 +28,12 @@ public class CategoriaController {
         return new ResponseEntity<>(categoriaService.find(id), HttpStatus.OK);
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public ResponseEntity<CategoriaDTO> registrarCategoria(@RequestBody CategoriaCreateDTO categoriaCreateDTO) {
         return new ResponseEntity<>(categoriaService.save(categoriaCreateDTO), HttpStatus.CREATED);
     }
 
-    @PutMapping("/")
+    @PutMapping("")
     public ResponseEntity<CategoriaDTO> actualizarCategoria(@RequestBody CategoriaUpdateDTO categoriaUpdateDTO) {
         return new ResponseEntity<>(categoriaService.update(categoriaUpdateDTO), HttpStatus.CREATED);
     }
