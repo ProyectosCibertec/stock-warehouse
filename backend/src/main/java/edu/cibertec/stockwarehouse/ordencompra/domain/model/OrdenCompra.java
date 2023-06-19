@@ -1,7 +1,7 @@
 package edu.cibertec.stockwarehouse.ordencompra.domain.model;
 
 import edu.cibertec.stockwarehouse.proveedor.domain.model.Proveedor;
-import lombok.Data;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -10,6 +10,8 @@ import java.util.Date;
 
 @Entity
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "tb_Ordencompra")
 public class OrdenCompra {
     @Id
@@ -30,7 +32,7 @@ public class OrdenCompra {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fechaentrega;
 
-    @Column(name = "condicionespago", length = 25, nullable = false)
+    @Column(name = "condicionespago", length = 50, nullable = false)
     private String condicionespago;
 
     @Column(name = "valortotal_orden", scale = 2, nullable = false)

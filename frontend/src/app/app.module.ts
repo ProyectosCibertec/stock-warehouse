@@ -22,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     MaterialModule,
     CoreModule
+    BrowserModule, ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

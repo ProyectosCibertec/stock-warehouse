@@ -1,6 +1,6 @@
 <div class="container col-md-10">
   <div class="card-header mt-2 opacity-25">
-    <h1 class="text-dark text-center"> Actualizar orden de compra!</h1>
+    <h1 class="text-dark text-center"> Actualizar orden de compra</h1>
   </div>
   <mat-card>
     <form action="" class="m-3">  
@@ -45,7 +45,7 @@
       
           <mat-form-field class="example-full-width " floatLabel="always">
             <mat-label>Valor Total de la Orden:</mat-label>
-            <input matInput type="number" placeholder="valortotal_orden" class="example-right-align" [(ngModel)]="ordenCompra.valortotal_orden" name="valortotal_orden" required>
+            <input matInput type="number" placeholder="valortotal_orden" class="example-right-align" [(ngModel)]="ordenCompra.valortotal_orden" name="valortotal_orden" required readonly>
             <span matTextPrefix>$&nbsp;</span>
             <span matTextSuffix>.00</span>
           </mat-form-field>
