@@ -10,11 +10,13 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
-import { MatGridListModule } from '@angular/material/grid-list';
-import { NgIf } from '@angular/common';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
+import { MatListModule } from '@angular/material/list';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatMenuModule } from '@angular/material/menu';
 
 let modules = [
   MatSidenavModule,
@@ -30,7 +32,13 @@ let modules = [
   MatDatepickerModule,
   MatTableModule,
   MatDialogModule,
-  MatPaginatorModule
+  MatPaginatorModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatListModule,
+  MatExpansionModule,
+  MatTooltipModule,
+  MatMenuModule
 ]
 
 @NgModule({
