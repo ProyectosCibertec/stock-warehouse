@@ -5,12 +5,11 @@ import edu.cibertec.stockwarehouse.cabecerainventario.infrastructure.out.Cabecer
 import edu.cibertec.stockwarehouse.cargo.domain.model.Cargo;
 import edu.cibertec.stockwarehouse.cargo.infrastructure.out.CargoRepository;
 import edu.cibertec.stockwarehouse.categoria.domain.model.Categoria;
-import edu.cibertec.stockwarehouse.categoria.infraestructure.out.CategoriaRepository;
+import edu.cibertec.stockwarehouse.categoria.infrastructure.out.CategoriaRepository;
 import edu.cibertec.stockwarehouse.detalleinventario.infrastructure.out.DetalleInventarioRepository;
 import edu.cibertec.stockwarehouse.detalleordencompra.infrastructure.out.DetalleOrdenCompraRepository;
 import edu.cibertec.stockwarehouse.empleado.domain.model.Empleado;
 import edu.cibertec.stockwarehouse.empleado.infrastructure.out.EmpleadoRepository;
-import edu.cibertec.stockwarehouse.ordencompra.domain.model.OrdenCompra;
 import edu.cibertec.stockwarehouse.ordencompra.infrastructure.out.OrdenCompraRepository;
 import edu.cibertec.stockwarehouse.producto.infrastructure.out.ProductoRepository;
 import edu.cibertec.stockwarehouse.proveedor.domain.model.Proveedor;
@@ -20,6 +19,7 @@ import edu.cibertec.stockwarehouse.tipousuario.infrastructure.out.TipoUsuarioRep
 import edu.cibertec.stockwarehouse.usuario.domain.model.Usuario;
 import edu.cibertec.stockwarehouse.usuario.infrastructure.out.UsuarioRepository;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -39,6 +39,7 @@ public class GenerateSampleData implements CommandLineRunner {
     private final ProveedorRepository proveedorRepository;
     private final TipoUsuarioRepository tipoUsuarioRepository;
     private final UsuarioRepository usuarioRepository;
+    private final PasswordEncoder passwordEncoder;
     private final Faker faker;
 
     public GenerateSampleData(
@@ -53,6 +54,7 @@ public class GenerateSampleData implements CommandLineRunner {
             ProveedorRepository proveedorRepository,
             TipoUsuarioRepository tipoUsuarioRepository,
             UsuarioRepository usuarioRepository,
+            PasswordEncoder passwordEncoder,
             Faker faker) {
         this.cargoRepository = cargoRepository;
         this.empleadoRepository = empleadoRepository;
@@ -65,6 +67,7 @@ public class GenerateSampleData implements CommandLineRunner {
         this.proveedorRepository = proveedorRepository;
         this.tipoUsuarioRepository = tipoUsuarioRepository;
         this.usuarioRepository = usuarioRepository;
+        this.passwordEncoder = passwordEncoder;
         this.faker = faker;
     }
 
@@ -135,7 +138,7 @@ public class GenerateSampleData implements CommandLineRunner {
                     usuario.setTipoUsuario(tipoUsuario);
                     usuario.setEmpleado(empleado);
                     usuario.setLogin_usuario(faker.name().username());
-                    usuario.setContrasena_usuario("12345");
+                    usuario.setContrasena_usuario(passwordEncoder.encode("123"));
                     return usuario;
                 }).collect(Collectors.toList());
         usuarioRepository.saveAll(usuarios);

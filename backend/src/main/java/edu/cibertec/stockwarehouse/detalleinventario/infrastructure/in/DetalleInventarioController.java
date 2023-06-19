@@ -18,7 +18,7 @@ public class DetalleInventarioController {
     @Autowired
     private DetalleInventarioService detalleInventarioService;
 
-    @GetMapping("/")
+    @GetMapping("")
     public ResponseEntity<List<DetalleInventarioDTO>> listarDetallesInventario() {
         return new ResponseEntity<>(detalleInventarioService.findAll(), HttpStatus.OK);
     }
@@ -28,13 +28,13 @@ public class DetalleInventarioController {
         return new ResponseEntity<>(detalleInventarioService.findByID(id), HttpStatus.OK);
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public ResponseEntity<DetalleInventarioDTO> registrarDetalleInventario(@RequestBody DetalleInventarioCreateDTO
                                                                                    detalleInventarioCreateDTO) {
         return new ResponseEntity<>(detalleInventarioService.save(detalleInventarioCreateDTO), HttpStatus.CREATED);
     }
 
-    @PutMapping("/")
+    @PutMapping("")
     public ResponseEntity<DetalleInventarioDTO> actualizarDetalleInventario(@RequestBody DetalleInventarioUpdateDTO detalleInventarioUpdateDTO) {
         return new ResponseEntity<>(detalleInventarioService.update(detalleInventarioUpdateDTO), HttpStatus.CREATED);
     }

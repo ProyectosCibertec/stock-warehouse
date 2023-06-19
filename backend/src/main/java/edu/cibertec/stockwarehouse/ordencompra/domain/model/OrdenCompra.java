@@ -49,11 +49,9 @@ public class OrdenCompra {
     @JoinColumn(name = "id_proveedor")
     private Proveedor proveedor;
 
-
     //relacionar ordencompra y detalleordencompra
 
     @OneToMany(mappedBy = "ordencompra", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JsonIgnore
     private Set<DetalleOrdenCompra> detallesOrdenCompra;
-
 }

@@ -16,7 +16,7 @@ public class EmpleadoController {
     @Autowired
     private EmpleadoService empleadoService;
 
-    @GetMapping("/")
+    @GetMapping("")
     public ResponseEntity<List<EmpleadoDTO>> listarEmpleados() {
         return new ResponseEntity<>(empleadoService.findAll(), HttpStatus.OK);
     }
@@ -26,12 +26,12 @@ public class EmpleadoController {
         return new ResponseEntity<>(empleadoService.find(id), HttpStatus.OK);
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public ResponseEntity<EmpleadoDTO> registrarEmpleado(@RequestBody EmpleadoDTO empleadoDTO) {
         return new ResponseEntity<>(empleadoService.save(empleadoDTO), HttpStatus.CREATED);
     }
 
-    @PutMapping("/")
+    @PutMapping("")
     public ResponseEntity<EmpleadoDTO> actualizarEmpleado(@RequestBody EmpleadoDTO empleadoDTO) {
         return new ResponseEntity<>(empleadoService.update(empleadoDTO), HttpStatus.CREATED);
     }

@@ -1,0 +1,15 @@
+.body--auth {
+	background-size: cover;
+	background-repeat: no-repeat;
+    background-image: url('./../../../assets/login-screen.jpg');
+}
+
+.body--color {
+    background-color: rgba(63, 81, 181, 0.7);
+}
+
+@media screen and (min-width: 768px) {
+	.body--auth {
+		height: 100vh;
+	}
+}

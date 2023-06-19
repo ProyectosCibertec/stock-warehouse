@@ -1,46 +1,70 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ActualizarEmpleadoComponent } from './empleado/componentes/actualizar-empleado/actualizar-empleado.component';
-import { ListarEmpleadoComponent } from './empleado/componentes/listar-empleado/listar-empleado.component';
-import { RegistrarEmpleadoComponent } from './empleado/componentes/registrar-empleado/registrar-empleado.component';
-import { ActualizarOrdenCompraComponent } from './ordencompra/componentes/actualizar-orden-compra/actualizar-orden-compra.component';
-import { ListarOrdenCompraComponent } from './ordencompra/componentes/listar-orden-compra/listar-orden-compra.component';
-import { RegistrarOrdenCompraComponent } from './ordencompra/componentes/registrar-orden-compra/registrar-orden-compra.component';
-import { ActualizarProveedorComponent } from './proveedor/componentes/actualizar-proveedor/actualizar-proveedor.component';
-import { ListarProveedorComponent } from './proveedor/componentes/listar-proveedor/listar-proveedor.component';
-import { RegistrarProveedorComponent } from './proveedor/componentes/registrar-proveedor/registrar-proveedor.component';
-import { ListarTipoUsuarioComponent } from './tipo-usuario/componentes/listar-tipo-usuario//listar-tipo-usuario.component';
-import { RegistrarTipoUsuarioComponent } from './tipo-usuario/componentes/registrar-tipo-usuario/registrar-tipo-usuario.component';
-import { ActualizarTipoUsuarioComponent } from './tipo-usuario/componentes/actualizar-tipo-usuario/actualizar-tipo-usuario.component';
-import { ListarUsuarioComponent } from './usuario/componentes/listar-usuario/listar-usuario.component';
-import { RegistrarUsuarioComponent } from './usuario/componentes/registrar-usuario/registrar-usuario.component';
-import { ActualizarUsuarioComponent } from './usuario/componentes/actualizar-usuario/actualizar-usuario.component';
-import { ActualizarProductoComponent } from './producto/componentes/actualizar-producto/actualizar-producto.component';
-import { ListarProductoComponent } from './producto/componentes/listar-producto/listar-producto.component';
-import { RegistrarProductoComponent } from './producto/componentes/registrar-producto/registrar-producto.component';
-import { ListadDetalleOrdenCompraComponent } from './detalleordencompra/componentes/listad-detalle-orden-compra/listad-detalle-orden-compra.component';
+import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component';
+import { ContentLayoutComponent } from './layout/content-layout/content-layout.component';
+import { AuthGuard } from './core/guard/auth.guard';
+import { LoginGuard } from './core/guard/login.guard';
 
 const routes: Routes = [
-  { path: 'nuevoUsuario', component: RegistrarUsuarioComponent},
-  { path: 'editarUsuario', component: ActualizarUsuarioComponent},
-  { path: 'nuevaTipoUsuario', component: RegistrarTipoUsuarioComponent},
-  { path:'tiposUsuario', component:ListarTipoUsuarioComponent},
-  { path:'usuarios', component:ListarUsuarioComponent},
-  { path:'proveedores', component:ListarProveedorComponent},
-  { path:'registrarProveedor',  component: RegistrarProveedorComponent},
-  { path:'actualizarProveedor',  component: ActualizarProveedorComponent},
-  { path: 'ordenesCompra', component: ListarOrdenCompraComponent },
-  { path: 'nuevaOrdenCompra', component: RegistrarOrdenCompraComponent},
-  { path: 'editarOrdenCompra', component: ActualizarOrdenCompraComponent},
-  { path: 'empleados', component: ListarEmpleadoComponent },
-  { path: 'registrarEmpleado', component: RegistrarEmpleadoComponent},
-  { path: 'actualizarEmpleado', component: ActualizarEmpleadoComponent},
-  { path: 'editarTipoUsuario', component: ActualizarTipoUsuarioComponent},
-  { path:'productos', component:ListarProductoComponent},
-  { path:'registrarProducto',  component: RegistrarProductoComponent},
-  { path:'actualizarProducto',  component: ActualizarProductoComponent},
-  { path:'verDetallesOrdenCompra',  component: ListadDetalleOrdenCompraComponent},
-  
+  {
+    path: '',
+    redirectTo: 'auth/login',
+    pathMatch: 'full'
+  },
+  {
+    path: 'auth',
+    component: AuthLayoutComponent,
+    canActivate: [LoginGuard('empleado')],
+    loadChildren: () => import('./modules/auth/auth.module').then(m => m.AuthModule)
+  },
+  {
+    path: '',
+    component: ContentLayoutComponent,
+    canActivate: [AuthGuard('auth/login')],
+    children: [
+      {
+        path: 'empleado',
+        loadChildren: () => import('./modules/empleado/empleado.module').then(m => m.EmpleadoModule)
+      },
+      {
+        path: 'orden-compra',
+        loadChildren: () => import('./modules/ordencompra/ordencompra.module').then(m => m.OrdencompraModule)
+      },
+      {
+        path: 'proveedor',
+        loadChildren: () => import('./modules/proveedor/proveedor.module').then(m => m.ProveedorModule)
+      },
+      {
+        path: 'usuario',
+        loadChildren: () => import('./modules/usuario/usuario.module').then(m => m.UsuarioModule)
+      },
+      {
+        path: 'tipo-usuario',
+        loadChildren: () => import('./modules/tipousuario/tipousuario.module').then(m => m.TipousuarioModule)
+      },
+      {
+        path: 'producto',
+        loadChildren: () => import('./modules/producto/producto.module').then(m => m.ProductoModule)
+      },
+      {
+        path: 'categoria',
+        loadChildren: () => import('./modules/categoria/categoria.module').then(m => m.CategoriaModule)
+      },
+      {
+        path: 'cargo',
+        loadChildren: () => import('./modules/cargo/cargo.module').then(m => m.CargoModule)
+      },
+      {
+        path: 'detalle-orden-compra',
+        loadChildren: () => import('./modules/detalleordencompra/detalleordencompra.module').then(m => m.DetalleordencompraModule)
+      }
+    ]
+  },
+  {
+    path: '**',
+    redirectTo: 'auth/login',
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({

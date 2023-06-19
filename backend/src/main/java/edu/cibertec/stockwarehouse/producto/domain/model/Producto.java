@@ -1,6 +1,5 @@
 package edu.cibertec.stockwarehouse.producto.domain.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import edu.cibertec.stockwarehouse.categoria.domain.model.Categoria;
 import edu.cibertec.stockwarehouse.detalleordencompra.domain.model.DetalleOrdenCompra;
 import lombok.*;
@@ -10,10 +9,6 @@ import java.util.Set;
 
 @Entity
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
 @Table(name = "tb_producto")
 public class Producto {
     @Id
@@ -39,10 +34,4 @@ public class Producto {
 
     @Column(name = "estado")
     private int estado;
-
-    @OneToMany(mappedBy = "producto", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JsonIgnore
-    private Set<DetalleOrdenCompra> detalleOrdenCompras;
-
-
 }

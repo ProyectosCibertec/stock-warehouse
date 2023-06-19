@@ -6,7 +6,7 @@ import edu.cibertec.stockwarehouse.categoria.domain.dto.CategoriaDTO;
 import edu.cibertec.stockwarehouse.categoria.domain.dto.CategoriaUpdateDTO;
 import edu.cibertec.stockwarehouse.categoria.domain.mapper.CategoriaMapper;
 import edu.cibertec.stockwarehouse.categoria.domain.model.Categoria;
-import edu.cibertec.stockwarehouse.categoria.infraestructure.out.CategoriaRepository;
+import edu.cibertec.stockwarehouse.categoria.infrastructure.out.CategoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

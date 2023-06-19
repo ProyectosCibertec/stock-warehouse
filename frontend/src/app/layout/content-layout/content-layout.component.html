@@ -1,0 +1,68 @@
+<mat-drawer-container class="bg-body full-height">
+    <mat-drawer #drawer mode="side" closed>
+        <mat-card class="perfil-card">
+            <mat-card-header>
+                <div mat-card-avatar class="perfil-header-image">
+                    <img src="assets/stock-warehouse.svg" alt="">
+                </div>
+                <mat-card-title>{{username}}</mat-card-title>
+                <mat-card-subtitle>Nombre de usuario</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-actions>
+                <button mat-button (click)="logout()">Salir</button>
+            </mat-card-actions>
+        </mat-card>
+        <mat-stepper orientation="vertical">
+            <mat-step>
+                <ng-template matStepLabel>Mantenimiento</ng-template>
+                <ng-template matStepContent>
+                    <a routerLink="proveedor" class="nav-link">Proveedores</a>
+                    <a routerLink="producto" class="nav-link">Productos</a>
+                    <a routerLink="orden-compra" class="nav-link">Ordenes de compra</a>
+                    <a routerLink="empleado" class="nav-link">Empleados</a>
+                    <a routerLink="cargo" class="nav-link">Cargos</a>
+                    <a routerLink="categoria" class="nav-link">Categorías</a>
+                    <a routerLink="tipo-usuario" class="nav-link">Tipos de usuario</a>
+                    <a routerLink="usuario" class="nav-link">Usuarios</a>
+                </ng-template>
+            </mat-step>
+            <mat-step class="me-0">
+                <ng-template matStepLabel>Transacciones</ng-template>
+                <ng-template matStepContent>
+                    <a routerLink="ordencompra" class="nav-link">Ordenes de compra</a>
+                    <a routerLink="" class="nav-link">Inventario</a>
+                    <a routerLink="" class="nav-link">opcion 3</a>
+                </ng-template>
+            </mat-step>
+            <mat-step>
+                <ng-template matStepLabel>Consultas</ng-template>
+                <ng-template matStepContent>
+                    <a routerLink="" class="nav-link">opcion 1</a>
+                    <a routerLink="" class="nav-link">opcion 2</a>
+                    <a routerLink="" class="nav-link">opcion 3</a>
+                    <a routerLink="" class="nav-link">opcion 4</a>
+                </ng-template>
+            </mat-step>
+            <mat-step>
+                <ng-template matStepLabel>Reportes</ng-template>
+                <a routerLink="" class="nav-link">opcion 1</a>
+                <a routerLink="" class="nav-link">opcion 2</a>
+                <a routerLink="" class="nav-link">opcion 3</a>
+                <a routerLink="" class="nav-link">opcion 4</a>
+            </mat-step>
+        </mat-stepper>
+    </mat-drawer>
+    <mat-drawer-content>
+        <mat-toolbar class="bg-primary opacity-75">
+            <mat-toolbar-row color="primary">
+                <span class="text-white">StockWarehouse</span>
+                <button mat-icon-button (click)="drawer.toggle()">
+                    <mat-icon class="text-white">menu</mat-icon>
+                </button>
+            </mat-toolbar-row>
+        </mat-toolbar>
+        <div class="p-5">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

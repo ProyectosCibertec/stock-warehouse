@@ -1,0 +1,8 @@
+.full-height {
+    height: 100vh;
+    /* Establece la altura al 100% del viewport */
+}
+
+.perfil-card {
+    max-width: 350px;
+}

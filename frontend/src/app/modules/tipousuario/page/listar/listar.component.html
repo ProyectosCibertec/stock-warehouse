@@ -1,0 +1,29 @@
+<div [style.display]="'flex'" [style.justifyContent]="'center'" [style.alignItems]="'center'">
+  <h1 class="fw-bold mb-0">Listar Tipos de Usuario</h1>
+  <a class="btn btn-success mx-4" [routerLink]="['registrar']">Agregar</a>
+</div>
+<table class="table table-striped mt-5">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Tipo Usuario</th>
+      <th scope="col">Estado</th>
+      <th [width]="'260px'">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tipoUsuario of tiposUsuario">
+      <th scope="row">{{tipoUsuario.idTipoUsuario}}</th>
+      <td>{{tipoUsuario.nombreTipoUsuario}}</td>
+      <td>
+        <span *ngIf="tipoUsuario.estado === 0">Registrado</span>
+        <span *ngIf="tipoUsuario.estado === 1">Activo</span>
+        <span *ngIf="tipoUsuario.estado === 2">Dado de baja</span>
+      </td>
+      <td [style.display]="'flex'" [style.justifyContent]="'space-around'">
+        <button (click)="editarTipoUsuario(tipoUsuario)" class="btn btn-warning btn-margin-right">Actualizar</button>
+        <button (click)="eliminarTipoUsuario(tipoUsuario)" class="btn btn-danger">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

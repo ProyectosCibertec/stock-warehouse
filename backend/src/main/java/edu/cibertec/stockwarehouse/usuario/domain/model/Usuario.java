@@ -2,14 +2,12 @@ package edu.cibertec.stockwarehouse.usuario.domain.model;
 
 import edu.cibertec.stockwarehouse.empleado.domain.model.Empleado;
 import edu.cibertec.stockwarehouse.tipousuario.domain.model.TipoUsuario;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.persistence.*;
 
 @Entity
-@Getter
-@Setter
+@Data
 @Table(name = "tb_usuario")
 public class Usuario {
     @Id

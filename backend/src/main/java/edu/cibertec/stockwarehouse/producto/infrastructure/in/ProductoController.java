@@ -19,7 +19,7 @@ public class ProductoController {
     @Autowired
     private ProductoService productoService;
 
-    @GetMapping("/")
+    @GetMapping("")
     public ResponseEntity<List<ProductoDTO>> listarProductos() {
         return new ResponseEntity<>(productoService.findAll(), HttpStatus.OK);
     }
@@ -29,12 +29,12 @@ public class ProductoController {
         return new ResponseEntity<>(productoService.find(id), HttpStatus.OK);
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public ResponseEntity<ProductoDTO> registrarProducto(@RequestBody ProductoCreateDTO productoCreateDTO) {
         return new ResponseEntity<>(productoService.save(productoCreateDTO), HttpStatus.CREATED);
     }
 
-    @PutMapping("/")
+    @PutMapping("")
     public ResponseEntity<ProductoDTO> actualizarProducto(@RequestBody ProductoUpdateDTO productoUpdateDTO) {
         return new ResponseEntity<>(productoService.update(productoUpdateDTO), HttpStatus.CREATED);
     }

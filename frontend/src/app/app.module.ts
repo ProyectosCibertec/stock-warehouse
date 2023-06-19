@@ -1,65 +1,32 @@
-import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './app.material.module';
-import { ListarTipoUsuarioComponent } from "./tipo-usuario/componentes/listar-tipo-usuario/listar-tipo-usuario.component";
-import { ActualizarEmpleadoComponent } from './empleado/componentes/actualizar-empleado/actualizar-empleado.component';
-import { ListarEmpleadoComponent } from './empleado/componentes/listar-empleado/listar-empleado.component';
-import { RegistrarEmpleadoComponent } from './empleado/componentes/registrar-empleado/registrar-empleado.component';
-import { ActualizarOrdenCompraComponent } from './ordencompra/componentes/actualizar-orden-compra/actualizar-orden-compra.component';
-import { ListarOrdenCompraComponent } from './ordencompra/componentes/listar-orden-compra/listar-orden-compra.component';
-import { RegistrarOrdenCompraComponent } from './ordencompra/componentes/registrar-orden-compra/registrar-orden-compra.component';
-import { ActualizarProveedorComponent } from './proveedor/componentes/actualizar-proveedor/actualizar-proveedor.component';
-import { ListarProveedorComponent } from './proveedor/componentes/listar-proveedor/listar-proveedor.component';
-import { RegistrarProveedorComponent } from './proveedor/componentes/registrar-proveedor/registrar-proveedor.component';
-import { RegistrarTipoUsuarioComponent } from "./tipo-usuario/componentes/registrar-tipo-usuario/registrar-tipo-usuario.component";
-import { ActualizarTipoUsuarioComponent } from "./tipo-usuario/componentes/actualizar-tipo-usuario/actualizar-tipo-usuario.component";
-import { ListarUsuarioComponent } from "./usuario/componentes/listar-usuario/listar-usuario.component";
-import { RegistrarUsuarioComponent } from "./usuario/componentes/registrar-usuario/registrar-usuario.component";
-import { ActualizarUsuarioComponent } from "./usuario/componentes/actualizar-usuario/actualizar-usuario.component";
-import { ActualizarProductoComponent } from './producto/componentes/actualizar-producto/actualizar-producto.component';
-import { ListarProductoComponent } from './producto/componentes/listar-producto/listar-producto.component';
-import { RegistrarProductoComponent } from './producto/componentes/registrar-producto/registrar-producto.component';
-import {ProductoModalComponent} from './ordencompra/componentes/producto-modal/producto-modal.component';
-import { ListadDetalleOrdenCompraComponent } from "./detalleordencompra/componentes/listad-detalle-orden-compra/listad-detalle-orden-compra.component";
-import { ToastrModule } from "ngx-toastr";
+import { CoreModule } from "./core/core.module";
+import { ContentLayoutComponent } from "./layout/content-layout/content-layout.component";
+import { AuthLayoutComponent } from "./layout/auth-layout/auth-layout.component";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListarProveedorComponent,
-    ListarTipoUsuarioComponent,
-    ListarUsuarioComponent,
-    ListarOrdenCompraComponent,
-    RegistrarOrdenCompraComponent,
-    RegistrarTipoUsuarioComponent,
-    RegistrarUsuarioComponent,
-    ActualizarUsuarioComponent,
-    ActualizarOrdenCompraComponent,
-    ActualizarTipoUsuarioComponent,
-    RegistrarProveedorComponent,
-    ActualizarProveedorComponent,
-    ListarEmpleadoComponent,
-    RegistrarEmpleadoComponent,
-    ActualizarEmpleadoComponent,
-    ListarProductoComponent,
-    RegistrarProductoComponent,
-    ActualizarProductoComponent,
-    ProductoModalComponent,
-    ListadDetalleOrdenCompraComponent
+    ContentLayoutComponent,
+    AuthLayoutComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
     HttpClientModule,
     MaterialModule,
-    BrowserModule, ToastrModule.forRoot(),
+    CoreModule,
+    BrowserModule, 
+    ToastrModule.forRoot(),
   ],
   providers: [],
-  bootstrap: [AppComponent] 
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

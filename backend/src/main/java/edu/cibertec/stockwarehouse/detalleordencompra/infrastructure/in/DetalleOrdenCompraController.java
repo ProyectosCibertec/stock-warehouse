@@ -19,7 +19,7 @@ public class DetalleOrdenCompraController {
     @Autowired
     private DetalleOrdenCompraService detalleOrdenCompraService;
 
-    @GetMapping("/")
+    @GetMapping("")
     public ResponseEntity<List<DetalleOrdenCompraDTO>> listarOrdenesCompra() {
         return new ResponseEntity<>(detalleOrdenCompraService.findAll(), HttpStatus.OK);
     }
@@ -29,13 +29,13 @@ public class DetalleOrdenCompraController {
         return new ResponseEntity<>(detalleOrdenCompraService.findByID(id), HttpStatus.OK);
     }
 
-    @PostMapping("/")
+    @PostMapping("")
     public ResponseEntity<DetalleOrdenCompraDTO> registrarDetalleOrdenCompra(@RequestBody DetalleOrdenCompraCreateDTO
                                                                                      detalleOrdenCompraCreateDTO) {
         return new ResponseEntity<>(detalleOrdenCompraService.save(detalleOrdenCompraCreateDTO), HttpStatus.CREATED);
     }
 
-    @PutMapping("/")
+    @PutMapping("")
     public ResponseEntity<DetalleOrdenCompraDTO> actualizarDetalleOrdeCompra(@RequestBody DetalleOrdenCompraUpdateDTO detalleOrdenCompraUpdateDTO) {
         return new ResponseEntity<>(detalleOrdenCompraService.update(detalleOrdenCompraUpdateDTO), HttpStatus.CREATED);
     }

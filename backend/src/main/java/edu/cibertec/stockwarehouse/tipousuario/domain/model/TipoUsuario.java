@@ -1,14 +1,12 @@
 package edu.cibertec.stockwarehouse.tipousuario.domain.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.persistence.*;
 
 @Entity
+@Data
 @Table(name = "tb_tipo_usuario")
-@Getter
-@Setter
 public class TipoUsuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

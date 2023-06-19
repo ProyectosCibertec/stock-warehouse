@@ -2,18 +2,15 @@ package edu.cibertec.stockwarehouse.detalleordencompra.domain.model;
 
 import edu.cibertec.stockwarehouse.ordencompra.domain.model.OrdenCompra;
 import edu.cibertec.stockwarehouse.producto.domain.model.Producto;
-import lombok.*;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 @Table(name = "tb_detalleordencompra")
 public class DetalleOrdenCompra {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_detalle_orden")
@@ -35,7 +32,6 @@ public class DetalleOrdenCompra {
     @ManyToOne
     @JoinColumn(name = "id_orden_compra")
     private OrdenCompra ordencompra;
-
 
     //relacion detalleordencompra y  ordenCompra
     @ManyToOne

@@ -1,0 +1,33 @@
+<div [style.display]="'flex'" [style.justifyContent]="'center'" [style.alignItems]="'center'">
+    <h1 class="fw-bold mb-0">Listar Empleados</h1>
+    <a class="btn btn-success mx-4" [routerLink]="['registrar']">Agregar</a>
+</div>
+<table class="table table-striped mt-5">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Teléfono</th>
+            <th>Fecha Ingreso</th>
+            <th>Cargo</th>
+            <th>Estado</th>
+            <th [width]="'260px'">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let empleado of empleados">
+            <td>{{empleado.nombre}}</td>
+            <td>{{empleado.apellido}}</td>
+            <td>{{empleado.correo}}</td>
+            <td>{{empleado.telefono}}</td>
+            <td>{{empleado.fechaIngreso}}</td>
+            <td>{{empleado.cargo.nombre}}</td>
+            <td>{{empleado.estado}}</td>
+            <td [style.display]="'flex'" [style.justifyContent]="'space-around'">
+                <a class="btn btn-warning" routerLink="actualizar/{{empleado.id}}">Actualizar</a>
+                <button (click)="deleteEmpleado(empleado)" class="btn btn-danger">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
