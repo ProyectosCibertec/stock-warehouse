@@ -11,10 +11,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/cargo")
-@CrossOrigin(origins = "http://localhost:4200")
 public class CargoController {
-    @Autowired
-    private CargoService cargoService;
+    private final CargoService cargoService;
+
+    public CargoController(CargoService cargoService) {
+        this.cargoService = cargoService;
+    }
 
     @GetMapping("")
     public ResponseEntity<List<CargoDTO>> listarCargos() {

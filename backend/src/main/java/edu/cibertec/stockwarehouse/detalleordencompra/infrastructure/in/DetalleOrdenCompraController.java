@@ -13,11 +13,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/detallesOrdenCompra")
-@CrossOrigin(origins = "http://localhost:4200")
 public class DetalleOrdenCompraController {
+    private final DetalleOrdenCompraService detalleOrdenCompraService;
 
-    @Autowired
-    private DetalleOrdenCompraService detalleOrdenCompraService;
+    public DetalleOrdenCompraController(DetalleOrdenCompraService detalleOrdenCompraService) {
+        this.detalleOrdenCompraService = detalleOrdenCompraService;
+    }
 
     @GetMapping("")
     public ResponseEntity<List<DetalleOrdenCompraDTO>> listarOrdenesCompra() {

@@ -22,16 +22,15 @@ import java.util.stream.Collectors;
 
 @Service
 public class CabeceraInventarioServiceImp implements CabeceraInventarioService {
+    private final CabeceraInventarioRepository cabeceraInventarioRepository;
+    private final EmpleadoRepository empleadoRepository;
+    private final DetalleInventarioRepository detalleInventarioRepository;
 
-    @Autowired
-    private CabeceraInventarioRepository cabeceraInventarioRepository;
-
-    @Autowired
-    private EmpleadoRepository empleadoRepository;
-
-    @Autowired
-    private DetalleInventarioRepository detalleInventarioRepository;
-
+    public CabeceraInventarioServiceImp(CabeceraInventarioRepository cabeceraInventarioRepository, EmpleadoRepository empleadoRepository, DetalleInventarioRepository detalleInventarioRepository) {
+        this.cabeceraInventarioRepository = cabeceraInventarioRepository;
+        this.empleadoRepository = empleadoRepository;
+        this.detalleInventarioRepository = detalleInventarioRepository;
+    }
 
     @Override
     public List<CabeceraInventarioDTO> findAll() {

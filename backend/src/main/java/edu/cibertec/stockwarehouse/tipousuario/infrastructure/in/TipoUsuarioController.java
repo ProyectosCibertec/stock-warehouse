@@ -11,13 +11,14 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api")
 public class TipoUsuarioController {
+    private final TipoUsuarioService tipoUsuarioService;
 
-    @Autowired
-    private TipoUsuarioService tipoUsuarioService;
+    public TipoUsuarioController(TipoUsuarioService tipoUsuarioService) {
+        this.tipoUsuarioService = tipoUsuarioService;
+    }
 
     @GetMapping("tipo-usuario")
     public ResponseEntity<List<TipoUsuarioDto>> listarTipoUsuarios() {

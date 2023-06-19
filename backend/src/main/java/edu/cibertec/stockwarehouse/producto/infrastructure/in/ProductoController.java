@@ -13,11 +13,12 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/producto")
-@CrossOrigin(origins = "http://localhost:4200")
 public class ProductoController {
+    private final ProductoService productoService;
 
-    @Autowired
-    private ProductoService productoService;
+    public ProductoController(ProductoService productoService) {
+        this.productoService = productoService;
+    }
 
     @GetMapping("")
     public ResponseEntity<List<ProductoDTO>> listarProductos() {

@@ -17,9 +17,11 @@ import java.util.Optional;
 
 @Service
 public class ProveedorServiceImpl implements ProveedorService {
+    private final ProveedorRepository proveedorRepository;
 
-    @Autowired
-    private ProveedorRepository proveedorRepository;
+    public ProveedorServiceImpl(ProveedorRepository proveedorRepository) {
+        this.proveedorRepository = proveedorRepository;
+    }
 
     @Override
     public List<ProveedorDTO> listarProveedores() {

@@ -26,15 +26,15 @@ import java.util.stream.Collectors;
 
 @Service
 public class OrdenCompraServiceImpl implements OrdenCompraService {
+    private final OrdenCompraRepository ordenCompraRepository;
+    private final ProveedorRepository proveedorRepository;
+    private final DetalleOrdenCompraRepository detalleOrdenCompraRepositoy;
 
-    @Autowired
-    private OrdenCompraRepository ordenCompraRepository;
-
-    @Autowired
-    private ProveedorRepository proveedorRepository;
-
-    @Autowired
-    private DetalleOrdenCompraRepository detalleOrdenCompraRepositoy;
+    public OrdenCompraServiceImpl(OrdenCompraRepository ordenCompraRepository, ProveedorRepository proveedorRepository, DetalleOrdenCompraRepository detalleOrdenCompraRepositoy) {
+        this.ordenCompraRepository = ordenCompraRepository;
+        this.proveedorRepository = proveedorRepository;
+        this.detalleOrdenCompraRepositoy = detalleOrdenCompraRepositoy;
+    }
 
     @Override
     public List<OrdenCompraDTO> findAll() {

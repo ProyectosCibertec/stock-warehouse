@@ -14,8 +14,11 @@ import java.util.Optional;
 
 @Service
 public class EmpleadoServiceImpl implements EmpleadoService {
-    @Autowired
-    private EmpleadoRepository empleadoRepository;
+    private final EmpleadoRepository empleadoRepository;
+
+    public EmpleadoServiceImpl(EmpleadoRepository empleadoRepository) {
+        this.empleadoRepository = empleadoRepository;
+    }
 
     @Override
     public EmpleadoDTO find(int id) {
