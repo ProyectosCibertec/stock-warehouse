@@ -27,7 +27,7 @@
         <td>{{ordenCompra.proveedor.razonSocial}}</td>
         <td>{{ordencompra.NombreEstado(ordenCompra.estado)}}</td>
         <td><button class="bg-body" (click)="editarOrdenCompra(ordenCompra)"><mat-icon class="text-success">drive_file_rename_outline</mat-icon></button>&nbsp;&nbsp;
-            <button class="bg-body"><mat-icon class="text-primary">visibility</mat-icon></button>&nbsp;&nbsp;
+            <button class="bg-body" (click)="verDetallesOrdenCompra(ordenCompra)"><mat-icon class="text-primary">visibility</mat-icon></button>&nbsp;&nbsp;
             <button class="bg-body" (click)="eliminarOrdeCompra(ordenCompra)"><mat-icon class="text-danger">delete_forever</mat-icon></button>
           </td>
       </tr>

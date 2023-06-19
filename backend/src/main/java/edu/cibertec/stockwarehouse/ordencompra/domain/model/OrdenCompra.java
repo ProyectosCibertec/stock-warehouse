@@ -13,8 +13,6 @@ import java.util.Set;
 
 @Entity
 @Data
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "tb_Ordencompra")
@@ -37,7 +35,7 @@ public class OrdenCompra {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fechaentrega;
 
-    @Column(name = "condicionespago", length = 25, nullable = false)
+    @Column(name = "condicionespago", length = 50, nullable = false)
     private String condicionespago;
 
     @Column(name = "valortotal_orden", scale = 2, nullable = false)

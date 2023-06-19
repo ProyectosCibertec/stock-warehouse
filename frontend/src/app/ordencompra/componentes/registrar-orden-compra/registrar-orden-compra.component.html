@@ -2,52 +2,45 @@
 <div class="container col-md-10">
 
   <div class="card-header mt-2 opacity-25">
-    <h1 class="text-dark text-center"> registrar-orden-compra!</h1>
+    <h1 class="text-dark text-center"> registrar-orden-compra</h1>
   </div>
-  <mat-card>
-    <form action="" class="m-3">  
-      <div class="example-container ms-1 d-flex justify-content-start"> 
-          <mat-form-field hintLabel="Max 10 characters" class="example-full-width ms-4">
-              <mat-label>Nro. de Orden de Compra:</mat-label>
-              <input matInput type="text"  #input maxlength="10" placeholder="nro_orden_compra" [(ngModel)]="modelOrdenCompra.nro_orden_compra" name="nro_orden_compra" required="required">
-              <mat-hint class="text-dark" align="end">{{modelOrdenCompra.nro_orden_compra.length}}/10</mat-hint>
-            </mat-form-field>
-        </div>
-        <div class="example-container d-flex justify-content-around"> 
+  <mat-card class="h-auto w-auto p-2">
+    <form action="" class="m-2"> 
+    <div class="row d-flex justify-content-center m-2">
+    <div class="p-2 col-8 ">
+      <h2>Orden de Compra</h2>
+      <div class="example-container d-flex justify-content-around"> 
             <mat-form-field class="example-full-width" >
               <mat-label>Fecha de Orden de Compra:</mat-label>
               <input matInput type="date" #input placeholder="fechaorden_compra" [(ngModel)]="modelOrdenCompra.fechaorden_compra" name="fechaorden_compra" required>
               <mat-hint>Formato: dd/MM/YYYY</mat-hint>
             </mat-form-field>
-
             <mat-form-field class="example-full-width" >
               <mat-label>Fecha de Entrega:</mat-label>
               <input matInput type="date" #input placeholder="fechaentrega" [(ngModel)]="modelOrdenCompra.fechaentrega" name="fechaentrega" required>
               <mat-hint>Formato: dd/MM/YYYY</mat-hint>
             </mat-form-field>
+            <mat-form-field class=" example-full-width">
+              <mat-label>Condiciones de pago</mat-label>
+              <mat-select [(ngModel)]="modelOrdenCompra.condicionespago" name="condicionespago" required>
+                <mat-option value="Pago anticipado"> Pago anticipado </mat-option>
+                <mat-option value="Pago al contado"> Pago al contado </mat-option>
+                <mat-option value="Pago a plazos"> Pago a plazos </mat-option>
+                <mat-option value="Pago contra entrega"> Pago contra entrega </mat-option>
+                <mat-option value="Pago a plazo fijo"> Pago a plazo fijo </mat-option>
+                <mat-option value="Pago por letra de cambio"> Pago por letra de cambio </mat-option>
+                <mat-option value="Pago por transferencia bancaria"> Pago por transferencia bancaria </mat-option>
+              </mat-select>
+            </mat-form-field>
         </div>
         <div class="example-container d-flex justify-content-around"> 
-          <mat-form-field class=" example-full-width">
-            <mat-label>Condiciones de pago</mat-label>
-            <mat-select [(ngModel)]="modelOrdenCompra.condicionespago" name="condicionespago" required>
-              <mat-option value="Pago anticipado"> Pago anticipado </mat-option>
-              <mat-option value="Pago al contado"> Pago al contado </mat-option>
-              <mat-option value="Pago a plazos"> Pago a plazos </mat-option>
-              <mat-option value="Pago contra entrega"> Pago contra entrega </mat-option>
-              <mat-option value="Pago a plazo fijo"> Pago a plazo fijo </mat-option>
-              <mat-option value="Pago por letra de cambio"> Pago por letra de cambio </mat-option>
-              <mat-option value="Pago por transferencia bancaria"> Pago por transferencia bancaria </mat-option>
-            </mat-select>
-          </mat-form-field>
-      
+         
           <mat-form-field class="example-full-width " floatLabel="always">
             <mat-label>Valor Total de la Orden:</mat-label>
-            <input matInput type="number" placeholder="valortotal_orden" class="example-right-align" [(ngModel)]="modelOrdenCompra.valortotal_orden" name="valortotal_orden" required>
+            <input matInput type="number" placeholder="valortotal_orden" class="example-right-align" [(ngModel)]="modelOrdenCompra.valortotal_orden" name="valortotal_orden" required readonly>
             <span matTextPrefix>$&nbsp;</span>
             <span matTextSuffix>.00</span>
           </mat-form-field>
-        </div>
-        <div class="example-container d-flex justify-content-around"> 
           <mat-form-field class=" example-full-width">
             <mat-label>Estado</mat-label>
             <mat-select [(ngModel)]="modelOrdenCompra.estado" name="estado" required>
@@ -56,18 +49,100 @@
               <mat-option  [value]="2"> Anulado </mat-option>
             </mat-select>
           </mat-form-field>
-        <mat-form-field class=" example-full-width">
-          <mat-label>Proveedor</mat-label>
-          <mat-select [(ngModel)]="modelOrdenCompra.proveedor.id" name="proveedor"  required>
-            <mat-option *ngFor="let proveedor of proveedores"[value]="proveedor.id">
-              {{proveedor.razonSocial}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+          <mat-form-field class=" example-full-width">
+            <mat-label>Proveedor</mat-label>
+            <mat-select [(ngModel)]="modelOrdenCompra.proveedor.id" name="proveedor"  required>
+              <mat-option *ngFor="let proveedor of proveedores"[value]="proveedor.id">
+                {{proveedor.razonSocial}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      <div>
+          
+        <div class="w-100  d-flex justify-content-between p-2">
+          <span class="mt-3 mb-0 ">Detalle de orden de compra</span>   
+          <button  color="primary" class=" me-2" mat-raised-button (click)="agregarDetalle()">Agregar detalle<mat-icon class="text-dark">save</mat-icon></button>
       </div>
-      <div class="example-container  d-flex justify-content-center mt-5 mb-3"> 
-        <button  color="basic" mat-raised-button (click)="guardarOrdenCompra(modelOrdenCompra)">Grabar<mat-icon class="text-dark">save</mat-icon></button>
-       </div>
+        <table mat-table [dataSource]="detallesDataSource" class="mat-elevation-z8 ">
+          <ng-container *ngFor="let columna of columnas">
+            <ng-container matColumnDef="{{ columna }}">
+              <th mat-header-cell *matHeaderCellDef class="header-style">{{ obtenerNombreColumna(columna) }}</th>
+              <td mat-cell *matCellDef="let detalle">
+                <!-- Verificar si es la columna de eliminación -->
+                <ng-container *ngIf="columna !== 'eliminar'">
+                  {{ obtenerValorColumna(detalle, columna) }}
+                </ng-container>
+                <ng-container *ngIf="columna === 'eliminar'">
+                  <button mat-icon-button color="warn" class="delete-button" (click)="eliminarDetalle(detalle)">
+                    <mat-icon class="delete-icon">delete</mat-icon>
+                  </button>
+                </ng-container>
+              </td>
+            </ng-container>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+          <tr mat-row  *matRowDef="let row; columns: columnas"></tr>
+        </table>
+      <mat-paginator [pageSize]="pageSize" [pageSizeOptions]="[3,5]" [showFirstLastButtons]="true" (page)="onPageChange($event)" [length]="detallesDataSource.data.length"></mat-paginator>
+      </div>
+    </div>
+
+      <div class="p-2 col-4 ">
+        <h2>Producto</h2>
+        <div class="w-100 d-flex justify-content-start">
+          <mat-form-field class="example-full-width">
+            <mat-label>Id Producto:</mat-label>
+            <input matInput type="text"  #input maxlength="10" placeholder="id_Producto" [(ngModel)]="modeloDetalleOC.producto.id" name="idProducto"  readonly>
+          </mat-form-field>
+     
+          <div class="ms-5 mt-2">
+            <button mat-raised-button class="bg-dark text-white" (click)="abrirModalProductos()" >Buscar</button>
+          </div>
+          </div>
+          <div class="example-container d-flex justify-content-around">
+          <mat-form-field  class="w-100">
+            <mat-label>Descripción:</mat-label>
+            <input matInput type="text"  placeholder="Descripción" [(ngModel)]="modeloDetalleOC.producto.descripcion" name="descripcion"  readonly>
+          </mat-form-field>
+          </div>
+          <div class="example-container d-flex justify-content-around">
+            <mat-form-field  class="text-body" floatLabel="always">
+              <mat-label>Precio:</mat-label>
+              <input matInput type="text"  placeholder="precio" class="example-right-align" [(ngModel)]="modeloDetalleOC.precio_unitario" name="precio_unitario" required="required" (ngModelChange)="calcularValorDetalle()">
+              <span matTextPrefix>$&nbsp;</span>
+             <span matTextSuffix>.00</span>
+            </mat-form-field>
+            <mat-form-field  class="">
+              <mat-label>Cantidad:</mat-label>
+              <input matInput type="text"  #input maxlength="10" placeholder="cantidad" [(ngModel)]="modeloDetalleOC.cantidad" name="cantidad" required="required" (ngModelChange)="calcularValorDetalle()">
+            </mat-form-field>
+            </div>
+
+            <div class="example-container d-flex justify-content-around">
+            <mat-form-field  class="example-small-width">
+              <mat-label>valor detalle:</mat-label>
+              <input matInput type="text"  #input maxlength="10" placeholder="valoDetalle" [(ngModel)]="modeloDetalleOC.costo_detalleorden" name="costo_detalleorden" required readonly>
+              <span matTextPrefix>$&nbsp;</span>
+              <span matTextSuffix>.00</span>
+            </mat-form-field>
+            <mat-form-field class=" example-full-width">
+              <mat-label>Estado</mat-label>
+              <mat-select [(ngModel)]="modeloDetalleOC.estado" name="estado" required>
+                <mat-option  [value]="0"> Generado </mat-option>
+                <mat-option  [value]="1"> Recepcionado </mat-option>
+                <mat-option  [value]="2"> Anulado </mat-option>
+              </mat-select>
+            </mat-form-field>
+            </div>
+            <div class="w-100  d-flex justify-content-end ">
+              <button  color="basic" class="mb-1 me-2 mt-5" mat-raised-button (click)="guardarOrdenCompra(modelOrdenCompra)">Grabar<mat-icon class="text-dark">save</mat-icon></button>
+            </div>
+
+            </div>
+        </div>
+       
     </form>
   </mat-card>
 

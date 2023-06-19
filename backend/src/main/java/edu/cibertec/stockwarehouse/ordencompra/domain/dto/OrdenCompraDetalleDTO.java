@@ -36,5 +36,5 @@ public class OrdenCompraDetalleDTO {
 
     private Proveedor proveedor;
 
-    private List<DetalleOrdenCompraDTO> listaDetallesDTO =  new ArrayList<>();
+    private List<DetalleOrdenCompraDTO> ordenCompraDetalleDTOList =  new ArrayList<>();
 }

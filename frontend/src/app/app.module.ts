@@ -23,6 +23,9 @@ import { ActualizarUsuarioComponent } from "./usuario/componentes/actualizar-usu
 import { ActualizarProductoComponent } from './producto/componentes/actualizar-producto/actualizar-producto.component';
 import { ListarProductoComponent } from './producto/componentes/listar-producto/listar-producto.component';
 import { RegistrarProductoComponent } from './producto/componentes/registrar-producto/registrar-producto.component';
+import {ProductoModalComponent} from './ordencompra/componentes/producto-modal/producto-modal.component';
+import { ListadDetalleOrdenCompraComponent } from "./detalleordencompra/componentes/listad-detalle-orden-compra/listad-detalle-orden-compra.component";
+import { ToastrModule } from "ngx-toastr";
 
 @NgModule({
   declarations: [
@@ -44,7 +47,9 @@ import { RegistrarProductoComponent } from './producto/componentes/registrar-pro
     ActualizarEmpleadoComponent,
     ListarProductoComponent,
     RegistrarProductoComponent,
-    ActualizarProductoComponent
+    ActualizarProductoComponent,
+    ProductoModalComponent,
+    ListadDetalleOrdenCompraComponent
   ],
   imports: [
     BrowserModule,
@@ -52,8 +57,9 @@ import { RegistrarProductoComponent } from './producto/componentes/registrar-pro
     FormsModule,
     HttpClientModule,
     MaterialModule,
+    BrowserModule, ToastrModule.forRoot(),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent] 
 })
 export class AppModule {}

@@ -32,6 +32,9 @@ export class OrdenCompraService {
     return this.httpClient.delete<OrdenCompra>(this.url+"/"+OrdenCompra.id_orden_compra);
   }
 
+  obtenerDetallesOrdenCompraPorOrdenCompra(id:number){
+    return this.httpClient.get<OrdenCompra>(this.url+"/ordendetalle/"+id);
+  }
 
   
 }
