@@ -11,6 +11,7 @@ import edu.cibertec.stockwarehouse.detalleordencompra.infrastructure.out.Detalle
 import edu.cibertec.stockwarehouse.empleado.domain.model.Empleado;
 import edu.cibertec.stockwarehouse.empleado.infrastructure.out.EmpleadoRepository;
 import edu.cibertec.stockwarehouse.ordencompra.infrastructure.out.OrdenCompraRepository;
+import edu.cibertec.stockwarehouse.producto.domain.model.Producto;
 import edu.cibertec.stockwarehouse.producto.infrastructure.out.ProductoRepository;
 import edu.cibertec.stockwarehouse.proveedor.domain.model.Proveedor;
 import edu.cibertec.stockwarehouse.proveedor.infrastructure.out.ProveedorRepository;
@@ -106,7 +107,7 @@ public class GenerateSampleData implements CommandLineRunner {
                     proveedor.setEstado(faker.number().numberBetween(0, 2));
                     proveedor.setEmail(faker.internet().emailAddress());
                     proveedor.setTelefono(faker.phoneNumber().phoneNumber());
-                    proveedor.setRuc("0123456789");
+                    proveedor.setRuc(String.valueOf(faker.number().numberBetween(111111111, 999999999)));
                     proveedor.setRazonSocial(faker.company().name());
                     proveedor.setDireccion(faker.address().buildingNumber());
                     return proveedor;
@@ -143,5 +144,18 @@ public class GenerateSampleData implements CommandLineRunner {
                 }).collect(Collectors.toList());
         usuarioRepository.saveAll(usuarios);
 
+        List<Producto> productos = IntStream.rangeClosed(1, 5)
+                .mapToObj(i -> {
+                    Categoria categoria = categorias.get(faker.number().numberBetween(0, 5));
+                    Producto producto = new Producto();
+                    producto.setCategoria(categoria);
+                    producto.setEstado(faker.number().numberBetween(0, 2));
+                    producto.setMarca(faker.commerce().productName());
+                    producto.setDescripcion(faker.commerce().material() + faker.commerce().color());
+                    producto.setStock(faker.number().numberBetween(0, 30));
+                    producto.setCodigobarra(faker.commerce().promotionCode().substring(0, 13));
+                    return producto;
+                }).collect(Collectors.toList());
+        productoRepository.saveAll(productos);
     }
 }
