@@ -1,0 +1,23 @@
+<div [style.display]="'flex'" [style.justifyContent]="'center'" [style.alignItems]="'center'">
+    <h1 class="fw-bold mb-0">Listar Cargos</h1>
+    <a class="btn btn-success mx-4" [routerLink]="['registrar']">Agregar</a>
+</div>
+<table class="table table-striped mt-5">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Estado</th>
+            <th [width]="'260px'">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cargo of cargos">
+            <td>{{cargo.nombre}}</td>
+            <td>{{cargo.estado == 0 ? "Activo" : "Anulado"}}</td>
+            <td [style.display]="'flex'" [style.justifyContent]="'space-around'">
+                <a class="btn btn-warning" routerLink="actualizar/{{cargo.id}}">Actualizar</a>
+                <button (click)="deleteCargo(cargo)" class="btn btn-danger">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

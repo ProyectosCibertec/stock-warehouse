@@ -4,7 +4,6 @@ import edu.cibertec.stockwarehouse.categoria.aplication.CategoriaService;
 import edu.cibertec.stockwarehouse.categoria.domain.dto.CategoriaCreateDTO;
 import edu.cibertec.stockwarehouse.categoria.domain.dto.CategoriaDTO;
 import edu.cibertec.stockwarehouse.categoria.domain.dto.CategoriaUpdateDTO;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -40,7 +39,7 @@ public class CategoriaController {
         return new ResponseEntity<>(categoriaService.update(categoriaUpdateDTO), HttpStatus.CREATED);
     }
 
-    @DeleteMapping("/id")
+    @DeleteMapping("/{id}")
     public void eliminarCategoria(@PathVariable("id") int id) {
         categoriaService.delete(id);
     }
